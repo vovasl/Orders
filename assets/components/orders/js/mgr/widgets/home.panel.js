@@ -280,6 +280,7 @@ Ext.extend(orders.panel.Home, MODx.Panel, {
 
         var tabs = [];
         tabs.push(ordersTab);
+        tabs.push(reports);
         if (orders.config['perm.orders_item_show_tab']) {
             tabs.push(managerTab);
             tabs.push(goodsTab);
@@ -302,7 +303,6 @@ Ext.extend(orders.panel.Home, MODx.Panel, {
             tabs.push(deliveryTermReceiverTab);
             tabs.push(saleNoteTab);
             tabs.push(accountsNoteTab);
-            tabs.push(reports);
         }
         return tabs;
     }

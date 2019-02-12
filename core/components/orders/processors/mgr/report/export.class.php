@@ -110,7 +110,7 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
         $objPHPExcel = new PHPExcel();
 
         $cellStart = 'A';
-        $cellEnd = 'Q'; //последняя ячейка
+        $cellEnd = 'R'; //последняя ячейка
         $dataCell = 2; //первая строка для записи данных в файл
 
         //массив последовательности выгрузки загрузки полей в Excel файл
@@ -120,32 +120,32 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
             'C' => 'container_number',
             'D' => 'container_type',
             'E' => 'weight',
-            'E' => 'port_arrive',
-            'F' => 'port_arrive_date',
-            'G' => 'release',
-            'H' => 'pdt',
-            'I' => 'vdt',
-            'J' => 'station_train_arrive',
-            'K' => 'train_arrive_date',
-            'L' => 'export_from_station_real',
-            'M' => 'city_delivery',
-            'N' => 'goods',
-            'O' => 'line',
-            'P' => 'receiver',
-            'Q' => 'manager2',
+            'F' => 'port_arrive',
+            'G' => 'port_arrive_date',
+            'H' => 'release',
+            'I' => 'pdt',
+            'J' => 'vdt',
+            'K' => 'station_train_arrive',
+            'L' => 'train_arrive_date',
+            'M' => 'export_from_station_real',
+            'N' => 'city_delivery',
+            'O' => 'goods',
+            'P' => 'line',
+            'Q' => 'receiver',
+            'R' => 'manager2',
         );
 
         //массив названий для полей с базой данных и их размещение в Excel файле
         $fieldsDB = array(
             'B' => 'clientName',
             'D' => 'containerTypeName',
-            'E' => 'portArriveName',
-            'J' => 'stationTrainArriveName',
-            'M' => 'cityDeliveryName',
-            'N' => 'goodsName',
-            'O' => 'lineName',
-            'P' => 'receiverName',
-            'Q' => 'manager2Name'
+            'F' => 'portArriveName',
+            'K' => 'stationTrainArriveName',
+            'N' => 'cityDeliveryName',
+            'O' => 'goodsName',
+            'P' => 'lineName',
+            'Q' => 'receiverName',
+            'R' => 'manager2Name'
         );
 
         $fieldsDate = array('port_arrive_date', 'pdt', 'vdt', 'train_arrive_date', 'export_from_station_real');//названия полей с типом дата
