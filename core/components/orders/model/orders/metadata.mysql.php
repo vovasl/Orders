@@ -1,0 +1,36 @@
+<?php
+
+$xpdo_meta_map = array (
+  'xPDOSimpleObject' => 
+  array (
+    0 => 'ordersItem',
+    1 => 'ordersGoods',
+    2 => 'ordersManager',
+    3 => 'ordersContainerType',
+    4 => 'ordersLine',
+    5 => 'ordersDeliveryTerm',
+    6 => 'ordersDeliveryTermReceiver',
+    7 => 'ordersPortDeparture',
+    8 => 'ordersPortArrive',
+    9 => 'ordersCityDelivery',
+    10 => 'ordersStationTrainArrive',
+    11 => 'ordersAddress',
+    12 => 'ordersAddressContainer',
+    13 => 'ordersClient',
+    14 => 'ordersAgentRailway',
+    15 => 'ordersReceiver',
+    16 => 'ordersSender',
+    17 => 'ordersForwarder',
+    18 => 'ordersCompanyWarehouse',
+    19 => 'ordersCarCarrier',
+    20 => 'ordersSaleNote',
+    21 => 'ordersAccountsNote',
+    22 => 'ordersSettings',
+    23 => 'ordersTemplate',
+    24 => 'ordersSettingsFieldsWidth',
+    25 => 'ordersClientSender',
+    26 => 'ordersClientManager',
+    27 => 'ordersClientManager2',
+    28 => 'ordersClientGoods',
+  ),
+);

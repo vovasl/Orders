@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="orders" baseClass="xPDOObject" platform="mysql" defaultEngine="InnoDB" phpdoc-package="orders"
+       version="1.1">
+
+    <object class="ordersItem" table="orders_items" extends="xPDOSimpleObject">
+        <field key="created" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="container_number" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="bl" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="agent_number" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="agent_china_number" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="bill_entry_number" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="manager" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="manager2" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="client" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="goods" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="delivery_term" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="port_departure" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="city_delivery" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="container_type" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="volume" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="weight" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="count_boxes" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="port_arrive" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="line" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="agent_railway" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="station_train_arrive" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="receiver" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="delivery_term_receiver" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="sale" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="accounts" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="tax_payments" dbtype="varchar" precision="10" phptype="string" null="false" default="" />
+        <field key="tax_payments_nds" dbtype="varchar" precision="10" phptype="string" null="false" default="" />
+        <field key="sender" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="forwarder" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="application_date" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="availability_date" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="booking" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="factory_supply" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="port_departure_date" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="port_arrive_date" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="release" dbtype="tinyint" precision="1" phptype="boolean" attributes="unsigned" null="false" default="0" />
+        <field key="pdt" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="examination" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="examined" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="vdt" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="train_departure_date" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="train_arrive_date" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="distance_to_station" dbtype="varchar" precision="20" phptype="string" null="false" default="" />
+        <field key="stations" dbtype="mediumtext" phptype="string" />
+        <field key="export_from_station" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="export_from_station_real" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="delivery_date" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="delivery_container_date" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="note" dbtype="mediumtext" phptype="string" />
+        <field key="company_warehouse" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="address" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="contact_person" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="contact_person_phone" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="address_container" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="car_carrier" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="car_carrier_rate" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="car_number" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="driver" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="driver_phone" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="important" dbtype="tinyint" precision="1" phptype="boolean" attributes="unsigned" null="false" default="0" />
+        <field key="archive" dbtype="tinyint" precision="1" phptype="boolean" attributes="unsigned" null="false" default="0" />
+        <field key="hidden" dbtype="tinyint" precision="1" phptype="boolean" attributes="unsigned" null="false" default="0" />
+        <field key="color" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="release_date" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="total" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="currency" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="exchange_rate" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="d_application" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="d_application_4" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="d_payment" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="d_payment_4" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="closed" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="agent" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="note_2" dbtype="mediumtext" phptype="string" />
+        <field key="note_3" dbtype="mediumtext" phptype="string" />
+        <field key="rate_rur" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="rate_usd" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="closed_2" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="d_closed" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="com_zebra" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="note_4" dbtype="mediumtext" phptype="string" />
+        <field key="payment_form" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="booking_mark" dbtype="tinyint" precision="1" phptype="boolean" attributes="unsigned" null="false" default="0" />
+        <field key="currency_2" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="currency_3" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="currency_4" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="account_number" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="account_number_2" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="account_number_3" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="account_number_4" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="customs_fee" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="closed_3" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="closed_4" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="closed_5" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="total_2" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="total_3" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="total_4" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="exw" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="shipper_2" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="shipper_3" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="shipper_4" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="shipper_5" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="bl_2" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="bl_3" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="bl_4" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="bl_5" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="agent_2" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="agent_3" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="agent_4" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="agent_5" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="invoice_2" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="invoice_3" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="invoice_4" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="invoice_5" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="ready_date_2" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="ready_date_3" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="ready_date_4" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="ready_date_5" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="goods_2" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="goods_3" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="goods_4" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="goods_5" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="cbm_2" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="cbm_3" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="cbm_4" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="cbm_5" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="kgs_2" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="kgs_3" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="kgs_4" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="kgs_5" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="ctn_2" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="ctn_3" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="ctn_4" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="ctn_5" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="note_s_2" dbtype="mediumtext" phptype="string" />
+        <field key="note_s_3" dbtype="mediumtext" phptype="string" />
+        <field key="note_s_4" dbtype="mediumtext" phptype="string" />
+        <field key="note_s_5" dbtype="mediumtext" phptype="string" />
+
+        <index alias="container_number" name="container_number" primary="false" unique="false" type="BTREE">
+            <column key="container_number" length="" collation="A" null="false" />
+        </index>
+        <index alias="bl" name="bl" primary="false" unique="false" type="BTREE">
+            <column key="bl" length="" collation="A" null="false" />
+        </index>
+        <index alias="agent_number" name="agent_number" primary="false" unique="false" type="BTREE">
+            <column key="agent_number" length="" collation="A" null="false" />
+        </index>
+        <index alias="bill_entry_number" name="bill_entry_number" primary="false" unique="false" type="BTREE">
+            <column key="bill_entry_number" length="" collation="A" null="false" />
+        </index>
+        <index alias="manager" name="manager" primary="false" unique="false" type="BTREE">
+            <column key="manager" length="" collation="A" null="false" />
+        </index>
+        <index alias="manager2" name="manager2" primary="false" unique="false" type="BTREE">
+            <column key="manager2" length="" collation="A" null="false" />
+        </index>
+        <index alias="client" name="client" primary="false" unique="false" type="BTREE">
+            <column key="client" length="" collation="A" null="false" />
+        </index>
+        <index alias="goods" name="goods" primary="false" unique="false" type="BTREE">
+            <column key="goods" length="" collation="A" null="false" />
+        </index>
+        <index alias="delivery_term" name="delivery_term" primary="false" unique="false" type="BTREE">
+            <column key="delivery_term" length="" collation="A" null="false" />
+        </index>
+        <index alias="port_departure" name="port_departure" primary="false" unique="false" type="BTREE">
+            <column key="port_departure" length="" collation="A" null="false" />
+        </index>
+        <index alias="city_delivery" name="city_delivery" primary="false" unique="false" type="BTREE">
+            <column key="city_delivery" length="" collation="A" null="false" />
+        </index>
+        <index alias="container_type" name="container_type" primary="false" unique="false" type="BTREE">
+            <column key="container_type" length="" collation="A" null="false" />
+        </index>
+        <index alias="port_arrive" name="port_arrive" primary="false" unique="false" type="BTREE">
+            <column key="port_arrive" length="" collation="A" null="false" />
+        </index>
+        <index alias="line" name="line" primary="false" unique="false" type="BTREE">
+            <column key="line" length="" collation="A" null="false" />
+        </index>
+        <index alias="company_warehouse" name="company_warehouse" primary="false" unique="false" type="BTREE">
+            <column key="company_warehouse" length="" collation="A" null="false" />
+        </index>
+        <index alias="car_carrier" name="car_carrier" primary="false" unique="false" type="BTREE">
+            <column key="car_carrier" length="" collation="A" null="false" />
+        </index>
+
+        <aggregate alias="Client" class="ordersClient" local="client" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Goods" class="ordersGoods" local="goods" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Manager" class="ordersManager" local="manager" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Manager2" class="ordersManager" local="manager2" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="ContainerType" class="ordersContainerType" local="container_type" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Line" class="ordersLine" local="line" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="DeliveryTerm" class="ordersDeliveryTerm" local="delivery_term" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="DeliveryTermReceiver" class="ordersDeliveryTermReceiver" local="delivery_term_receiver" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="PortDeparture" class="ordersPortDeparture" local="port_departure" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="CityDelivery" class="ordersCityDelivery" local="city_delivery" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="PortArrive" class="ordersPortArrive" local="port_arrive" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="StationTrainArrive" class="ordersStationTrainArrive" local="station_train_arrive" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Address" class="ordersAddress" local="address" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="AddressContainer" class="ordersAddressContainer" local="address_container" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="AgentRailway" class="ordersAgentRailway" local="agent_railway" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Receiver" class="ordersReceiver" local="receiver" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Sender" class="ordersSender" local="sender" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Forwarder" class="ordersForwarder" local="forwarder" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="CompanyWarehouse" class="ordersCompanyWarehouse" local="company_warehouse" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="CarCarrier" class="ordersCarCarrier" local="car_carrier" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Sale" class="ordersSaleNote" local="sale" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Accounts" class="ordersAccountsNote" local="accounts" foreign="id" cardinality="one" owner="foreign" />
+
+    </object>
+
+    <object class="ordersGoods" table="orders_goods" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="GoodsItem" class="ordersItem" local="id" foreign="goods" cardinality="many" owner="local" />
+        <composite alias="GoodsClient" class="ordersClientGoods" local="id" foreign="goods" cardinality="many" owner="local" />
+
+
+    </object>
+
+    <object class="ordersManager" table="orders_manager" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+        <field key="phone" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+        <index alias="phone" name="phone" primary="false" unique="false" type="BTREE">
+            <column key="phone" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="ManagerItem" class="ordersItem" local="id" foreign="manager" cardinality="many" owner="local" />
+        <composite alias="Manager2Item" class="ordersItem" local="id" foreign="manager2" cardinality="many" owner="local" />
+        <composite alias="ManagerClient" class="ordersClientManager" local="id" foreign="manager" cardinality="many" owner="local" />
+        <composite alias="Manager2Client" class="ordersClientManager2" local="id" foreign="manager" cardinality="many" owner="local" />
+
+    </object>
+
+    <object class="ordersContainerType" table="orders_container_type" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="ContainerTypeItem" class="ordersItem" local="id" foreign="container_type" cardinality="many" owner="local" />
+
+    </object>
+
+    <object class="ordersLine" table="orders_line" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="LineItem" class="ordersItem" local="id" foreign="line" cardinality="many" owner="local" />
+
+    </object>
+
+    <object class="ordersDeliveryTerm" table="orders_delivery_term" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="DeliveryTermItem" class="ordersItem" local="id" foreign="delivery_term" cardinality="many" owner="local" />
+
+    </object>
+
+    <object class="ordersDeliveryTermReceiver" table="orders_delivery_term_receiver" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="DeliveryTermReceiverItem" class="ordersItem" local="id" foreign="delivery_term_receiver" cardinality="many" owner="local" />
+
+    </object>
+
+
+    <object class="ordersPortDeparture" table="orders_port_departure" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="PortDepartureItem" class="ordersItem" local="id" foreign="port_departure" cardinality="many" owner="local" />
+
+    </object>
+
+    <object class="ordersPortArrive" table="orders_port_arrive" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="PortArriveItem" class="ordersItem" local="id" foreign="port_arrive" cardinality="many" owner="local" />
+
+    </object>
+
+    <object class="ordersCityDelivery" table="orders_city_delivery" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="CityDeliveryItem" class="ordersItem" local="id" foreign="city_delivery" cardinality="many" owner="local" />
+
+    </object>
+
+    <object class="ordersStationTrainArrive" table="orders_station_train_arrive" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="StationTrainArriveItem" class="ordersItem" local="id" foreign="station_train_arrive" cardinality="many" owner="local" />
+
+    </object>
+
+
+    <object class="ordersAddress" table="orders_address" extends="xPDOSimpleObject">
+        <field key="name" dbtype="mediumtext" phptype="string" />
+        <field key="client" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+
+        <composite alias="AddressItem" class="ordersItem" local="id" foreign="address" cardinality="many" owner="local" />
+
+        <aggregate alias="AddressClient" class="ordersClient" local="client" foreign="id" cardinality="one" owner="foreign" />
+    </object>
+
+    <object class="ordersAddressContainer" table="orders_address_container" extends="xPDOSimpleObject">
+        <field key="name" dbtype="mediumtext" phptype="string" />
+
+        <composite alias="AddressContainerItem" class="ordersItem" local="id" foreign="address_container" cardinality="many" owner="local" />
+
+    </object>
+
+    <object class="ordersClient" table="orders_client" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="ClientItem" class="ordersItem" local="id" foreign="client" cardinality="many" owner="local" />
+        <composite alias="ClientAddress" class="ordersAddress" local="id" foreign="client" cardinality="many" owner="local" />
+        <composite alias="ClientSender" class="ordersClientSender" local="id" foreign="client" cardinality="many" owner="local" />
+        <composite alias="ClientManager" class="ordersClientManager" local="id" foreign="client" cardinality="many" owner="local" />
+        <composite alias="ClientManager2" class="ordersClientManager2" local="id" foreign="client" cardinality="many" owner="local" />
+        <composite alias="ClientGoods" class="ordersClientGoods" local="id" foreign="client" cardinality="many" owner="local" />
+
+    </object>
+
+    <object class="ordersAgentRailway" table="orders_agent_railway" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="AgentRailwayItem" class="ordersItem" local="id" foreign="agent_railway" cardinality="many" owner="local" />
+
+    </object>
+
+    <object class="ordersReceiver" table="orders_receiver" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="ReceiverItem" class="ordersItem" local="id" foreign="receiver" cardinality="many" owner="local" />
+
+    </object>
+
+    <object class="ordersSender" table="orders_sender" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="SenderItem" class="ordersItem" local="id" foreign="sender" cardinality="many" owner="local" />
+        <composite alias="SenderClient" class="ordersClientSender" local="id" foreign="sender" cardinality="many" owner="local" />
+
+    </object>
+
+    <object class="ordersForwarder" table="orders_forwarder" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="ForwarderItem" class="ordersItem" local="id" foreign="forwarder" cardinality="many" owner="local" />
+
+    </object>
+
+    <object class="ordersCompanyWarehouse" table="orders_company_warehouse" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="CompanyWarehouseItem" class="ordersItem" local="id" foreign="company_warehouse" cardinality="many" owner="local" />
+
+    </object>
+
+    <object class="ordersCarCarrier" table="orders_car_carrier" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="CarCarrierItem" class="ordersItem" local="id" foreign="car_carrier" cardinality="many" owner="local" />
+
+    </object>
+
+    <object class="ordersSaleNote" table="orders_sale_note" extends="xPDOSimpleObject">
+        <field key="name" dbtype="mediumtext" phptype="string" />
+
+        <composite alias="SaleItem" class="ordersItem" local="id" foreign="sale" cardinality="many" owner="local" />
+
+    </object>
+
+    <object class="ordersAccountsNote" table="orders_accounts_note" extends="xPDOSimpleObject">
+        <field key="name" dbtype="mediumtext" phptype="string" />
+
+        <composite alias="AccountsItem" class="ordersItem" local="id" foreign="accounts" cardinality="many" owner="local" />
+
+    </object>
+
+    <object class="ordersSettings" table="orders_settings" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="description" dbtype="mediumtext" phptype="string" />
+        <field key="value" dbtype="mediumtext" phptype="string" />
+        <field key="area" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+
+    </object>
+
+    <object class="ordersTemplate" table="orders_template" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="value" dbtype="mediumtext" phptype="string" />
+
+    </object>
+
+    <object class="ordersSettingsFieldsWidth" table="orders_settings_fields_width" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="value" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+
+    </object>
+
+    <object class="ordersClientSender" table="orders_client_sender" extends="xPDOSimpleObject">
+        <field key="client" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="sender" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="default" dbtype="tinyint" precision="1" phptype="boolean" attributes="unsigned" null="false" default="0" />
+
+        <aggregate alias="Client" class="ordersClient" local="client" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Sender" class="ordersSender" local="sender" foreign="id" cardinality="one" owner="foreign" />
+
+    </object>
+
+    <object class="ordersClientManager" table="orders_client_manager" extends="xPDOSimpleObject">
+        <field key="client" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="manager" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="default" dbtype="tinyint" precision="1" phptype="boolean" attributes="unsigned" null="false" default="0" />
+
+        <aggregate alias="Client" class="ordersClient" local="client" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Manager" class="ordersManager" local="manager" foreign="id" cardinality="one" owner="foreign" />
+
+    </object>
+
+    <object class="ordersClientManager2" table="orders_client_manager2" extends="xPDOSimpleObject">
+        <field key="client" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="manager" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="default" dbtype="tinyint" precision="1" phptype="boolean" attributes="unsigned" null="false" default="0" />
+
+        <aggregate alias="Client" class="ordersClient" local="client" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Manager" class="ordersManager" local="manager" foreign="id" cardinality="one" owner="foreign" />
+
+    </object>
+
+    <object class="ordersClientGoods" table="orders_client_goods" extends="xPDOSimpleObject">
+        <field key="client" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="goods" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="default" dbtype="tinyint" precision="1" phptype="boolean" attributes="unsigned" null="false" default="0" />
+
+        <aggregate alias="Client" class="ordersClient" local="client" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Goods" class="ordersGoods" local="goods" foreign="id" cardinality="one" owner="foreign" />
+
+    </object>
+
+
+</model>
