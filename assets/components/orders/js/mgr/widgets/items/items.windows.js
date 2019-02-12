@@ -15,7 +15,7 @@ orders.window.CreateItem = function (config) {
             key: Ext.EventObject.ENTER, shift: true, fn: function () {
                 this.submit()
             }, scope: this
-        }]
+        }],
     });
     orders.window.CreateItem.superclass.constructor.call(this, config);
 };
@@ -54,6 +54,10 @@ Ext.extend(orders.window.CreateItem, MODx.Window, {
         }
         return tabs;
     },
+
+    selectFirstComboItem: function () {
+        console.log('111');
+    }
 
 });
 Ext.reg('orders-item-window-create', orders.window.CreateItem);

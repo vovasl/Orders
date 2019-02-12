@@ -66,6 +66,7 @@ class ordersSettingsManagerController extends modExtraManagerController
         $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/settings/template/templates.windows.js');
         $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/settings/fields-width/fields-width.grid.js');
         $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/settings/fields-width/fields-width.windows.js');
+        $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/settings/report/form.grid.js');
 
         $config = $this->orders->config;
 

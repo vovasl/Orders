@@ -59,6 +59,16 @@ orders.panel.Home = function (config) {
                     xtype: 'orders-grid-settings-fields-widths',
                     cls: 'main-wrapper',
                 }]
+            }, {
+                title: _('orders_settings_report_title'),
+                layout: 'anchor',
+                items: [{
+                    html: _('orders_settings_reports_intro_msg'),
+                    cls: 'panel-desc',
+                }, {
+                    xtype: 'orders-grid-settings-reports-form',
+                    cls: 'main-wrapper',
+                }]
             }]
         }]
     });

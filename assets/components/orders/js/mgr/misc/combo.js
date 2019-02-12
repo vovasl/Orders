@@ -66,6 +66,14 @@ var settings_area = new Ext.data.ArrayStore({
     ]
 });
 
+var reportSort = new Ext.data.ArrayStore({
+    fields: ['id','name'],
+    data: [
+        ['port_arrive_date', _('orders_item_port_arrive_date')],
+        ['train_arrive_date', _('orders_item_train_arrive_date')]
+    ]
+});
+
 
 orders.combo.ItemSearch = function (config) {
     config = config || {};
@@ -1031,3 +1039,22 @@ orders.combo.SettingArea = function(config) {
 };
 Ext.extend(orders.combo.SettingArea,MODx.combo.ComboBox);
 Ext.reg('orders-combo-setting-area',orders.combo.SettingArea);
+
+
+orders.combo.ReportSort = function(config) {
+    config = config || {};
+    Ext.applyIf(config,{
+        store: reportSort,
+        name: 'sort',
+        hiddenName: config.name || 'report_sort',
+        displayField: 'name',
+        valueField: 'id',
+        pageSize: 9999,
+        hideMode: 'offsets',
+        mode: 'local'
+
+    });
+    orders.combo.ReportSort.superclass.constructor.call(this,config);
+};
+Ext.extend(orders.combo.ReportSort,MODx.combo.ComboBox);
+Ext.reg('orders-combo-report-sort',orders.combo.ReportSort);

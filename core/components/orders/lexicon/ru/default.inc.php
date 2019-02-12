@@ -97,7 +97,7 @@ $_lang['orders_item_examination'] = 'Досмотр';
 $_lang['orders_item_examined'] = 'Досмотрен';
 $_lang['orders_item_vdt'] = 'Выпуск ДТ';
 $_lang['orders_item_train_departure_date'] = 'Дата выхода ЖД';
-$_lang['orders_item_train_arrive_date'] = 'Приб. ЖД,';
+$_lang['orders_item_train_arrive_date'] = 'Приб. ЖД';
 $_lang['orders_item_distance_to_station'] = 'Остаточное расстояние, км';
 $_lang['orders_item_stations'] = 'Станция этап';
 $_lang['orders_item_export_from_station'] = 'Раскредитован';
@@ -589,3 +589,13 @@ $_lang['orders_settings_fields_width_err_name'] = 'Вы должны указа�
 $_lang['orders_settings_fields_width_err_ae'] = 'Поле с таким именем уже существует';
 $_lang['orders_settings_fields_width_err_nf'] = 'Поле не найдено';
 $_lang['orders_settings_fields_width_err_ns'] = 'Поле не указано';
+
+
+$_lang['orders_settings_report_title'] = 'Отчеты';
+$_lang['orders_settings_reports_intro_msg'] = 'Сформировать отчет в формате Excel';
+$_lang['orders_settings_report_field_port_arrive_date_start'] = 'Приб. ETA c';
+$_lang['orders_settings_report_field_port_arrive_date_finish'] = 'по';
+$_lang['orders_settings_report_field_train_arrive_date_start'] = 'Приб. ЖД с';
+$_lang['orders_settings_report_field_train_arrive_date_finish'] = 'по';
+$_lang['orders_settings_report_button_export'] = 'Экспорт';
+$_lang['orders_settings_report_field_sort'] = 'Сортировать';

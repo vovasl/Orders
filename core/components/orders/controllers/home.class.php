@@ -120,6 +120,7 @@ class ordersHomeManagerController extends modExtraManagerController
 
         $config = $this->orders->config;
 
+
         //выбираем все настройки в массив $settings
         $settings = array();
         $settingsDB = $this->modx->getCollection('ordersSettings');
@@ -223,6 +224,10 @@ class ordersHomeManagerController extends modExtraManagerController
             $width[$val->get('name')]['width'] = (int)$val->get('value');
         }
         $config['orders_item_fields_width'] = $width;
+
+        //ID менеджера
+        $fields = $this->modx->user->getOne('Profile')->get('extended');
+        $config['manager'] = $fields['manager'];
 
         //настройки прав доступа
         $config['perm.orders_item_create_button'] = $this->modx->hasPermission('orders.create_order') ? 1 : 0;

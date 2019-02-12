@@ -1,14 +1,19 @@
 UpdateItemTamozhnya = {getTabs: function (config) {
-        var tab1 = {
+        var tabs = [{
             title: _('orders_item_tab_item'),
             hideMode: 'offsets',
             //bodyStyle: 'padding:5px 0;',
             defaults: {msgTarget: 'under', border: false},
             items: this.getOrderFields(config)
-        };
-        var tabs = [];
+        }, {
+            layout: 'form',
+            title: _('orders_item_tab_factories'),
+            hideMode: 'offsets',
+            //bodyStyle: 'padding:5px 0;',
+            defaults: {msgTarget: 'under', border: false},
+            items: this.getOrderFieldsTab3(config),
+        }];
 
-        tabs.push(tab1);
         return tabs;
     },
 
@@ -161,5 +166,274 @@ UpdateItemTamozhnya = {getTabs: function (config) {
                     }]
                 }]
             }];
+    },
+
+    getOrderFieldsTab3: function (config) {
+        return [{
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:15px 5px;text-align:center;',
+            items: [{
+                columnWidth: .25,
+                layout: 'form',
+                items: [{
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_shipper_2'),
+                    name: 'shipper_2',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_bl_2'),
+                    name: 'bl_2',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_agent_2'),
+                    name: 'agent_2',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_invoice_2'),
+                    name: 'invoice_2',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_ready_date_2'),
+                    name: 'ready_date_2',
+                    anchor: '88%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_goods_2'),
+                    name: 'goods_2',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_cbm_2'),
+                    name: 'cbm_2',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_kgs_2'),
+                    name: 'kgs_2',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_ctn_2'),
+                    name: 'ctn_2',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textarea',
+                    fieldLabel: _('orders_item_note_s_2'),
+                    name: 'note_s_2',
+                    anchor: '99%',
+                    height: 239,
+                    disabled: true,
+                }]
+            }, {
+                columnWidth: .25,
+                layout: 'form',
+                items: [{
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_shipper_3'),
+                    name: 'shipper_3',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_bl_3'),
+                    name: 'bl_3',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_agent_3'),
+                    name: 'agent_3',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_invoice_3'),
+                    name: 'invoice_3',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_ready_date_3'),
+                    name: 'ready_date_3',
+                    anchor: '88%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_goods_3'),
+                    name: 'goods_3',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_cbm_3'),
+                    name: 'cbm_3',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_kgs_3'),
+                    name: 'kgs_3',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_ctn_3'),
+                    name: 'ctn_3',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textarea',
+                    fieldLabel: _('orders_item_note_s_3'),
+                    name: 'note_s_3',
+                    anchor: '99%',
+                    height: 239,
+                    disabled: true,
+                }]
+            }, {
+                columnWidth: .25,
+                layout: 'form',
+                items: [{
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_shipper_4'),
+                    name: 'shipper_4',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_bl_4'),
+                    name: 'bl_4',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_agent_4'),
+                    name: 'agent_4',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_invoice_4'),
+                    name: 'invoice_4',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_ready_date_4'),
+                    name: 'ready_date_4',
+                    anchor: '88%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_goods_4'),
+                    name: 'goods_4',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_cbm_4'),
+                    name: 'cbm_4',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_kgs_4'),
+                    name: 'kgs_4',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_ctn_4'),
+                    name: 'ctn_4',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textarea',
+                    fieldLabel: _('orders_item_note_s_4'),
+                    name: 'note_s_4',
+                    anchor: '99%',
+                    height: 239,
+                    disabled: true,
+                }]
+            }, {
+                columnWidth: .25,
+                layout: 'form',
+                items: [{
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_shipper_5'),
+                    name: 'shipper_5',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_bl_5'),
+                    name: 'bl_5',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_agent_5'),
+                    name: 'agent_5',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_invoice_5'),
+                    name: 'invoice_5',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_ready_date_5'),
+                    name: 'ready_date_5',
+                    anchor: '88%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_goods_5'),
+                    name: 'goods_5',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_cbm_5'),
+                    name: 'cbm_5',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_kgs_5'),
+                    name: 'kgs_5',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_ctn_5'),
+                    name: 'ctn_5',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textarea',
+                    fieldLabel: _('orders_item_note_s_5'),
+                    name: 'note_s_5',
+                    anchor: '99%',
+                    height: 239,
+                    disabled: true,
+                }]
+            }]
+        }];
     },
 }

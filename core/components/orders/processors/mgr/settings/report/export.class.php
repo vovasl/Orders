@@ -6,17 +6,52 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
     public $objectType = 'ordersItem';
     public $classKey = 'ordersItem';
     public $defaultSortField = 'id';
-    public $defaultSortDirection = 'ASC';
+    public $defaultSortDirection = 'DESC';
     public $languageTopics = ['orders:default'];
 
     public function prepareQueryBeforeCount(xPDOQuery $c) {
         $c->select($this->modx->getSelectColumns($this->classKey, $this->classKey));
 
-        $orderID = $this->getProperty('orderID');
-        if($orderID){
+        $portArriveDateStart = $this->getProperty('portArriveDateStart');
+        $portArriveDateFinish = $this->getProperty('portArriveDateFinish');
+        $trainArriveDateStart = $this->getProperty('trainArriveDateStart');
+        $trainArriveDateFinish = $this->getProperty('trainArriveDateFinish');
+
+        if($portArriveDateStart) {
+            $date = new DateTime($portArriveDateStart);
+            $portArriveDateStartStr = $date->format('U');
             $c->where([
-                'id' => $orderID,
+                'port_arrive_date:>=' => $portArriveDateStartStr,
             ]);
+        }
+
+        if($portArriveDateFinish){
+            $date = new DateTime($portArriveDateFinish);
+            $portArriveDateFinishStr = $date->format('U');
+            $c->where([
+                'port_arrive_date:<=' => $portArriveDateFinishStr,
+            ]);
+        }
+
+        if($trainArriveDateStart) {
+            $date = new DateTime($trainArriveDateStart);
+            $trainArriveDateStartStr = $date->format('U');
+            $c->where([
+                'train_arrive_date:>=' => $trainArriveDateStartStr,
+            ]);
+        }
+
+        if($trainArriveDateFinish) {
+            $date = new DateTime($trainArriveDateFinish);
+            $trainArriveDateFinishStr = $date->format('U');
+            $c->where([
+                'train_arrive_date:<=' => $trainArriveDateFinishStr,
+            ]);
+        }
+
+        $sortField = $this->getProperty('reportSort');
+        if($sortField){
+            $c->sortby($sortField , $this->defaultSortDirection);
         }
 
         return $c;
@@ -35,6 +70,7 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
         $c->leftJoin('ordersPortArrive', 'PortArrive');
         $c->leftJoin('ordersLine', 'Line');
         $c->leftJoin('ordersContainerType', 'ContainerType');
+        $c->leftJoin('ordersStationTrainArrive', 'StationTrainArrive');
         $c->select(array(
             'clientName' => 'Client.name',
             'manager2Name' => 'Manager2.name',
@@ -48,6 +84,7 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
             'portArriveName' => 'PortArrive.name',
             'lineName' => 'Line.name',
             'containerTypeName' => 'ContainerType.name',
+            'stationTrainArriveName' => 'StationTrainArrive.name'
         ));
         return $c;
     }
@@ -68,69 +105,93 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
     }
 
     public function createExcel(array $data) {
-        foreach ($data['results'] as $object) {
-            if ($this->checkListPermission && $object instanceof modAccessibleObject && !$object->checkPolicy('list')) {
-                continue;
-            }
-            $orderArr = $this->prepareRow($object);
-            break;
-        }
-
-        $orderArr['id'] = '0000' . $orderArr['id'];
-        $orderArr['application_date'] = $orderArr['application_date'] == 0 ? '' : date('d.m.y',  strtotime($orderArr['application_date']));
-        $orderArr['availability_date'] = $orderArr['availability_date'] == 0 ? '' : date('d.m.y',  strtotime($orderArr['availability_date']));
 
         require_once  MODX_ASSETS_PATH . 'components/orders/libs/phpexcel/PHPExcel.php';
         $objPHPExcel = new PHPExcel();
 
-        $objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(25);
-        $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(35);
-        $objPHPExcel->getActiveSheet()->getStyle('B')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_LEFT);
+        $cellStart = 'A';
+        $cellEnd = 'Q'; //последняя ячейка
+        $dataCell = 2; //первая строка для записи данных в файл
 
-        $objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue('A1', $this->modx->lexicon('orders_item_id'))
-            ->setCellValue('A2', $this->modx->lexicon('orders_item_application_date'))
-            ->setCellValue('A3', $this->modx->lexicon('orders_item_availability_date'))
-            ->setCellValue('A4', $this->modx->lexicon('orders_item_manager2'))
-            ->setCellValue('A5', $this->modx->lexicon('orders_item_client'))
-            ->setCellValue('A6', $this->modx->lexicon('orders_item_goods'))
-            ->setCellValue('A7', $this->modx->lexicon('orders_item_sender'))
-            ->setCellValue('A8', $this->modx->lexicon('orders_item_receiver'))
-            ->setCellValue('A9', $this->modx->lexicon('orders_item_forwarder'))
-            ->setCellValue('A10', $this->modx->lexicon('orders_item_port_departure'))
-            ->setCellValue('A11', $this->modx->lexicon('orders_item_delivery_term'))
-            ->setCellValue('A12', $this->modx->lexicon('orders_item_city_delivery'))
-            ->setCellValue('A13', $this->modx->lexicon('orders_item_port_arrive'))
-            ->setCellValue('A14', $this->modx->lexicon('orders_item_line'))
-            ->setCellValue('A15', $this->modx->lexicon('orders_item_container_type'))
-            ->setCellValue('A16', $this->modx->lexicon('orders_item_volume'))
-            ->setCellValue('A17', $this->modx->lexicon('orders_item_weight'))
-            ->setCellValue('A18', $this->modx->lexicon('orders_item_count_boxes'))
-            ->setCellValue('A19', $this->modx->lexicon('orders_item_note'))
-            ->setCellValue('B1', $orderArr['id'])
-            ->setCellValue('B2', $orderArr['application_date'])
-            ->setCellValue('B3', $orderArr['availability_date'])
-            ->setCellValue('B4', $orderArr['manager2Name'])
-            ->setCellValue('B5', $orderArr['clientName'])
-            ->setCellValue('B6', $orderArr['goodsName'])
-            ->setCellValue('B7', $orderArr['senderName'])
-            ->setCellValue('B8', $orderArr['receiverName'])
-            ->setCellValue('B9', $orderArr['forwarderName'])
-            ->setCellValue('B10', $orderArr['portDepartureName'])
-            ->setCellValue('B11', $orderArr['deliveryTermName'])
-            ->setCellValue('B12', $orderArr['cityDeliveryName'])
-            ->setCellValue('B13', $orderArr['portArriveName'])
-            ->setCellValue('B14', $orderArr['lineName'])
-            ->setCellValue('B15', $orderArr['containerTypeName'])
-            ->setCellValue('B16', $orderArr['volume'])
-            ->setCellValue('B17', $orderArr['weight'])
-            ->setCellValue('B18', $orderArr['count_boxes'])
-            ->setCellValue('B19', $orderArr['note']);
+        //массив последовательности выгрузки загрузки полей в Excel файл
+        $fields = array(
+            'A' => 'id',
+            'B' => 'client',
+            'C' => 'container_number',
+            'D' => 'container_type',
+            'E' => 'weight',
+            'E' => 'port_arrive',
+            'F' => 'port_arrive_date',
+            'G' => 'release',
+            'H' => 'pdt',
+            'I' => 'vdt',
+            'J' => 'station_train_arrive',
+            'K' => 'train_arrive_date',
+            'L' => 'export_from_station_real',
+            'M' => 'city_delivery',
+            'N' => 'goods',
+            'O' => 'line',
+            'P' => 'receiver',
+            'Q' => 'manager2',
+        );
+
+        //массив названий для полей с базой данных и их размещение в Excel файле
+        $fieldsDB = array(
+            'B' => 'clientName',
+            'D' => 'containerTypeName',
+            'E' => 'portArriveName',
+            'J' => 'stationTrainArriveName',
+            'M' => 'cityDeliveryName',
+            'N' => 'goodsName',
+            'O' => 'lineName',
+            'P' => 'receiverName',
+            'Q' => 'manager2Name'
+        );
+
+        $fieldsDate = array('port_arrive_date', 'pdt', 'vdt', 'train_arrive_date', 'export_from_station_real');//названия полей с типом дата
+        $fieldsCheckbox = array('release');
+
+        //установка заголовков и основных стилей для Excel файла
+        foreach(range($cellStart, $cellEnd) as $columnID) {
+            $objPHPExcel->getActiveSheet()->getColumnDimension($columnID)
+                ->setAutoSize(true);
+            $objPHPExcel->getActiveSheet()->getStyle($columnID)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+            $objPHPExcel->setActiveSheetIndex(0)
+                ->setCellValue($columnID . '1', $this->modx->lexicon('orders_item_' . $fields[$columnID]));
+        }
+
+
+        foreach ($data['results'] as $object) {
+            if ($this->checkListPermission && $object instanceof modAccessibleObject && !$object->checkPolicy('list')) {
+                continue;
+            }
+            $orderArr = $this->prepareRow($object); //массив данных
+
+            $orderArr['id'] = '0000' . $orderArr['id'];
+
+            //запись данных в файл по ячейке
+            foreach(range($cellStart, $cellEnd) as $columnID) {
+                //получение значения в зависимости поле в базе или нет
+                $val = array_key_exists($columnID, $fieldsDB) ? $orderArr[$fieldsDB[$columnID]] : $orderArr[$fields[$columnID]];
+
+                if(in_array($fields[$columnID], $fieldsDate)){ //формат для дат
+                    $val = $val ? date('d.m.y',  strtotime($val)) : '';
+                }
+                else if(in_array($fields[$columnID], $fieldsCheckbox)){ //форма для checkbox
+                    $val = $val ? 'Да' : 'Нет';
+
+                }
+                $objPHPExcel->setActiveSheetIndex(0)
+                    ->setCellValue($columnID . $dataCell, $val);
+            }
+
+            $dataCell++;
+        }
 
         $objPHPExcel->getActiveSheet()->setTitle('Лист 1');
 
         header('Content-Type: application/vnd.ms-excel');
-        header('Content-Disposition: attachment;filename="' . $orderArr['id'] . '.xls"');
+        header('Content-Disposition: attachment;filename="zebra_export_' . date('d_m_y_H_i') . '.xls"');
 
         $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
         $objWriter->save('php://output');

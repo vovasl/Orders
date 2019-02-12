@@ -36,8 +36,10 @@ class ordersItemDisableProcessor extends modObjectProcessor
             $object->set('important', true);
             $object->save();
 
+            /*
             $this->email = new itemMail($this->modx, $id);
             $this->email->orderEmail();
+            */
         }
         return $this->success();
 

@@ -73,14 +73,22 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
     },
 
     createItem: function (btn, e) {
+        var id = Ext.id();
         var w = MODx.load({
             xtype: 'orders-item-window-create',
-            id: Ext.id(),
+            id: id,
             listeners: {
                 success: {
                     fn: function () {
                         this.refresh();
                     }, scope: this
+                },
+                afterrender: function() {
+                    var manager = orders.config['manager'];
+                    if(manager) {
+                        Ext.getCmp(id + '-manager').setValue(manager);
+                        Ext.getCmp(id + '-manager2').setValue(manager);
+                    }
                 }
             }
         });

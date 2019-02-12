@@ -139,7 +139,6 @@ orders.utils.sendEmail = function() {
 };
 
 orders.utils.selectClient = function (c_id) {
-
     var client = Ext.getCmp(c_id + '-client');
     var address = Ext.getCmp(c_id + '-address');
     var sender = Ext.getCmp(c_id + '-sender');
