@@ -1,7 +1,7 @@
 orders.grid.ReportsForm = function(config) {
     config = config || {};
     Ext.applyIf(config,{
-        id: 'orders-grid-settings-reports-form'
+        id: 'orders-grid-reports-form'
         ,labelAlign: 'left'
         ,autoHeight: true
         ,title: _('search_criteria')
@@ -18,7 +18,7 @@ orders.grid.ReportsForm = function(config) {
         }]
         ,buttonAlign: 'left'
         ,buttons: [{
-                text: _('orders_settings_report_button_export')
+                text: _('orders_report_button_export')
                 ,handler: function() {
                     this.export();
                 }, scope: this
@@ -43,7 +43,7 @@ Ext.extend(orders.grid.ReportsForm, MODx.FormPanel,{
                     name: 'port_arrive_date_start',
                     xtype: 'datefield',
                     width: 120,
-                    fieldLabel: _('orders_settings_report_field_port_arrive_date_start'),
+                    fieldLabel: _('orders_report_field_port_arrive_date_start'),
                     format:'d.m.Y'
                 }]
             }, {
@@ -54,7 +54,7 @@ Ext.extend(orders.grid.ReportsForm, MODx.FormPanel,{
                     name: 'port_arrive_date_finish',
                     xtype: 'datefield',
                     width: 120,
-                    fieldLabel: _('orders_settings_report_field_port_arrive_date_finish'),
+                    fieldLabel: _('orders_report_field_port_arrive_date_finish'),
                     format:'d.m.Y'
                 }]
             }]
@@ -70,7 +70,7 @@ Ext.extend(orders.grid.ReportsForm, MODx.FormPanel,{
                     name: 'train_arrive_date_start',
                     xtype: 'datefield',
                     width: 120,
-                    fieldLabel: _('orders_settings_report_field_train_arrive_date_start'),
+                    fieldLabel: _('orders_report_field_train_arrive_date_start'),
                     format:'d.m.Y'
                 }]
             }, {
@@ -81,7 +81,7 @@ Ext.extend(orders.grid.ReportsForm, MODx.FormPanel,{
                     name: 'train_arrive_date_finish',
                     xtype: 'datefield',
                     width: 120,
-                    fieldLabel: _('orders_settings_report_field_train_arrive_date_finish'),
+                    fieldLabel: _('orders_report_field_train_arrive_date_finish'),
                     format:'d.m.Y'
                 }]
             }]
@@ -97,7 +97,7 @@ Ext.extend(orders.grid.ReportsForm, MODx.FormPanel,{
                     name: 'report-sort',
                     width: 120,
                     xtype: 'orders-combo-report-sort',
-                    fieldLabel: _('orders_settings_report_field_sort'),
+                    fieldLabel: _('orders_report_field_sort'),
                 }]
             }]
         }];
@@ -111,7 +111,7 @@ Ext.extend(orders.grid.ReportsForm, MODx.FormPanel,{
         var reportSort = Ext.getCmp('report-sort').getValue();
 
         var _params = {
-            action: 'mgr/settings/report/export',
+            action: 'mgr/report/export',
             portArriveDateStart: portArriveDateStart,
             portArriveDateFinish: portArriveDateFinish,
             trainArriveDateStart: trainArriveDateStart,
@@ -126,4 +126,4 @@ Ext.extend(orders.grid.ReportsForm, MODx.FormPanel,{
     }
 
 });
-Ext.reg('orders-grid-settings-reports-form',orders.grid.ReportsForm);
+Ext.reg('orders-grid-reports-form',orders.grid.ReportsForm);

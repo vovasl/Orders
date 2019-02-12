@@ -591,11 +591,11 @@ $_lang['orders_settings_fields_width_err_nf'] = 'Поле не найдено';
 $_lang['orders_settings_fields_width_err_ns'] = 'Поле не указано';
 
 
-$_lang['orders_settings_report_title'] = 'Отчеты';
-$_lang['orders_settings_reports_intro_msg'] = 'Сформировать отчет в формате Excel';
-$_lang['orders_settings_report_field_port_arrive_date_start'] = 'Приб. ETA c';
-$_lang['orders_settings_report_field_port_arrive_date_finish'] = 'по';
-$_lang['orders_settings_report_field_train_arrive_date_start'] = 'Приб. ЖД с';
-$_lang['orders_settings_report_field_train_arrive_date_finish'] = 'по';
-$_lang['orders_settings_report_button_export'] = 'Экспорт';
-$_lang['orders_settings_report_field_sort'] = 'Сортировать';
+$_lang['orders_report_title'] = 'Отчеты';
+$_lang['orders_reports_intro_msg'] = 'Сформировать отчет в формате Excel';
+$_lang['orders_report_field_port_arrive_date_start'] = 'Приб. ETA c';
+$_lang['orders_report_field_port_arrive_date_finish'] = 'по';
+$_lang['orders_report_field_train_arrive_date_start'] = 'Приб. ЖД с';
+$_lang['orders_report_field_train_arrive_date_finish'] = 'по';
+$_lang['orders_report_button_export'] = 'Экспорт';
+$_lang['orders_report_field_sort'] = 'Сортировать';

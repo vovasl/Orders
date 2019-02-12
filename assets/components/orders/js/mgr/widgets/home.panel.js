@@ -266,6 +266,18 @@ Ext.extend(orders.panel.Home, MODx.Panel, {
             }]
         };
 
+        var reports = {
+            title: _('orders_report_title'),
+            layout: 'anchor',
+            items: [{
+                html: _('orders_reports_intro_msg'),
+                cls: 'panel-desc',
+            }, {
+                xtype: 'orders-grid-reports-form',
+                cls: 'main-wrapper',
+            }]
+        }
+
         var tabs = [];
         tabs.push(ordersTab);
         if (orders.config['perm.orders_item_show_tab']) {
@@ -290,6 +302,7 @@ Ext.extend(orders.panel.Home, MODx.Panel, {
             tabs.push(deliveryTermReceiverTab);
             tabs.push(saleNoteTab);
             tabs.push(accountsNoteTab);
+            tabs.push(reports);
         }
         return tabs;
     }
