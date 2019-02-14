@@ -195,6 +195,8 @@ $_lang['orders_item_note_s_3'] = 'Примечание 3';
 $_lang['orders_item_note_s_4'] = 'Примечание 4';
 $_lang['orders_item_note_s_5'] = 'Примечание 5';
 
+$_lang['orders_item_reports_intro_msg'] = 'Сформировать отчет в формате Excel';
+
 
 $_lang['orders_manager_title'] = 'Менеджеры';
 $_lang['orders_manager_intro_msg'] = 'Вы можете выделять сразу несколько менеджеров при помощи Shift или Ctrl.';
@@ -591,11 +593,9 @@ $_lang['orders_settings_fields_width_err_nf'] = 'Поле не найдено';
 $_lang['orders_settings_fields_width_err_ns'] = 'Поле не указано';
 
 
-$_lang['orders_report_title'] = 'Отчеты';
-$_lang['orders_reports_intro_msg'] = 'Сформировать отчет в формате Excel';
 $_lang['orders_report_field_port_arrive_date_start'] = 'Приб. ETA c';
 $_lang['orders_report_field_port_arrive_date_finish'] = 'по';
 $_lang['orders_report_field_train_arrive_date_start'] = 'Приб. ЖД с';
 $_lang['orders_report_field_train_arrive_date_finish'] = 'по';
-$_lang['orders_report_button_export'] = 'Экспорт';
+$_lang['orders_report_button_export'] = 'Создать отчет';
 $_lang['orders_report_field_sort'] = 'Сортировать';

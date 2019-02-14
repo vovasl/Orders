@@ -30,6 +30,11 @@ Ext.extend(orders.panel.Home, MODx.Panel, {
             title: _('orders_item_title'),
             layout: 'anchor',
             items: [{
+                html: _('orders_item_reports_intro_msg'),
+                cls: 'panel-desc',
+            }, {
+                xtype: 'orders-grid-items-reports',
+            }, {
                 xtype: 'orders-grid-items',
                 cls: 'main-wrapper',
             }]
@@ -266,21 +271,9 @@ Ext.extend(orders.panel.Home, MODx.Panel, {
             }]
         };
 
-        var reports = {
-            title: _('orders_report_title'),
-            layout: 'anchor',
-            items: [{
-                html: _('orders_reports_intro_msg'),
-                cls: 'panel-desc',
-            }, {
-                xtype: 'orders-grid-reports-form',
-                cls: 'main-wrapper',
-            }]
-        }
 
         var tabs = [];
         tabs.push(ordersTab);
-        tabs.push(reports);
         if (orders.config['perm.orders_item_show_tab']) {
             tabs.push(managerTab);
             tabs.push(goodsTab);

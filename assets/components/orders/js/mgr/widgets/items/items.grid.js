@@ -644,6 +644,11 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         var filterStationTrainArrive = {
             xtype: 'orders-combo-filter-station-train-arrive',
             listeners: {
+                /*
+                render: function(el){
+                    el.getStore().insert({id:111,name:'Test'});
+                },
+                */
                 select: {
                     fn: function (field) {
                         this._selectFilterStationTrainArrive(field);

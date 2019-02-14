@@ -1,7 +1,7 @@
 orders.grid.ReportsForm = function(config) {
     config = config || {};
     Ext.applyIf(config,{
-        id: 'orders-grid-reports-form'
+        id: 'orders-grid-items-reports'
         ,labelAlign: 'left'
         ,autoHeight: true
         ,title: _('search_criteria')
@@ -111,7 +111,7 @@ Ext.extend(orders.grid.ReportsForm, MODx.FormPanel,{
         var reportSort = Ext.getCmp('report-sort').getValue();
 
         var _params = {
-            action: 'mgr/report/export',
+            action: 'mgr/item/report',
             portArriveDateStart: portArriveDateStart,
             portArriveDateFinish: portArriveDateFinish,
             trainArriveDateStart: trainArriveDateStart,
@@ -126,4 +126,4 @@ Ext.extend(orders.grid.ReportsForm, MODx.FormPanel,{
     }
 
 });
-Ext.reg('orders-grid-reports-form',orders.grid.ReportsForm);
+Ext.reg('orders-grid-items-reports',orders.grid.ReportsForm);
