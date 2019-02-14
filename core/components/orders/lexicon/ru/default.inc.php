@@ -196,6 +196,12 @@ $_lang['orders_item_note_s_4'] = 'Примечание 4';
 $_lang['orders_item_note_s_5'] = 'Примечание 5';
 
 $_lang['orders_item_reports_intro_msg'] = 'Сформировать отчет в формате Excel';
+$_lang['orders_item_reports_field_port_arrive_date_start'] = 'Приб. ETA c';
+$_lang['orders_item_reports_field_port_arrive_date_finish'] = 'Приб. ETA по';
+$_lang['orders_item_reports_field_train_arrive_date_start'] = 'Приб. ЖД с';
+$_lang['orders_item_reports_field_train_arrive_date_finish'] = 'Приб. ЖД по';
+$_lang['orders_item_reports_field_sort'] = 'Сортировать по';
+$_lang['orders_item_reports_button_export'] = 'Создать отчет';
 
 
 $_lang['orders_manager_title'] = 'Менеджеры';
@@ -591,11 +597,3 @@ $_lang['orders_settings_fields_width_err_name'] = 'Вы должны указа�
 $_lang['orders_settings_fields_width_err_ae'] = 'Поле с таким именем уже существует';
 $_lang['orders_settings_fields_width_err_nf'] = 'Поле не найдено';
 $_lang['orders_settings_fields_width_err_ns'] = 'Поле не указано';
-
-
-$_lang['orders_report_field_port_arrive_date_start'] = 'Приб. ETA c';
-$_lang['orders_report_field_port_arrive_date_finish'] = 'по';
-$_lang['orders_report_field_train_arrive_date_start'] = 'Приб. ЖД с';
-$_lang['orders_report_field_train_arrive_date_finish'] = 'по';
-$_lang['orders_report_button_export'] = 'Создать отчет';
-$_lang['orders_report_field_sort'] = 'Сортировать';

@@ -7,9 +7,25 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
     public $classKey = 'ordersItem';
     public $defaultSortField = 'id';
     public $defaultSortDirection = 'DESC';
+    public $limit = '0';
     public $languageTopics = ['orders:default'];
 
+    public function initialize() {
+        $this->setDefaultProperties(array(
+            'start' => 0,
+            'limit' => this.$this->limit,
+            'sort' => $this->defaultSortField,
+            'dir' => $this->defaultSortDirection,
+            'combo' => false,
+            'query' => '',
+        ));
+
+        return parent::initialize();
+    }
+
+
     public function prepareQueryBeforeCount(xPDOQuery $c) {
+
         $c->select($this->modx->getSelectColumns($this->classKey, $this->classKey));
 
         $portArriveDateStart = $this->getProperty('portArriveDateStart');
@@ -56,6 +72,7 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
 
         return $c;
     }
+
 
     public function prepareQueryAfterCount(xPDOQuery $c) {
         $c->leftJoin('ordersClient', 'Client');
@@ -161,11 +178,16 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
         }
 
 
+
+
         foreach ($data['results'] as $object) {
+
             if ($this->checkListPermission && $object instanceof modAccessibleObject && !$object->checkPolicy('list')) {
                 continue;
             }
+
             $orderArr = $this->prepareRow($object); //массив данных
+
 
             $orderArr['id'] = '0000' . $orderArr['id'];
 
@@ -187,6 +209,7 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
 
             $dataCell++;
         }
+
 
         $objPHPExcel->getActiveSheet()->setTitle('Лист 1');
 

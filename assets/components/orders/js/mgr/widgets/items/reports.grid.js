@@ -2,27 +2,10 @@ orders.grid.ReportsForm = function(config) {
     config = config || {};
     Ext.applyIf(config,{
         id: 'orders-grid-items-reports'
-        ,labelAlign: 'left'
         ,autoHeight: true
-        ,title: _('search_criteria')
-        ,labelWidth: 200
         ,url: orders.config.connector_url
-        ,items: [{
-            layout: 'form'
-            ,cls: 'main-wrapper'
-            ,border: false
-            ,items: this.getFields(config)
-        },{
-            html: '<hr />'
-            ,border: false
-        }]
-        ,buttonAlign: 'left'
-        ,buttons: [{
-                text: _('orders_report_button_export')
-                ,handler: function() {
-                    this.export();
-                }, scope: this
-            }]
+        ,tbar: this.getTopBar(config)
+
     });
     orders.grid.ReportsForm.superclass.constructor.call(this,config);
 };
@@ -30,76 +13,47 @@ orders.grid.ReportsForm = function(config) {
 Ext.extend(orders.grid.ReportsForm, MODx.FormPanel,{
     filters: {}
 
-    ,getFields: function() {
+    ,getTopBar: function() {
         return [{
-            layout: 'column',
-            defaults: {msgTarget: 'under', border: false},
-            style: 'padding:15px 5px;text-align:center;',
-            items: [{
-                layout: 'form',
-                labelWidth: 90,
-                items: [{
-                    id: 'port_arrive_date_start',
-                    name: 'port_arrive_date_start',
-                    xtype: 'datefield',
-                    width: 120,
-                    fieldLabel: _('orders_report_field_port_arrive_date_start'),
-                    format:'d.m.Y'
-                }]
-            }, {
-                layout: 'form',
-                labelWidth: 30,
-                items: [{
-                    id: 'port_arrive_date_finish',
-                    name: 'port_arrive_date_finish',
-                    xtype: 'datefield',
-                    width: 120,
-                    fieldLabel: _('orders_report_field_port_arrive_date_finish'),
-                    format:'d.m.Y'
-                }]
-            }]
+            id: 'port_arrive_date_start',
+            name: 'port_arrive_date_start',
+            xtype: 'datefield',
+            width: 140,
+            format:'d.m.Y',
+            emptyText: _('orders_item_reports_field_port_arrive_date_start')
         }, {
-            layout: 'column',
-            defaults: {msgTarget: 'under', border: false},
-            style: 'padding:15px 5px;text-align:center;',
-            items: [{
-                layout: 'form',
-                labelWidth: 90,
-                items: [{
-                    id: 'train_arrive_date_start',
-                    name: 'train_arrive_date_start',
-                    xtype: 'datefield',
-                    width: 120,
-                    fieldLabel: _('orders_report_field_train_arrive_date_start'),
-                    format:'d.m.Y'
-                }]
-            }, {
-                layout: 'form',
-                labelWidth: 30,
-                items: [{
-                    id: 'train_arrive_date_finish',
-                    name: 'train_arrive_date_finish',
-                    xtype: 'datefield',
-                    width: 120,
-                    fieldLabel: _('orders_report_field_train_arrive_date_finish'),
-                    format:'d.m.Y'
-                }]
-            }]
+            id: 'port_arrive_date_finish',
+            name: 'port_arrive_date_finish',
+            xtype: 'datefield',
+            width: 140,
+            format:'d.m.Y',
+            emptyText: _('orders_item_reports_field_port_arrive_date_finish')
         }, {
-            layout: 'column',
-            defaults: {msgTarget: 'under', border: false},
-            style: 'padding:15px 5px;text-align:center;',
-            items: [{
-                layout: 'form',
-                labelWidth: 90,
-                items: [{
-                    id: 'report-sort',
-                    name: 'report-sort',
-                    width: 120,
-                    xtype: 'orders-combo-report-sort',
-                    fieldLabel: _('orders_report_field_sort'),
-                }]
-            }]
+            id: 'train_arrive_date_start',
+            name: 'train_arrive_date_start',
+            xtype: 'datefield',
+            width: 140,
+            format:'d.m.Y',
+            emptyText: _('orders_item_reports_field_train_arrive_date_start')
+        }, {
+            id: 'train_arrive_date_finish',
+            name: 'train_arrive_date_finish',
+            xtype: 'datefield',
+            width: 140,
+            format:'d.m.Y',
+            emptyText: _('orders_item_reports_field_train_arrive_date_finish')
+        }, {
+            id: 'report-sort',
+            name: 'report-sort',
+            width: 150,
+            xtype: 'orders-combo-report-sort',
+        }, {
+            xtype: 'button'
+            ,text: _('orders_item_reports_button_export')
+            ,cls: 'primary-button'
+            ,handler: function() {
+                this.export();
+            }, scope: this
         }];
     }
     ,export: function() {

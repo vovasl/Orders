@@ -34,6 +34,7 @@ Ext.extend(orders.panel.Home, MODx.Panel, {
                 cls: 'panel-desc',
             }, {
                 xtype: 'orders-grid-items-reports',
+                cls: 'main-wrapper',
             }, {
                 xtype: 'orders-grid-items',
                 cls: 'main-wrapper',

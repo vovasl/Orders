@@ -1051,7 +1051,8 @@ orders.combo.ReportSort = function(config) {
         valueField: 'id',
         pageSize: 9999,
         hideMode: 'offsets',
-        mode: 'local'
+        mode: 'local',
+        emptyText: _('orders_item_reports_field_sort'),
 
     });
     orders.combo.ReportSort.superclass.constructor.call(this,config);
