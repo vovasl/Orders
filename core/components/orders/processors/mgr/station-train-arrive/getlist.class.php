@@ -9,6 +9,18 @@ class ordersStationTrainArriveGetListProcessor extends modObjectGetListProcessor
     //public $permission = 'list';
 
 
+    public function beforeIteration($list)
+    {
+
+        $filter = trim($this->getProperty('filter'));
+        if($filter) {
+            $list[] = array('id' => 'no_empty', 'name' => $this->modx->lexicon('orders_item_filter_station_train_arrive_no_empty'));
+        }
+
+        return $list;
+    }
+
+
     /**
      * We do a special check of permissions
      * because our objects is not an instances of modAccessibleObject
@@ -32,13 +44,6 @@ class ordersStationTrainArriveGetListProcessor extends modObjectGetListProcessor
      */
     public function prepareQueryBeforeCount(xPDOQuery $c)
     {
-        $query = trim($this->getProperty('query'));
-        if ($query) {
-            $c->where([
-                'name:LIKE' => "%{$query}%",
-                'OR:description:LIKE' => "%{$query}%",
-            ]);
-        }
 
         return $c;
     }
@@ -52,6 +57,8 @@ class ordersStationTrainArriveGetListProcessor extends modObjectGetListProcessor
     public function prepareRow(xPDOObject $object)
     {
         $array = $object->toArray();
+
+
         $array['actions'] = [];
 
         // Edit

@@ -329,7 +329,7 @@ orders.combo.FilterStationTrainArrive = function (config) {
         fields: ['id', 'name'],
         pageSize: 9999,
         hideMode: 'offsets',
-        width: 200,
+        width: 210,
         emptyText: _('orders_item_filter_station_train_arrive_empty_text'),
         url: orders.config['connector_url'],
         baseParams: {
@@ -338,7 +338,9 @@ orders.combo.FilterStationTrainArrive = function (config) {
             dir: 'asc',
             combo: true,
             limit: 9999,
-        }
+            filter: 1
+        },
+
     });
     orders.combo.FilterStationTrainArrive.superclass.constructor.call(this, config);
 };

@@ -16,12 +16,7 @@ orders.grid.Items = function (config) {
             combo: true,
         },
         listeners: {
-            /*
-            rowDblClick: function (grid, rowIndex, e) {
-                var row = grid.store.getAt(rowIndex);
-                this.updateItem(grid, e, row);
-            }
-            */
+
         },
         viewConfig: {
             forceFit: true,
@@ -643,17 +638,13 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         };
         var filterStationTrainArrive = {
             xtype: 'orders-combo-filter-station-train-arrive',
+            id: 'orders-combo-filter-station-train-arrive',
             listeners: {
-                /*
-                render: function(el){
-                    el.getStore().insert({id:111,name:'Test'});
-                },
-                */
                 select: {
                     fn: function (field) {
                         this._selectFilterStationTrainArrive(field);
                     }, scope: this
-                }
+                },
             }
         };
         var filterManager = {

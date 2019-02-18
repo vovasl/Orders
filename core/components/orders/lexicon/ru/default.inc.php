@@ -26,6 +26,7 @@ $_lang['orders_item_filter_color_empty_text'] = 'по цвету';
 $_lang['orders_item_filter_receiver_empty_text'] = 'по CONSIGNEE';
 $_lang['orders_item_filter_manager_empty_text'] = 'Менеджер по ведению';
 $_lang['orders_item_filter_station_train_arrive_empty_text'] = 'по Станциям';
+$_lang['orders_item_filter_station_train_arrive_no_empty'] = 'ВСЕ СТАНЦИИ(без пустых)';
 $_lang['orders_item_filter_port_arrive_empty_text'] = 'по P. DISCHARGE';
 
 $_lang['orders_item_tab_item'] = 'Заказ';
