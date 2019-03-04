@@ -12,6 +12,8 @@ class ordersStationTrainArriveGetListProcessor extends modObjectGetListProcessor
     public function beforeIteration($list)
     {
 
+        $list[] = array('id' => '', 'name' => '');
+
         $filter = trim($this->getProperty('filter'));
         if($filter) {
             $list[] = array('id' => 'no_empty', 'name' => $this->modx->lexicon('orders_item_filter_station_train_arrive_no_empty'));

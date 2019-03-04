@@ -140,17 +140,6 @@ class ordersItemGetListProcessor extends modObjectGetListProcessor
 
         if ($stationTrainArrive) {
 
-            /*
-            if($stationTrainArrive == 'no_empty'){
-
-            }
-            else {
-                $c->where([
-                    'station_train_arrive' => $stationTrainArrive,
-                ]);
-            }
-            */
-
             $stationTrainArrive == 'no_empty' ? $c->where(['station_train_arrive:!=' => '']) : $c->where(['station_train_arrive' => $stationTrainArrive]);
         }
 

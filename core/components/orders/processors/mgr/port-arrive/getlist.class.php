@@ -9,6 +9,15 @@ class ordersPortArriveGetListProcessor extends modObjectGetListProcessor
     //public $permission = 'list';
 
 
+    public function beforeIteration($list)
+    {
+
+        $list[] = array('id' => '', 'name' => '');
+
+        return $list;
+    }
+
+
     /**
      * We do a special check of permissions
      * because our objects is not an instances of modAccessibleObject

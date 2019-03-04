@@ -296,7 +296,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         var fields = {};
 
         fields = {
-            actions: {width: 200, id: 'actions', renderer: orders.utils.renderActions, sortable: false},
+            actions: {width: 200, renderer: orders.utils.renderActions, sortable: false},
             color: {width: 34, editor: {xtype: 'orders-combo-row-color', renderer: true}},
             id: {width: 75, renderer: orders.utils.renderID},
             release: {width: 29, renderer: orders.utils.renderBoolean},
@@ -552,8 +552,10 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
                 Ext.applyIf(all[field], {
                     header: _('orders_item_' + field),
                     dataIndex: field,
+                    id: field,
                     sortable: true,
-                    fixed: true
+                    fixed: true,
+                    cls: 'custom-column'
                 });
                 if(orders.config['orders_item_fields_disabled'].includes(field)) {
                     Ext.applyIf(all[field]['editor'], {

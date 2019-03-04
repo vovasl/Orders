@@ -32,6 +32,7 @@ $_lang['orders_item_filter_port_arrive_empty_text'] = 'по P. DISCHARGE';
 $_lang['orders_item_tab_item'] = 'Заказ';
 $_lang['orders_item_tab_calculations'] = 'Временно';
 $_lang['orders_item_tab_factories'] = 'Фабрики';
+$_lang['orders_item_tab_files'] = 'Файлы';
 
 $_lang['orders_item_title'] = 'Заказы';
 $_lang['orders_item_intro_msg'] = 'Вы можете выделять сразу несколько заказов при помощи Shift или Ctrl.';
@@ -195,6 +196,7 @@ $_lang['orders_item_note_s_2'] = 'Примечание 2';
 $_lang['orders_item_note_s_3'] = 'Примечание 3';
 $_lang['orders_item_note_s_4'] = 'Примечание 4';
 $_lang['orders_item_note_s_5'] = 'Примечание 5';
+$_lang['orders_item_file_1'] = 'Файл 1';
 
 $_lang['orders_item_reports_intro_msg'] = 'Сформировать отчет в формате Excel';
 $_lang['orders_item_reports_field_port_arrive_date_start'] = 'Приб. ETA c';

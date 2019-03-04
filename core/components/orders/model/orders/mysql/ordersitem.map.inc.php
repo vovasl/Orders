@@ -148,6 +148,7 @@ $xpdo_meta_map['ordersItem']= array (
     'note_s_3' => NULL,
     'note_s_4' => NULL,
     'note_s_5' => NULL,
+    'file_1' => '',
   ),
   'fieldMeta' => 
   array (
@@ -1232,6 +1233,14 @@ $xpdo_meta_map['ordersItem']= array (
     array (
       'dbtype' => 'mediumtext',
       'phptype' => 'string',
+    ),
+    'file_1' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '255',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
     ),
   ),
   'indexes' => 

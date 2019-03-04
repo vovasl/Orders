@@ -20,6 +20,13 @@ CreateItemAdmin = {
             //bodyStyle: 'padding:5px 0;',
             defaults: {msgTarget: 'under', border: false},
             items: this.getOrderFieldsTab2(config),
+        }, {
+            layout: 'form',
+            title: _('orders_item_tab_files'),
+            hideMode: 'offsets',
+            //bodyStyle: 'padding:5px 0;',
+            defaults: {msgTarget: 'under', border: false},
+            items: this.getOrderFieldsTabFiles(config),
         }];
 
         return tabs;
@@ -892,6 +899,27 @@ CreateItemAdmin = {
                     name: 'note_s_5',
                     anchor: '99%',
                     height: 239,
+                }]
+            }]
+        }];
+    },
+
+    getOrderFieldsTabFiles: function (config) {
+        return [{
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:15px 5px;text-align:center;',
+            items: [{
+                columnWidth: .25,
+                layout: 'form',
+                items: [{
+                    xtype: 'modx-combo-browser',
+                    fieldLabel: _('orders_item_file_1'),
+                    name: 'file_1',
+                    anchor: '99%',
+                    source: '4',
+                    openTo: '0000492/',
+                    rootId: '0000492/',
                 }]
             }]
         }];
