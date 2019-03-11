@@ -110,7 +110,7 @@ $_lang['orders_item_note'] = 'Примечание';
 $_lang['orders_item_company'] = 'Компания';
 $_lang['orders_item_company_warehouse'] = 'Компания на выгрузке на складе';
 $_lang['orders_item_address'] = 'Адрес доставки';
-$_lang['orders_item_contact_person'] = 'Контактное лицо';
+$_lang['orders_item_contact_person'] = 'Инвойс';
 $_lang['orders_item_contact_person_phone'] = 'Телефон';
 $_lang['orders_item_address_container'] = 'Адрес сдачи порожнего контейнера';
 $_lang['orders_item_car_carrier'] = 'Авто перевозчик';
@@ -196,7 +196,7 @@ $_lang['orders_item_note_s_2'] = 'Примечание 2';
 $_lang['orders_item_note_s_3'] = 'Примечание 3';
 $_lang['orders_item_note_s_4'] = 'Примечание 4';
 $_lang['orders_item_note_s_5'] = 'Примечание 5';
-$_lang['orders_item_file_1'] = 'Файл 1';
+$_lang['orders_item_upload_files'] = 'Загрузить файлы';
 
 $_lang['orders_item_reports_intro_msg'] = 'Сформировать отчет в формате Excel';
 $_lang['orders_item_reports_field_port_arrive_date_start'] = 'Приб. ETA c';

@@ -126,6 +126,18 @@ CreateItemAdmin = {
                     layout: 'form',
                     labelWidth: 160,
                     items: [{
+                        columnWidth: .05,
+                        layout: 'form',
+                        items: [{
+                            xtype: 'modx-combo-browser',
+                            browserEl: 'modx-browser',
+                            fieldLabel: _('orders_item_upload_files'),
+                            anchor: '99%',
+                            source: '4',
+                            openTo: '0000492/',
+                            rootId: '0000492/',
+                        }]
+                    }, {
                         id: config.id + '-manager',
                         xtype: 'orders-combo-manager',
                         fieldLabel: _('orders_item_manager'),
@@ -924,6 +936,5 @@ CreateItemAdmin = {
             }]
         }];
     },
-
 
 }

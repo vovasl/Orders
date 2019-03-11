@@ -55,9 +55,6 @@ Ext.extend(orders.window.CreateItem, MODx.Window, {
         return tabs;
     },
 
-    selectFirstComboItem: function () {
-        console.log('111');
-    }
 
 });
 Ext.reg('orders-item-window-create', orders.window.CreateItem);
