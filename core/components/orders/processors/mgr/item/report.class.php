@@ -32,6 +32,7 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
         $portArriveDateFinish = $this->getProperty('portArriveDateFinish');
         $trainArriveDateStart = $this->getProperty('trainArriveDateStart');
         $trainArriveDateFinish = $this->getProperty('trainArriveDateFinish');
+        $exportFromStationRealEmpty = $this->getProperty('exportFromStationRealEmpty');
 
         if($portArriveDateStart) {
             $date = new DateTime($portArriveDateStart);
@@ -64,6 +65,14 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
                 'train_arrive_date:<=' => $trainArriveDateFinishStr,
             ]);
         }
+
+        if($exportFromStationRealEmpty == 'true'){
+            $c->where([
+                'export_from_station_real' => '',
+            ]);
+        }
+
+
 
         $sortField = $this->getProperty('reportSort');
         if($sortField){

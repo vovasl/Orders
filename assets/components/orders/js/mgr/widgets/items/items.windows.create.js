@@ -114,7 +114,7 @@ CreateItemAdmin = {
                         iconCls : 'icon icon-mail-forward',
                         handler: orders.utils.sendEmail,
                         tooltip: _('orders_item_email_title_text'),
-                        tooltipType: 'title'
+                        tooltipType: 'title',
                     }]
                 }]
             }, {
@@ -936,5 +936,7 @@ CreateItemAdmin = {
             }]
         }];
     },
+
+
 
 }

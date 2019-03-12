@@ -204,6 +204,7 @@ $_lang['orders_item_reports_field_port_arrive_date_finish'] = 'Приб. ETA п�
 $_lang['orders_item_reports_field_train_arrive_date_start'] = 'Приб. ЖД с';
 $_lang['orders_item_reports_field_train_arrive_date_finish'] = 'Приб. ЖД по';
 $_lang['orders_item_reports_field_sort'] = 'Сортировать по';
+$_lang['orders_item_reports_export_from_station_real_empty'] = 'Нет Д. Вывоза';
 $_lang['orders_item_reports_button_export'] = 'Создать отчет';
 
 

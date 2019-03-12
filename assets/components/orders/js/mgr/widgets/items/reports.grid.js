@@ -43,6 +43,14 @@ Ext.extend(orders.grid.ReportsForm, MODx.FormPanel,{
             format:'d.m.Y',
             emptyText: _('orders_item_reports_field_train_arrive_date_finish')
         }, {
+            id: 'export_from_station_real_empty',
+            name: 'export_from_station_real_empty',
+            xtype: 'xcheckbox',
+            width: 120,
+            boxLabel: '<div class="report_checkbox">' + _('orders_item_reports_export_from_station_real_empty') + '</div>',
+            checked: false,
+            hideLabel: true
+        }, {
             id: 'report-sort',
             name: 'report-sort',
             width: 150,
@@ -62,6 +70,7 @@ Ext.extend(orders.grid.ReportsForm, MODx.FormPanel,{
         var portArriveDateFinish = Ext.getCmp('port_arrive_date_finish').getValue();
         var trainArriveDateStart = Ext.getCmp('train_arrive_date_start').getValue();
         var trainArriveDateFinish = Ext.getCmp('train_arrive_date_finish').getValue();
+        var exportFromStationRealEmpty = Ext.getCmp('export_from_station_real_empty').getValue();
         var reportSort = Ext.getCmp('report-sort').getValue();
 
         var _params = {
@@ -70,9 +79,11 @@ Ext.extend(orders.grid.ReportsForm, MODx.FormPanel,{
             portArriveDateFinish: portArriveDateFinish,
             trainArriveDateStart: trainArriveDateStart,
             trainArriveDateFinish: trainArriveDateFinish,
+            exportFromStationRealEmpty: exportFromStationRealEmpty,
             reportSort: reportSort,
             HTTP_MODAUTH: MODx.siteId
         };
+
         var link = orders.config.connector_url + '?' + Ext.urlEncode(_params);
 
         var win = window.open(link, '_blank');

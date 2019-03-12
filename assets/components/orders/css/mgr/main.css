@@ -108,3 +108,5 @@ a.orders-btn.disabled, fieldset[disabled] a.orders-btn { pointer-events: none }
 .orders-btn-block + .orders-btn-block { margin-top: 5px }
 
 input[disabled], textarea[disabled] { font-weight:bold; color: #151808; }
+
+.report_checkbox {padding: 8px 0px 8px 20px;font-size: 12px !important;}
