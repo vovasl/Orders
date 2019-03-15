@@ -60,7 +60,7 @@ CreateItemManager = {
                 }, {
                     columnWidth: .165,
                     layout: 'form',
-                    labelWidth: 80,
+                    labelWidth: 90,
                     items: [{
                         xtype: 'textfield',
                         fieldLabel: _('orders_item_agent_number'),
@@ -251,12 +251,6 @@ CreateItemManager = {
                         name: 'count_boxes',
                         anchor: '99%',
                     }, {
-                        xtype: 'textarea',
-                        fieldLabel: _('orders_item_note'),
-                        name: 'note',
-                        anchor: '99%',
-                        height: 239,
-                    }, {
                         xtype: 'orders-combo-row-color',
                         fieldLabel: _('orders_item_color'),
                         name: 'color',
@@ -264,82 +258,91 @@ CreateItemManager = {
                         disabled: true,
                     }]
                 }, {
-                    columnWidth: .33,
+                    columnWidth: .39,
                     layout: 'form',
-                    labelWidth: 190,
+                    labelWidth: 90,
                     items: [{
-                        xtype: 'orders-combo-xdates',
-                        fieldLabel: _('orders_item_application_date'),
-                        name: 'application_date',
-                        anchor: '90%',
+                        layout: 'column',
+                        defaults: {msgTarget: 'under', border: false},
+                        style: 'text-align:center;',
+                        items: [{
+                            columnWidth: .46,
+                            layout: 'form',
+                            labelWidth: 90,
+                            items: [{
+                                xtype: 'orders-combo-xdates',
+                                fieldLabel: _('orders_item_application_date'),
+                                name: 'application_date',
+                                anchor: '86%',
+                            }]
+                        }, {
+                            columnWidth: .54,
+                            layout: 'form',
+                            labelWidth: 111,
+                            items: [{
+                                xtype: 'orders-combo-xdates',
+                                fieldLabel: _('orders_item_availability_date'),
+                                name: 'availability_date',
+                                anchor: '85%',
+                            }]
+                        }]
                     }, {
-                        xtype: 'orders-combo-xdates',
-                        fieldLabel: _('orders_item_availability_date'),
-                        name: 'availability_date',
-                        anchor: '90%',
+                        layout: 'column',
+                        defaults: {msgTarget: 'under', border: false},
+                        style: 'text-align:center;',
+                        items: [{
+                            columnWidth: .46,
+                            layout: 'form',
+                            labelWidth: 90,
+                            items: [{
+                                xtype: 'orders-combo-xdates',
+                                fieldLabel: _('orders_item_port_departure_date'),
+                                name: 'port_departure_date',
+                                anchor: '86%',
+                                disabled: true,
+                            }]
+                        }, {
+                            columnWidth: .54,
+                            layout: 'form',
+                            labelWidth: 111,
+                            items: [{
+                                xtype: 'orders-combo-xdates',
+                                fieldLabel: _('orders_item_port_arrive_date'),
+                                name: 'port_arrive_date',
+                                anchor: '85%',
+                                disabled: true,
+                            }]
+                        }]
                     }, {
-                        xtype: 'orders-combo-xdates',
-                        fieldLabel: _('orders_item_booking'),
-                        name: 'booking',
-                        anchor: '90%',
-                        disabled: true,
-                    }, {
-                        xtype: 'orders-combo-xdates',
-                        fieldLabel: _('orders_item_factory_supply'),
-                        name: 'factory_supply',
-                        anchor: '90%',
-                        disabled: true,
-                    }, {
-                        xtype: 'orders-combo-xdates',
-                        fieldLabel: _('orders_item_port_departure_date'),
-                        name: 'port_departure_date',
-                        anchor: '90%',
-                        disabled: true,
-                    }, {
-                        xtype: 'orders-combo-xdates',
-                        fieldLabel: _('orders_item_port_arrive_date'),
-                        name: 'port_arrive_date',
-                        anchor: '90%',
-                        disabled: true,
-                    }, {
-                        xtype: 'orders-combo-xdates',
-                        fieldLabel: _('orders_item_release_date'),
-                        name: 'release_date',
-                        anchor: '90%',
-                        disabled: true,
-                    }, {
-                        xtype: 'xcheckbox',
-                        fieldLabel: _('orders_item_release'),
-                        name: 'release',
-                        anchor: '99%',
-                        boxLabel: _('orders_item_release_label'),
-                        checked: false,
-                        inputValue: 1,
-                        disabled: true,
-                    },{
-                        xtype: 'orders-combo-xdates',
-                        fieldLabel: _('orders_item_pdt'),
-                        name: 'pdt',
-                        anchor: '90%',
-                        disabled: true,
-                    }, {
-                        xtype: 'orders-combo-xdates',
-                        fieldLabel: _('orders_item_examination'),
-                        name: 'examination',
-                        anchor: '90%',
-                        disabled: true,
-                    }, {
-                        xtype: 'orders-combo-xdates',
-                        fieldLabel: _('orders_item_examined'),
-                        name: 'examined',
-                        anchor: '90%',
-                        disabled: true,
-                    }, {
-                        xtype: 'orders-combo-xdates',
-                        fieldLabel: _('orders_item_vdt'),
-                        name: 'vdt',
-                        anchor: '90%',
-                        disabled: true,
+                        layout: 'column',
+                        defaults: {msgTarget: 'under', border: false},
+                        style: 'padding:15px 0;text-align:center;',
+                        items: [{
+                            columnWidth: .46,
+                            layout: 'form',
+                            labelWidth: 90,
+                            items: [{
+                                xtype: 'orders-combo-xdates',
+                                fieldLabel: _('orders_item_release_date'),
+                                name: 'release_date',
+                                anchor: '86%',
+                                disabled: true,
+                            }]
+                        }, {
+                            columnWidth: .54,
+                            layout: 'form',
+                            labelWidth: 111,
+                            items: [{
+                                xtype: 'xcheckbox',
+                                fieldLabel: _('orders_item_release'),
+                                name: 'release',
+                                anchor: '58%',
+                                boxLabel: _('orders_item_release_label'),
+                                checked: false,
+                                inputValue: 1,
+                                disabled: true,
+                            }]
+                        }]
                     }, {
                         xtype: 'orders-combo-agent-railway',
                         fieldLabel: _('orders_item_agent_railway'),
@@ -353,96 +356,32 @@ CreateItemManager = {
                         anchor: '99%',
                         disabled: true,
                     }, {
-                        xtype: 'orders-combo-xdates',
-                        fieldLabel: _('orders_item_train_departure_date'),
-                        name: 'train_departure_date',
-                        anchor: '90%',
-                        disabled: true,
-                    }, {
-                        xtype: 'orders-combo-xdates',
-                        fieldLabel: _('orders_item_train_arrive_date'),
-                        name: 'train_arrive_date',
-                        anchor: '90%',
-                        disabled: true,
-                    }, {
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_distance_to_station'),
-                        name: 'distance_to_station',
-                        anchor: '99%',
-                        disabled: true,
-                    }, {
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_stations'),
-                        name: 'stations',
-                        anchor: '99%',
-                        disabled: true,
-                    }, {
-                        xtype: 'orders-combo-xdates',
-                        fieldLabel: _('orders_item_export_from_station'),
-                        name: 'export_from_station',
-                        anchor: '90%',
-                        disabled: true,
-                    }]
-                }, {
-                    columnWidth: .33,
-                    layout: 'form',
-                    labelWidth: 160,
-                    items: [{
-                        xtype: 'orders-combo-delivery-term-receiver',
-                        fieldLabel: _('orders_item_delivery_term_receiver'),
-                        name: 'delivery_term_receiver',
-                        anchor: '99%',
-                    }, {
-                        xtype: 'orders-combo-sale-note',
-                        fieldLabel: _('orders_item_sale'),
-                        name: 'sale',
-                        anchor: '99%',
-                    }, {
-                        xtype: 'orders-combo-accounts-note',
-                        fieldLabel: _('orders_item_accounts'),
-                        name: 'accounts',
-                        anchor: '99%',
-                    }, {
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_com_zebra'),
-                        name: 'com_zebra',
-                        anchor: '99%',
-                    }, {
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_tax_payments'),
-                        name: 'tax_payments',
-                        anchor: '99%',
-                    }, {
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_tax_payments_nds'),
-                        name: 'tax_payments_nds',
-                        anchor: '99%',
-                    }, {
-                        xtype: 'fieldset',
-                        layout: 'form',
-                        style: 'padding:15px 5px;text-align:center;',
+                        layout: 'column',
                         defaults: {msgTarget: 'under', border: false},
+                        style: 'padding:15px 0 0 0;text-align:center;',
                         items: [{
-                            xtype: 'textfield',
-                            fieldLabel: _('orders_item_customs_fee'),
-                            name: 'customs_fee',
-                            anchor: '99%',
+                            columnWidth: .46,
+                            layout: 'form',
+                            labelWidth: 90,
+                            items: [{
+                                xtype: 'orders-combo-xdates',
+                                fieldLabel: _('orders_item_train_arrive_date'),
+                                name: 'train_arrive_date',
+                                anchor: '86%',
+                                disabled: true,
+                            }]
                         }, {
-                            xtype: 'textfield',
-                            fieldLabel: _('orders_item_rate_rur'),
-                            name: 'rate_rur',
-                            anchor: '99%',
-                        }, {
-                            xtype: 'textfield',
-                            fieldLabel: _('orders_item_rate_usd'),
-                            name: 'rate_usd',
-                            anchor: '99%',
+                            columnWidth: .54,
+                            layout: 'form',
+                            labelWidth: 111,
+                            items: [{
+                                xtype: 'textfield',
+                                fieldLabel: _('orders_item_distance_to_station'),
+                                name: 'distance_to_station',
+                                anchor: '99%',
+                                disabled: true,
+                            }]
                         }]
-                    }, {
-                        xtype: 'orders-combo-company-warehouse',
-                        fieldLabel: _('orders_item_company_warehouse'),
-                        name: 'company_warehouse',
-                        anchor: '99%',
                     }, {
                         id: config.id + '-address',
                         xtype: 'orders-combo-address',
@@ -458,69 +397,112 @@ CreateItemManager = {
                             }
                         },
                     }, {
+                        layout: 'column',
+                        defaults: {msgTarget: 'under', border: false},
+                        style: 'padding:15px 0;text-align:center;',
+                        items: [{
+                            columnWidth: .46,
+                            layout: 'form',
+                            labelWidth: 90,
+                            items: [{
+                                xtype: 'orders-combo-xdates',
+                                fieldLabel: _('orders_item_export_from_station_real'),
+                                name: 'export_from_station_real',
+                                anchor: '86%',
+                                disabled: true,
+                            }]
+                        }, {
+                            columnWidth: .54,
+                            layout: 'form',
+                            labelWidth: 111,
+                            items: [{
+                                xtype: 'orders-combo-xdates',
+                                fieldLabel: _('orders_item_delivery_date'),
+                                name: 'delivery_date',
+                                anchor: '85%',
+                                disabled: true,
+                            }]
+                        }]
+                    }, {
+                        xtype: 'textarea',
+                        fieldLabel: _('orders_item_note_3'),
+                        name: 'note_3',
+                        anchor: '99%',
+                        height: 50,
+                        disabled: true,
+                    }, {
+                        xtype: 'textarea',
+                        fieldLabel: _('orders_item_note'),
+                        name: 'note',
+                        anchor: '99%',
+                        height: 239,
+                    }]
+                }, {
+                    columnWidth: .27,
+                    layout: 'form',
+                    labelWidth: 75,
+                    items: [{
+                        xtype: 'textarea',
+                        fieldLabel: _('orders_item_note_2'),
+                        name: 'note_2',
+                        anchor: '99%',
+                        height: 125,
+                        disabled: true,
+                    }, {
+                        xtype: 'textfield',
+                        fieldLabel: _('orders_item_rate_rur'),
+                        name: 'rate_rur',
+                        anchor: '99%',
+                    }, {
+                        layout: 'column',
+                        defaults: {msgTarget: 'under', border: false},
+                        style: 'padding:15px 0;text-align:center;',
+                        items: [{
+                            columnWidth: .55,
+                            layout: 'form',
+                            labelWidth: 75,
+                            items: [{
+                                xtype: 'textfield',
+                                fieldLabel: _('orders_item_tax_payments'),
+                                name: 'tax_payments',
+                                anchor: '99%',
+                            }]
+                        }, {
+                            columnWidth: .45,
+                            layout: 'form',
+                            labelWidth: 40,
+                            items: [{
+                                xtype: 'textfield',
+                                fieldLabel: _('orders_item_tax_payments_nds'),
+                                name: 'tax_payments_nds',
+                                anchor: '99%',
+                            }]
+                        }]
+                    }, {
+                        xtype: 'textfield',
+                        fieldLabel: _('orders_item_customs_fee'),
+                        name: 'customs_fee',
+                        anchor: '99%',
+                    }, {
                         xtype: 'textfield',
                         fieldLabel: _('orders_item_contact_person'),
                         name: 'contact_person',
                         anchor: '99%',
                     }, {
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_contact_person_phone'),
-                        name: 'contact_person_phone',
+                        xtype: 'orders-combo-delivery-term-receiver',
+                        fieldLabel: _('orders_item_delivery_term_receiver'),
+                        name: 'delivery_term_receiver',
                         anchor: '99%',
                     }, {
-                        xtype: 'orders-combo-xdates',
-                        fieldLabel: _('orders_item_export_from_station_real'),
-                        name: 'export_from_station_real',
-                        anchor: '90%',
-                        disabled: true,
-                    }, {
-                        xtype: 'orders-combo-xdates',
-                        fieldLabel: _('orders_item_delivery_date'),
-                        name: 'delivery_date',
-                        anchor: '90%',
-                        disabled: true,
-                    }, {
-                        xtype: 'orders-combo-xdates',
-                        fieldLabel: _('orders_item_delivery_container_date'),
-                        name: 'delivery_container_date',
-                        anchor: '90%',
-                        disabled: true,
-                    }, {
-                        xtype: 'orders-combo-address-container',
-                        fieldLabel: _('orders_item_address_container'),
-                        name: 'address_container',
+                        xtype: 'orders-combo-sale-note',
+                        fieldLabel: _('orders_item_sale'),
+                        name: 'sale',
                         anchor: '99%',
-                        disabled: true,
                     }, {
-                        xtype: 'orders-combo-car-carrier',
-                        fieldLabel: _('orders_item_car_carrier'),
-                        name: 'car_carrier',
+                        xtype: 'orders-combo-accounts-note',
+                        fieldLabel: _('orders_item_accounts'),
+                        name: 'accounts',
                         anchor: '99%',
-                        disabled: true,
-                    }, {
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_car_carrier_rate'),
-                        name: 'car_carrier_rate',
-                        anchor: '99%',
-                        disabled: true,
-                    }, {
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_car_number'),
-                        name: 'car_number',
-                        anchor: '99%',
-                        disabled: true,
-                    }, {
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_driver'),
-                        name: 'driver',
-                        anchor: '99%',
-                        disabled: true,
-                    }, {
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_driver_phone'),
-                        name: 'driver_phone',
-                        anchor: '99%',
-                        disabled: true,
                     }]
                 }]
             }];
@@ -599,6 +581,60 @@ CreateItemManager = {
                     fieldLabel: _('orders_item_account_number_4'),
                     name: 'account_number_4',
                     anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_booking'),
+                    name: 'booking',
+                    anchor: '90%',
+                    disabled: true,
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_factory_supply'),
+                    name: 'factory_supply',
+                    anchor: '90%',
+                    disabled: true,
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_pdt'),
+                    name: 'pdt',
+                    anchor: '90%',
+                    disabled: true,
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_examination'),
+                    name: 'examination',
+                    anchor: '90%',
+                    disabled: true,
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_examined'),
+                    name: 'examined',
+                    anchor: '90%',
+                    disabled: true,
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_vdt'),
+                    name: 'vdt',
+                    anchor: '90%',
+                    disabled: true,
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_train_departure_date'),
+                    name: 'train_departure_date',
+                    anchor: '90%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_stations'),
+                    name: 'stations',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_export_from_station'),
+                    name: 'export_from_station',
+                    anchor: '90%',
                     disabled: true,
                 }]
             }, {
@@ -698,24 +734,72 @@ CreateItemManager = {
                 layout: 'form',
                 items: [{
                     xtype: 'textarea',
-                    fieldLabel: _('orders_item_note_2'),
-                    name: 'note_2',
-                    anchor: '99%',
-                    height: 125,
-                    disabled: true,
-                }, {
-                    xtype: 'textarea',
-                    fieldLabel: _('orders_item_note_3'),
-                    name: 'note_3',
-                    anchor: '99%',
-                    height: 125,
-                    disabled: true,
-                }, {
-                    xtype: 'textarea',
                     fieldLabel: _('orders_item_note_4'),
                     name: 'note_4',
                     anchor: '99%',
                     height: 125,
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_com_zebra'),
+                    name: 'com_zebra',
+                    anchor: '99%',
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_rate_usd'),
+                    name: 'rate_usd',
+                    anchor: '99%',
+                }, {
+                    xtype: 'orders-combo-company-warehouse',
+                    fieldLabel: _('orders_item_company_warehouse'),
+                    name: 'company_warehouse',
+                    anchor: '99%',
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_contact_person_phone'),
+                    name: 'contact_person_phone',
+                    anchor: '99%',
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_delivery_container_date'),
+                    name: 'delivery_container_date',
+                    anchor: '90%',
+                    disabled: true,
+                }, {
+                    xtype: 'orders-combo-address-container',
+                    fieldLabel: _('orders_item_address_container'),
+                    name: 'address_container',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'orders-combo-car-carrier',
+                    fieldLabel: _('orders_item_car_carrier'),
+                    name: 'car_carrier',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_car_carrier_rate'),
+                    name: 'car_carrier_rate',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_car_number'),
+                    name: 'car_number',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_driver'),
+                    name: 'driver',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_driver_phone'),
+                    name: 'driver_phone',
+                    anchor: '99%',
                     disabled: true,
                 }]
             }]
