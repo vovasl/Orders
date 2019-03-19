@@ -266,12 +266,6 @@ CreateItemAdmin = {
                         name: 'count_boxes',
                         anchor: '99%',
                     }, {
-                        xtype: 'textarea',
-                        fieldLabel: _('orders_item_note'),
-                        name: 'note',
-                        anchor: '99%',
-                        height: 239,
-                    }, {
                         xtype: 'orders-combo-row-color',
                         fieldLabel: _('orders_item_color'),
                         name: 'color',
@@ -460,6 +454,11 @@ CreateItemAdmin = {
                         xtype: 'textfield',
                         fieldLabel: _('orders_item_rate_rur'),
                         name: 'rate_rur',
+                        anchor: '99%',
+                    }, {
+                        xtype: 'textfield',
+                        fieldLabel: _('orders_item_rate_usd'),
+                        name: 'rate_usd',
                         anchor: '99%',
                     }, {
                         layout: 'column',
@@ -721,11 +720,6 @@ CreateItemAdmin = {
                     xtype: 'textfield',
                     fieldLabel: _('orders_item_com_zebra'),
                     name: 'com_zebra',
-                    anchor: '99%',
-                }, {
-                    xtype: 'textfield',
-                    fieldLabel: _('orders_item_rate_usd'),
-                    name: 'rate_usd',
                     anchor: '99%',
                 }, {
                     xtype: 'orders-combo-company-warehouse',

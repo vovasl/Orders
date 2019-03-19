@@ -454,6 +454,11 @@ CreateItemManager = {
                         name: 'rate_rur',
                         anchor: '99%',
                     }, {
+                        xtype: 'textfield',
+                        fieldLabel: _('orders_item_rate_usd'),
+                        name: 'rate_usd',
+                        anchor: '99%',
+                    }, {
                         layout: 'column',
                         defaults: {msgTarget: 'under', border: false},
                         style: 'padding:15px 0;text-align:center;',
@@ -743,11 +748,6 @@ CreateItemManager = {
                     xtype: 'textfield',
                     fieldLabel: _('orders_item_com_zebra'),
                     name: 'com_zebra',
-                    anchor: '99%',
-                }, {
-                    xtype: 'textfield',
-                    fieldLabel: _('orders_item_rate_usd'),
-                    name: 'rate_usd',
                     anchor: '99%',
                 }, {
                     xtype: 'orders-combo-company-warehouse',
