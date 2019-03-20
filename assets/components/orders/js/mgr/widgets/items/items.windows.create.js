@@ -20,13 +20,6 @@ CreateItemAdmin = {
             //bodyStyle: 'padding:5px 0;',
             defaults: {msgTarget: 'under', border: false},
             items: this.getOrderFieldsTab2(config),
-        }, {
-            layout: 'form',
-            title: _('orders_item_tab_files'),
-            hideMode: 'offsets',
-            //bodyStyle: 'padding:5px 0;',
-            defaults: {msgTarget: 'under', border: false},
-            items: this.getOrderFieldsTabFiles(config),
         }];
 
         return tabs;
@@ -37,7 +30,7 @@ CreateItemAdmin = {
             {
                 xtype: 'hidden',
                 name: 'id',
-                id: 'id',
+                id: config.id + '-id',
             }, {
                 layout: 'column',
                 defaults: {msgTarget: 'under', border: false},
@@ -83,9 +76,9 @@ CreateItemAdmin = {
                         anchor: '99%',
                     }]
                 }, {
-                    columnWidth: .23,
+                    columnWidth: .18,
                     layout: 'form',
-                    labelWidth: 80,
+                    labelWidth: 50,
                     items: [{
                         xtype: 'textfield',
                         fieldLabel: _('orders_item_bill_entry_number'),
@@ -116,6 +109,18 @@ CreateItemAdmin = {
                         tooltip: _('orders_item_email_title_text'),
                         tooltipType: 'title',
                     }]
+                }, {
+                    columnWidth: .05,
+                    layout: 'form',
+                    items: [{
+                        xtype: 'button',
+                        scope: this,
+                        cls: 'x-btn-icon icon-file_upload',
+                        tooltip: {text: _('upload_files')},
+                        handler: function(btn,e) {
+                            orders.utils.uploadFiles(btn,e,Ext.getCmp(config.id + '-id').getValue());
+                        }
+                    }]
                 }]
             }, {
                 layout: 'column',
@@ -126,18 +131,6 @@ CreateItemAdmin = {
                     layout: 'form',
                     labelWidth: 160,
                     items: [{
-                        columnWidth: .05,
-                        layout: 'form',
-                        items: [{
-                            xtype: 'modx-combo-browser',
-                            browserEl: 'modx-browser',
-                            fieldLabel: _('orders_item_upload_files'),
-                            anchor: '99%',
-                            source: '4',
-                            openTo: '0000492/',
-                            rootId: '0000492/',
-                        }]
-                    }, {
                         id: config.id + '-manager',
                         xtype: 'orders-combo-manager',
                         fieldLabel: _('orders_item_manager'),
@@ -999,28 +992,6 @@ CreateItemAdmin = {
             }]
         }];
     },
-
-    getOrderFieldsTabFiles: function (config) {
-        return [{
-            layout: 'column',
-            defaults: {msgTarget: 'under', border: false},
-            style: 'padding:15px 5px;text-align:center;',
-            items: [{
-                columnWidth: .25,
-                layout: 'form',
-                items: [{
-                    xtype: 'modx-combo-browser',
-                    fieldLabel: _('orders_item_file_1'),
-                    name: 'file_1',
-                    anchor: '99%',
-                    source: '4',
-                    openTo: '0000492/',
-                    rootId: '0000492/',
-                }]
-            }]
-        }];
-    },
-
 
 
 }

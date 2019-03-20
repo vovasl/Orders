@@ -22,7 +22,8 @@ UpdateItemAvtovyvoz2 = {
         return [
             {
                 xtype: 'hidden',
-                name: 'id'
+                name: 'id',
+                id: config.id + '-id',
             }, {
                 layout: 'column',
                 defaults: {msgTarget: 'side', border: false},

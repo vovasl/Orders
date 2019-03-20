@@ -281,3 +281,47 @@ orders.utils.renderGoods = function (c_id) {
         }
     }
 }
+
+//upload files
+
+orders.utils.getSource = function() {
+    return '4';
+}
+
+orders.utils.uploadFiles = function(btn,e,order_id) {
+    var path = order_id + '/';
+
+    if (!this.uploader) {
+        this.uploader = new MODx.util.MultiUploadDialog.Dialog({
+            url: MODx.config.connector_url
+            ,base_params: {
+                action: 'browser/file/upload'
+                ,wctx: MODx.ctx || ''
+                ,source: orders.utils.getSource()
+            }
+            ,cls: 'ext-ux-uploaddialog-dialog modx-upload-window'
+        });
+        this.uploader.on('show',function(){
+            orders.utils.beforeUpload(path);
+        },this);
+        this.uploader.on('uploadsuccess',orders.utils.uploadSuccess,this);
+        this.uploader.on('uploaderror',orders.utils.uploadError,this);
+        this.uploader.on('uploadfailed',orders.utils.uploadFailed,this);
+    }
+    this.uploader.base_params.source = orders.utils.getSource();
+    this.uploader.show(btn);
+}
+
+orders.utils.uploadError = function(dlg,file,data,rec) {},
+orders.utils.uploadFailed = function(dlg,file,rec) {}
+orders.utils.uploadSuccess = function() {},
+
+orders.utils.beforeUpload = function(path) {
+
+    this.uploader.setBaseParams({
+        action: 'browser/file/upload'
+        ,path: path
+        ,wctx: MODx.ctx || ''
+        ,source: orders.utils.getSource()
+    });
+}

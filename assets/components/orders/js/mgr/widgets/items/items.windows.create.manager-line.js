@@ -30,7 +30,7 @@ CreateItemLineManager = {
             {
                 xtype: 'hidden',
                 name: 'id',
-                id: 'id',
+                id: config.id + '-id',
             }, {
                 layout: 'column',
                 defaults: {msgTarget: 'under', border: false},
