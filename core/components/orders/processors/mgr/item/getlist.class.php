@@ -51,6 +51,8 @@ class ordersItemGetListProcessor extends modObjectGetListProcessor
 
         //ID портов прибытия
         $portArriveIDs = array(9,3,18,5,7,14,6,1,20);
+        $portArrivePortsIDs = array(8,2,4);
+
 
         //дополнительные условия в зависимости какой менеджер зашел в систему
         if ($this->modx->user->isMember('OrdersManager')) {
@@ -144,9 +146,22 @@ class ordersItemGetListProcessor extends modObjectGetListProcessor
         }
 
         if ($portArrive) {
-            $c->where([
-                'port_arrive' => $portArrive,
-            ]);
+            switch ($portArrive) {
+                case 'railway-disabled':
+                    $c->where([
+                        "port_arrive NOT IN (" . implode(",", $portArrivePortsIDs) . ",'')",
+                    ]);
+                    break;
+                case 'ports':
+                    $c->where([
+                        "port_arrive IN (" . implode(",", $portArrivePortsIDs) . ",'')",
+                    ]);
+                    break;
+                default:
+                    $c->where([
+                        'port_arrive' => $portArrive,
+                    ]);
+            }
         }
 
         if($template){
@@ -180,7 +195,7 @@ class ordersItemGetListProcessor extends modObjectGetListProcessor
             'button' => true,
             'menu' => true,
         ];
-
+        /*
 		if ($array['important']) {
 			$array['actions'][] = [
 				'cls' => '',
@@ -202,7 +217,7 @@ class ordersItemGetListProcessor extends modObjectGetListProcessor
 				'menu' => true,
 			];
 		}
-
+        */
 		if ($array['archive']) {
 			$array['actions'][] = [
 				'cls' => '',
@@ -224,7 +239,7 @@ class ordersItemGetListProcessor extends modObjectGetListProcessor
 				'menu' => true,
 			];
 		}
-
+        /*
 		if (!$array['hidden']) {
 			$array['actions'][] = [
 				'cls' => '',
@@ -246,7 +261,7 @@ class ordersItemGetListProcessor extends modObjectGetListProcessor
 				'menu' => true,
 			];
 		}
-
+        */
         // Remove
         $array['actions'][] = [
             'cls' => '',

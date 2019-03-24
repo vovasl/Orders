@@ -444,21 +444,61 @@ CreateItemAdmin = {
                         anchor: '99%',
                         height: 125,
                     }, {
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_rate_rur'),
-                        name: 'rate_rur',
-                        anchor: '99%',
-                    }, {
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_rate_usd'),
-                        name: 'rate_usd',
-                        anchor: '99%',
+                        layout: 'column',
+                        defaults: {msgTarget: 'under', border: false},
+                        style: 'padding:15px 0;text-align:center;',
+                        items: [{
+                            columnWidth: .5,
+                            layout: 'form',
+                            labelWidth: 75,
+                            items: [{
+                                xtype: 'textfield',
+                                fieldLabel: _('orders_item_rate_rur'),
+                                name: 'rate_rur',
+                                anchor: '99%',
+                            }]
+                        }, {
+                            columnWidth: .5,
+                            layout: 'form',
+                            labelWidth: 70,
+                            items: [{
+                                xtype: 'orders-combo-yes-no',
+                                fieldLabel: _('orders_item_closed_2'),
+                                name: 'closed_2',
+                                anchor: '99%',
+                            }]
+                        }]
                     }, {
                         layout: 'column',
                         defaults: {msgTarget: 'under', border: false},
                         style: 'padding:15px 0;text-align:center;',
                         items: [{
-                            columnWidth: .55,
+                            columnWidth: .5,
+                            layout: 'form',
+                            labelWidth: 75,
+                            items: [{
+                                xtype: 'textfield',
+                                fieldLabel: _('orders_item_rate_usd'),
+                                name: 'rate_usd',
+                                anchor: '99%',
+                            }]
+                        }, {
+                            columnWidth: .5,
+                            layout: 'form',
+                            labelWidth: 70,
+                            items: [{
+                                xtype: 'orders-combo-yes-no',
+                                fieldLabel: _('orders_item_closed_3'),
+                                name: 'closed_3',
+                                anchor: '99%',
+                            }]
+                        }]
+                    }, {
+                        layout: 'column',
+                        defaults: {msgTarget: 'under', border: false},
+                        style: 'padding:15px 0;text-align:center;',
+                        items: [{
+                            columnWidth: .5,
                             layout: 'form',
                             labelWidth: 75,
                             items: [{
@@ -468,9 +508,9 @@ CreateItemAdmin = {
                                 anchor: '99%',
                             }]
                         }, {
-                            columnWidth: .45,
+                            columnWidth: .5,
                             layout: 'form',
-                            labelWidth: 40,
+                            labelWidth: 70,
                             items: [{
                                 xtype: 'textfield',
                                 fieldLabel: _('orders_item_tax_payments_nds'),
@@ -479,15 +519,55 @@ CreateItemAdmin = {
                             }]
                         }]
                     }, {
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_customs_fee'),
-                        name: 'customs_fee',
-                        anchor: '99%',
+                        layout: 'column',
+                        defaults: {msgTarget: 'under', border: false},
+                        style: 'padding:15px 0;text-align:center;',
+                        items: [{
+                            columnWidth: .5,
+                            layout: 'form',
+                            labelWidth: 75,
+                            items: [{
+                                xtype: 'textfield',
+                                fieldLabel: _('orders_item_customs_fee'),
+                                name: 'customs_fee',
+                                anchor: '99%',
+                            }]
+                        }, {
+                            columnWidth: .5,
+                            layout: 'form',
+                            labelWidth: 70,
+                            items: [{
+                                xtype: 'orders-combo-yes-no',
+                                fieldLabel: _('orders_item_closed_4'),
+                                name: 'closed_4',
+                                anchor: '99%',
+                            }]
+                        }]
                     }, {
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_contact_person'),
-                        name: 'contact_person',
-                        anchor: '99%',
+                        layout: 'column',
+                        defaults: {msgTarget: 'under', border: false},
+                        style: 'padding:15px 0;text-align:center;',
+                        items: [{
+                            columnWidth: .5,
+                            layout: 'form',
+                            labelWidth: 75,
+                            items: [{
+                                xtype: 'textfield',
+                                fieldLabel: _('orders_item_contact_person'),
+                                name: 'contact_person',
+                                anchor: '99%',
+                            }]
+                        }, {
+                            columnWidth: .5,
+                            layout: 'form',
+                            labelWidth: 70,
+                            items: [{
+                                xtype: 'orders-combo-yes-no',
+                                fieldLabel: _('orders_item_closed_5'),
+                                name: 'closed_5',
+                                anchor: '99%',
+                            }]
+                        }]
                     }, {
                         xtype: 'orders-combo-delivery-term-receiver',
                         fieldLabel: _('orders_item_delivery_term_receiver'),
@@ -576,51 +656,6 @@ CreateItemAdmin = {
                     fieldLabel: _('orders_item_account_number_4'),
                     name: 'account_number_4',
                     anchor: '99%',
-                }, {
-                    xtype: 'orders-combo-xdates',
-                    fieldLabel: _('orders_item_booking'),
-                    name: 'booking',
-                    anchor: '90%',
-                }, {
-                    xtype: 'orders-combo-xdates',
-                    fieldLabel: _('orders_item_factory_supply'),
-                    name: 'factory_supply',
-                    anchor: '90%',
-                }, {
-                    xtype: 'orders-combo-xdates',
-                    fieldLabel: _('orders_item_pdt'),
-                    name: 'pdt',
-                    anchor: '90%',
-                }, {
-                    xtype: 'orders-combo-xdates',
-                    fieldLabel: _('orders_item_examination'),
-                    name: 'examination',
-                    anchor: '90%',
-                }, {
-                    xtype: 'orders-combo-xdates',
-                    fieldLabel: _('orders_item_examined'),
-                    name: 'examined',
-                    anchor: '90%',
-                }, {
-                    xtype: 'orders-combo-xdates',
-                    fieldLabel: _('orders_item_vdt'),
-                    name: 'vdt',
-                    anchor: '90%',
-                }, {
-                    xtype: 'orders-combo-xdates',
-                    fieldLabel: _('orders_item_train_departure_date'),
-                    name: 'train_departure_date',
-                    anchor: '90%',
-                }, {
-                    xtype: 'textfield',
-                    fieldLabel: _('orders_item_stations'),
-                    name: 'stations',
-                    anchor: '99%',
-                }, {
-                    xtype: 'orders-combo-xdates',
-                    fieldLabel: _('orders_item_export_from_station'),
-                    name: 'export_from_station',
-                    anchor: '90%',
                 }]
             }, {
                 columnWidth: .25,
@@ -680,25 +715,50 @@ CreateItemAdmin = {
                     name: 'closed',
                     anchor: '99%',
                 }, {
-                    xtype: 'orders-combo-yes-no',
-                    fieldLabel: _('orders_item_closed_2'),
-                    name: 'closed_2',
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_booking'),
+                    name: 'booking',
+                    anchor: '90%',
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_factory_supply'),
+                    name: 'factory_supply',
+                    anchor: '90%',
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_pdt'),
+                    name: 'pdt',
+                    anchor: '90%',
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_examination'),
+                    name: 'examination',
+                    anchor: '90%',
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_examined'),
+                    name: 'examined',
+                    anchor: '90%',
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_vdt'),
+                    name: 'vdt',
+                    anchor: '90%',
+                }, {
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_train_departure_date'),
+                    name: 'train_departure_date',
+                    anchor: '90%',
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_stations'),
+                    name: 'stations',
                     anchor: '99%',
                 }, {
-                    xtype: 'orders-combo-yes-no',
-                    fieldLabel: _('orders_item_closed_3'),
-                    name: 'closed_3',
-                    anchor: '99%',
-                }, {
-                    xtype: 'orders-combo-yes-no',
-                    fieldLabel: _('orders_item_closed_4'),
-                    name: 'closed_4',
-                    anchor: '99%',
-                }, {
-                    xtype: 'orders-combo-yes-no',
-                    fieldLabel: _('orders_item_closed_5'),
-                    name: 'closed_5',
-                    anchor: '99%',
+                    xtype: 'orders-combo-xdates',
+                    fieldLabel: _('orders_item_export_from_station'),
+                    name: 'export_from_station',
+                    anchor: '90%',
                 }]
             }, {
                 columnWidth: .25,

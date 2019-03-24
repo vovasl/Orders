@@ -13,6 +13,8 @@ class ordersPortArriveGetListProcessor extends modObjectGetListProcessor
     {
 
         $list[] = array('id' => '', 'name' => '');
+        $list[] = array('id' => 'railway-disabled', 'name' => $this->modx->lexicon('orders_item_filter_port_arrive_railway_disabled'));
+        $list[] = array('id' => 'ports', 'name' => $this->modx->lexicon('orders_item_filter_port_arrive_ports'));
 
         return $list;
     }
