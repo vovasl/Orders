@@ -233,6 +233,8 @@ class ordersHomeManagerController extends modExtraManagerController
         $config['perm.orders_item_create_button'] = $this->modx->hasPermission('orders.create_order') ? 1 : 0;
         $config['perm.orders_item_show_tab'] = $this->modx->hasPermission('orders.show_tabs') ? 1 : 0;
 
+        $config['source'] = $settings['orders_setting_item_source'];
+
 		$this->addHtml('
                 <script type="text/javascript">
                     orders.config = ' . json_encode($config) . ';

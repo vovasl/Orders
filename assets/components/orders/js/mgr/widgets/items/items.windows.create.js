@@ -494,53 +494,59 @@ CreateItemAdmin = {
                             }]
                         }]
                     }, {
-                        layout: 'column',
-                        defaults: {msgTarget: 'under', border: false},
-                        style: 'padding:15px 0;text-align:center;',
+                        xtype: 'fieldset',
+                        layout: 'form',
+                        style: 'text-align:center;border: 2px solid #ffffff;',
+                        defaults: {msgTarget: 'under'},
                         items: [{
-                            columnWidth: .5,
-                            layout: 'form',
-                            labelWidth: 75,
+                            layout: 'column',
+                            defaults: {msgTarget: 'under', border: false},
+                            style: 'padding:15px 0;text-align:center;',
                             items: [{
-                                xtype: 'textfield',
-                                fieldLabel: _('orders_item_tax_payments'),
-                                name: 'tax_payments',
-                                anchor: '99%',
+                                columnWidth: .5,
+                                layout: 'form',
+                                labelWidth: 75,
+                                items: [{
+                                    xtype: 'textfield',
+                                    fieldLabel: _('orders_item_tax_payments'),
+                                    name: 'tax_payments',
+                                    anchor: '99%',
+                                }]
+                            }, {
+                                columnWidth: .5,
+                                layout: 'form',
+                                labelWidth: 70,
+                                items: [{
+                                    xtype: 'textfield',
+                                    fieldLabel: _('orders_item_tax_payments_nds'),
+                                    name: 'tax_payments_nds',
+                                    anchor: '99%',
+                                }]
                             }]
                         }, {
-                            columnWidth: .5,
-                            layout: 'form',
-                            labelWidth: 70,
+                            layout: 'column',
+                            defaults: {msgTarget: 'under', border: false},
+                            style: 'padding:15px 0;text-align:center;',
                             items: [{
-                                xtype: 'textfield',
-                                fieldLabel: _('orders_item_tax_payments_nds'),
-                                name: 'tax_payments_nds',
-                                anchor: '99%',
-                            }]
-                        }]
-                    }, {
-                        layout: 'column',
-                        defaults: {msgTarget: 'under', border: false},
-                        style: 'padding:15px 0;text-align:center;',
-                        items: [{
-                            columnWidth: .5,
-                            layout: 'form',
-                            labelWidth: 75,
-                            items: [{
-                                xtype: 'textfield',
-                                fieldLabel: _('orders_item_customs_fee'),
-                                name: 'customs_fee',
-                                anchor: '99%',
-                            }]
-                        }, {
-                            columnWidth: .5,
-                            layout: 'form',
-                            labelWidth: 70,
-                            items: [{
-                                xtype: 'orders-combo-yes-no',
-                                fieldLabel: _('orders_item_closed_4'),
-                                name: 'closed_4',
-                                anchor: '99%',
+                                columnWidth: .5,
+                                layout: 'form',
+                                labelWidth: 75,
+                                items: [{
+                                    xtype: 'textfield',
+                                    fieldLabel: _('orders_item_customs_fee'),
+                                    name: 'customs_fee',
+                                    anchor: '99%',
+                                }]
+                            }, {
+                                columnWidth: .5,
+                                layout: 'form',
+                                labelWidth: 70,
+                                items: [{
+                                    xtype: 'orders-combo-yes-no',
+                                    fieldLabel: _('orders_item_closed_4'),
+                                    name: 'closed_4',
+                                    anchor: '99%',
+                                }]
                             }]
                         }]
                     }, {

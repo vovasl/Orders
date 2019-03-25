@@ -285,7 +285,7 @@ orders.utils.renderGoods = function (c_id) {
 //upload files
 
 orders.utils.getSource = function() {
-    return '4';
+    return orders.config['source']
 }
 
 orders.utils.uploadFiles = function(btn,e,order_id) {

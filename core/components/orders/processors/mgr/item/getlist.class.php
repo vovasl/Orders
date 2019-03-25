@@ -52,6 +52,8 @@ class ordersItemGetListProcessor extends modObjectGetListProcessor
         //ID портов прибытия
         $portArriveIDs = array(9,3,18,5,7,14,6,1,20);
         $portArrivePortsIDs = array(8,2,4);
+        $portArriveSPBIDs = array(3,14,18,5,7,6);
+        $portArriveRigaIDs = array(19,20,9,1,10,12);
 
 
         //дополнительные условия в зависимости какой менеджер зашел в систему
@@ -154,7 +156,17 @@ class ordersItemGetListProcessor extends modObjectGetListProcessor
                     break;
                 case 'ports':
                     $c->where([
-                        "port_arrive IN (" . implode(",", $portArrivePortsIDs) . ",'')",
+                        "port_arrive IN (" . implode(",", $portArrivePortsIDs) . ")",
+                    ]);
+                    break;
+                case 'spb':
+                    $c->where([
+                        "port_arrive IN (" . implode(",", $portArriveSPBIDs) . ")",
+                    ]);
+                    break;
+                case 'riga':
+                    $c->where([
+                        "port_arrive IN (" . implode(",", $portArriveRigaIDs) . ")",
                     ]);
                     break;
                 default:

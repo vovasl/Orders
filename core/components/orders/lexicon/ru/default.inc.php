@@ -28,8 +28,10 @@ $_lang['orders_item_filter_manager_empty_text'] = 'Менеджер по вед�
 $_lang['orders_item_filter_station_train_arrive_empty_text'] = 'по Станциям';
 $_lang['orders_item_filter_station_train_arrive_no_empty'] = 'ВСЕ СТАНЦИИ(без пустых)';
 $_lang['orders_item_filter_port_arrive_empty_text'] = 'по P. DISCHARGE';
-$_lang['orders_item_filter_port_arrive_railway_disabled'] = 'Без ЖД';
-$_lang['orders_item_filter_port_arrive_ports'] = 'Порты-ЖД';
+$_lang['orders_item_filter_port_arrive_railway_disabled'] = 'Без Владив и Восточ';
+$_lang['orders_item_filter_port_arrive_ports'] = 'Только Владив и Восточ';
+$_lang['orders_item_filter_port_arrive_spb'] = 'Только СПБ';
+$_lang['orders_item_filter_port_arrive_riga'] = 'Только Рига\Котка+Коляд+Ворс';
 
 $_lang['orders_item_tab_item'] = 'Заказ';
 $_lang['orders_item_tab_calculations'] = 'Временно';
@@ -570,6 +572,7 @@ $_lang['orders_setting_item_tamozhnya_fields_disabled'] = 'Поля недост
 $_lang['orders_setting_item_tamozhnya_fields_delete'] = 'Поля недоступные для вывода в таблице - пользователь Таможня';
 $_lang['orders_setting_item_email'] = 'E-mail для отправки сообщений во вкладке Заказы';
 $_lang['orders_setting_item_email_fields'] = 'Поля которые отправляются на email';
+$_lang['orders_setting_item_source'] = 'Источник файлов';
 
 $_lang['orders_template_title'] = 'Шаблоны';
 $_lang['orders_template_intro_msg'] = 'Вы можете выделять сразу несколько шаблонов при помощи Shift или Ctrl.';
