@@ -44,7 +44,6 @@ CreateItemManager = {
                         fieldLabel: _('orders_item_container_number'),
                         name: 'container_number',
                         anchor: '99%',
-                        disabled: true,
                     }]
                 }, {
                     columnWidth: .165,
@@ -66,7 +65,6 @@ CreateItemManager = {
                         fieldLabel: _('orders_item_agent_number'),
                         name: 'agent_number',
                         anchor: '99%',
-                        disabled: true,
                     }]
                 }, {
                     columnWidth: .165,
@@ -127,7 +125,6 @@ CreateItemManager = {
                         fieldLabel: _('orders_item_manager'),
                         name: 'manager',
                         anchor: '99%',
-                        disabled: true,
                         listeners: {
                             render: {
                                 fn: function (r) {
@@ -471,7 +468,6 @@ CreateItemManager = {
                                 fieldLabel: _('orders_item_closed_2'),
                                 name: 'closed_2',
                                 anchor: '99%',
-                                disabled: true,
                             }]
                         }]
                     }, {
@@ -497,7 +493,6 @@ CreateItemManager = {
                                 fieldLabel: _('orders_item_closed_3'),
                                 name: 'closed_3',
                                 anchor: '99%',
-                                disabled: true,
                             }]
                         }]
                     }, {
@@ -553,7 +548,6 @@ CreateItemManager = {
                                     fieldLabel: _('orders_item_closed_4'),
                                     name: 'closed_4',
                                     anchor: '99%',
-                                    disabled: true,
                                 }]
                             }]
                         }]
@@ -580,7 +574,6 @@ CreateItemManager = {
                                 fieldLabel: _('orders_item_closed_5'),
                                 name: 'closed_5',
                                 anchor: '99%',
-                                disabled: true,
                             }]
                         }]
                     }, {

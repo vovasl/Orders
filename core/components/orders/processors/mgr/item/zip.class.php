@@ -29,6 +29,7 @@ class ordersItemDisableProcessor extends modObjectProcessor
             }
 
             $object->set('archive', true);
+            $object->set('color', '');
             $object->save();
         }
 
