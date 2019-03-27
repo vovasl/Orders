@@ -728,6 +728,18 @@ CreateItemManager = {
                     name: 'currency_4',
                     anchor: '99%',
                     disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_kursgtd'),
+                    name: 'kursgtd',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_platej'),
+                    name: 'platej',
+                    anchor: '99%',
+                    disabled: true,
                 }]
             }, {
                 columnWidth: .25,

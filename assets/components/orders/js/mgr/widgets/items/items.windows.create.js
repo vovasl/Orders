@@ -710,6 +710,16 @@ CreateItemAdmin = {
                     fieldLabel: _('orders_item_currency_4'),
                     name: 'currency_4',
                     anchor: '99%',
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_kursgtd'),
+                    name: 'kursgtd',
+                    anchor: '99%',
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_platej'),
+                    name: 'platej',
+                    anchor: '99%',
                 }]
             }, {
                 columnWidth: .25,

@@ -148,7 +148,9 @@ $xpdo_meta_map['ordersItem']= array (
     'note_s_3' => NULL,
     'note_s_4' => NULL,
     'note_s_5' => NULL,
-    'file_1' => '',
+    'kursgtd' => '',
+    'platej' => '',
+    'itogo' => '',
   ),
   'fieldMeta' => 
   array (
@@ -1234,10 +1236,26 @@ $xpdo_meta_map['ordersItem']= array (
       'dbtype' => 'mediumtext',
       'phptype' => 'string',
     ),
-    'file_1' => 
+    'kursgtd' => 
     array (
       'dbtype' => 'varchar',
-      'precision' => '255',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'platej' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'itogo' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
       'phptype' => 'string',
       'null' => false,
       'default' => '',

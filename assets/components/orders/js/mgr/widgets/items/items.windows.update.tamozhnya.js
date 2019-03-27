@@ -165,6 +165,21 @@ UpdateItemTamozhnya = {getTabs: function (config) {
                         anchor: '99%',
                         height: 330,
                     }]
+                }, {
+                    columnWidth: .33,
+                    layout: 'form',
+                    labelWidth: 100,
+                    items: [{
+                        xtype: 'textfield',
+                        fieldLabel: _('orders_item_kursgtd'),
+                        name: 'kursgtd',
+                        anchor: '99%',
+                    }, {
+                        xtype: 'textfield',
+                        fieldLabel: _('orders_item_platej'),
+                        name: 'platej',
+                        anchor: '99%',
+                    }]
                 }]
             }];
     },

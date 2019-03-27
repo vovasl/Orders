@@ -200,6 +200,9 @@ $_lang['orders_item_note_s_2'] = 'Примечание 2';
 $_lang['orders_item_note_s_3'] = 'Примечание 3';
 $_lang['orders_item_note_s_4'] = 'Примечание 4';
 $_lang['orders_item_note_s_5'] = 'Примечание 5';
+$_lang['orders_item_kursgtd'] = 'Курс ГТД';
+$_lang['orders_item_platej'] = 'Платеж';
+$_lang['orders_item_itogo'] = 'Итого';
 $_lang['orders_item_upload_files'] = 'Загрузить файлы';
 
 $_lang['orders_item_reports_intro_msg'] = 'Сформировать отчет в формате Excel';
