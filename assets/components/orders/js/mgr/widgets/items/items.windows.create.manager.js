@@ -96,7 +96,11 @@ CreateItemManager = {
                         scope: this,
                         enableToggle: true,
                         iconCls : 'icon icon-xls',
-                        handler: orders.utils.renderXLS,
+                        handler: function() {
+                            orders.utils.renderXLS(config.id);
+                        },
+                        tooltip: _('orders_item_xls_title_text'),
+                        tooltipType: 'title'
                     }]
                 }, {
                     columnWidth: .05,
@@ -106,7 +110,9 @@ CreateItemManager = {
                         scope: this,
                         enableToggle: false,
                         iconCls : 'icon icon-mail-forward',
-                        handler: orders.utils.sendEmail,
+                        handler: function() {
+                            orders.utils.sendEmail(config.id);
+                        },
                         tooltip: _('orders_item_email_title_text'),
                         tooltipType: 'title'
                     }]

@@ -105,8 +105,8 @@ orders.utils.renderActions = function (value, props, row) {
 };
 
 
-orders.utils.renderXLS = function() {
-    var orderID = Ext.getCmp('id');
+orders.utils.renderXLS = function(c_id) {
+    var orderID = Ext.getCmp(c_id + '-id');
 
     var _params = {
         action: 'mgr/item/xls',
@@ -119,9 +119,11 @@ orders.utils.renderXLS = function() {
 
 };
 
-orders.utils.sendEmail = function() {
+orders.utils.sendEmail = function(c_id) {
+    var orderID = Ext.getCmp(c_id + '-id');
+
     alert(_('orders_item_email_succ_text'));
-    var orderID = Ext.getCmp('id');
+
     MODx.Ajax.request({
         url: orders.config.connector_url,
         params: {
