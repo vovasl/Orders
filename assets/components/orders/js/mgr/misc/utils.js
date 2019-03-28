@@ -284,6 +284,14 @@ orders.utils.renderGoods = function (c_id) {
     }
 }
 
+orders.utils.itogoVal = function (c_id) {
+    var kursgtd = Ext.getCmp(c_id + '-kursgtd').getValue();
+    var platej = Ext.getCmp(c_id + '-platej').getValue();
+
+    var itogo = kursgtd * platej;
+    Ext.getCmp(c_id + '-itogo').setValue(itogo);
+};
+
 //upload files
 
 orders.utils.getSource = function() {

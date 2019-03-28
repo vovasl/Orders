@@ -729,17 +729,27 @@ CreateItemManager = {
                     anchor: '99%',
                     disabled: true,
                 }, {
+                    id: config.id + '-kursgtd',
                     xtype: 'textfield',
                     fieldLabel: _('orders_item_kursgtd'),
                     name: 'kursgtd',
                     anchor: '99%',
                     disabled: true,
                 }, {
+                    id: config.id + '-platej',
                     xtype: 'textfield',
                     fieldLabel: _('orders_item_platej'),
                     name: 'platej',
                     anchor: '99%',
                     disabled: true,
+                }, {
+                    id: config.id + '-itogo',
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_itogo'),
+                    name: 'itogo',
+                    anchor: '99%',
+                    readOnly: true,
+                    fieldClass: 'x-item-disabled'
                 }]
             }, {
                 columnWidth: .25,

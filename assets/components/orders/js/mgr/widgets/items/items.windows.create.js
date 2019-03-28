@@ -711,15 +711,41 @@ CreateItemAdmin = {
                     name: 'currency_4',
                     anchor: '99%',
                 }, {
+                    id: config.id + '-kursgtd',
                     xtype: 'textfield',
                     fieldLabel: _('orders_item_kursgtd'),
                     name: 'kursgtd',
                     anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.itogoVal(config.id);
+                            },
+                            scope: this
+                        }
+                    }
                 }, {
+                    id: config.id + '-platej',
                     xtype: 'textfield',
                     fieldLabel: _('orders_item_platej'),
                     name: 'platej',
                     anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.itogoVal(config.id);
+                            },
+                            scope: this
+                        }
+                    }
+                }, {
+                    id: config.id + '-itogo',
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_itogo'),
+                    name: 'itogo',
+                    anchor: '99%',
+                    readOnly: true,
+                    fieldClass: 'x-item-disabled'
                 }]
             }, {
                 columnWidth: .25,
