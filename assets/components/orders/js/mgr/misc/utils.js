@@ -288,8 +288,8 @@ orders.utils.itogoVal = function (c_id) {
     var kursgtd = Ext.getCmp(c_id + '-kursgtd').getValue();
     var platej = Ext.getCmp(c_id + '-platej').getValue();
 
-    var itogo = kursgtd * platej;
-    Ext.getCmp(c_id + '-itogo').setValue(itogo);
+    var itogo = platej/kursgtd;
+    Ext.getCmp(c_id + '-itogo').setValue(itogo.toFixed(2));
 };
 
 //upload files
