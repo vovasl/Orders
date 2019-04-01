@@ -97,6 +97,7 @@
         <field key="closed_3" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
         <field key="closed_4" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
         <field key="closed_5" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="closed_6" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
         <field key="total_2" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
         <field key="total_3" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
         <field key="total_4" dbtype="varchar" precision="100" phptype="string" null="false" default="" />

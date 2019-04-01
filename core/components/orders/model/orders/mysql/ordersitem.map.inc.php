@@ -104,6 +104,7 @@ $xpdo_meta_map['ordersItem']= array (
     'closed_3' => '',
     'closed_4' => '',
     'closed_5' => '',
+    'closed_6' => '',
     'total_2' => '',
     'total_3' => '',
     'total_4' => '',
@@ -889,6 +890,14 @@ $xpdo_meta_map['ordersItem']= array (
       'default' => '',
     ),
     'closed_5' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'closed_6' => 
     array (
       'dbtype' => 'varchar',
       'precision' => '100',

@@ -205,6 +205,11 @@ UpdateItemTamozhnya = {getTabs: function (config) {
                         anchor: '99%',
                         readOnly: true,
                         fieldClass: 'x-item-disabled'
+                    }, {
+                        xtype: 'orders-combo-yes-no',
+                        fieldLabel: _('orders_item_closed_6'),
+                        name: 'closed_6',
+                        anchor: '99%',
                     }]
                 }]
             }];

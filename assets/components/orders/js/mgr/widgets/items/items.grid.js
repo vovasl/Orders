@@ -468,6 +468,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             closed_3: {width: 65, editor: {xtype: 'orders-combo-yes-no', renderer: true}},
             closed_4: {width: 65, editor: {xtype: 'orders-combo-yes-no', renderer: true}},
             closed_5: {width: 65, editor: {xtype: 'orders-combo-yes-no', renderer: true}},
+            closed_6: {width: 65, editor: {xtype: 'orders-combo-yes-no', renderer: true}},
             total_2: {width: 85, editor: {xtype: 'textfield'}},
             total_3: {width: 85, editor: {xtype: 'textfield'}},
             total_4: {width: 85, editor: {xtype: 'textfield'}},
@@ -528,6 +529,9 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             note_s_3: {width: 125, editor: {xtype: 'textarea'}},
             note_s_4: {width: 125, editor: {xtype: 'textarea'}},
             note_s_5: {width: 125, editor: {xtype: 'textarea'}},
+            kursgtd: {width: 80},
+            platej: {width: 80},
+            itogo: {width: 80},
 
         };
 

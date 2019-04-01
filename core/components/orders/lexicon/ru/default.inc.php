@@ -152,6 +152,7 @@ $_lang['orders_item_customs_fee'] = 'ТП USD';
 $_lang['orders_item_closed_3'] = 'Закрыта 3';
 $_lang['orders_item_closed_4'] = 'Закрыта 4';
 $_lang['orders_item_closed_5'] = 'Закрыта 5';
+$_lang['orders_item_closed_6'] = 'БУХ.ОТГР.';
 $_lang['orders_item_total_2'] = 'Сумма 2, USD';
 $_lang['orders_item_total_3'] = 'Сумма 3, USD';
 $_lang['orders_item_total_4'] = 'Сумма 4, USD';
