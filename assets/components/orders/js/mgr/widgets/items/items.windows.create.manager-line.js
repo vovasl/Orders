@@ -26,95 +26,9 @@ CreateItemLineManager = {
     },
 
     getOrderFields: function (config) {
-        return [
-            {
-                xtype: 'hidden',
-                name: 'id',
-                id: config.id + '-id',
-            }, {
-                layout: 'column',
-                defaults: {msgTarget: 'under', border: false},
-                style: 'padding:15px 5px;text-align:center;',
-                items: [{
-                    columnWidth: .165,
-                    layout: 'form',
-                    labelWidth: 100,
-                    items: [{
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_container_number'),
-                        name: 'container_number',
-                        anchor: '99%',
-                    }]
-                }, {
-                    columnWidth: .165,
-                    layout: 'form',
-                    labelWidth: 30,
-                    items: [{
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_bl'),
-                        name: 'bl',
-                        anchor: '99%',
-                    }]
-                }, {
-                    columnWidth: .165,
-                    layout: 'form',
-                    labelWidth: 80,
-                    items: [{
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_agent_number'),
-                        name: 'agent_number',
-                        anchor: '99%',
-                    }]
-                }, {
-                    columnWidth: .165,
-                    layout: 'form',
-                    labelWidth: 80,
-                    items: [{
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_agent_china_number'),
-                        name: 'agent_china_number',
-                        anchor: '99%',
-                    }]
-                }, {
-                    columnWidth: .23,
-                    layout: 'form',
-                    labelWidth: 80,
-                    items: [{
-                        xtype: 'textfield',
-                        fieldLabel: _('orders_item_bill_entry_number'),
-                        name: 'bill_entry_number',
-                        anchor: '99%',
-                    }]
-                }, {
-                    columnWidth: .05,
-                    layout: 'form',
-                    items: [{
-                        xtype: 'button',
-                        scope: this,
-                        enableToggle: true,
-                        iconCls : 'icon icon-xls',
-                        handler: function() {
-                            orders.utils.renderXLS(config.id);
-                        },
-                        tooltip: _('orders_item_xls_title_text'),
-                        tooltipType: 'title'
-                    }]
-                }, {
-                    columnWidth: .05,
-                    layout: 'form',
-                    items: [{
-                        xtype: 'button',
-                        scope: this,
-                        enableToggle: false,
-                        iconCls : 'icon icon-mail-forward',
-                        handler: function() {
-                            orders.utils.sendEmail(config.id);
-                        },
-                        tooltip: _('orders_item_email_title_text'),
-                        tooltipType: 'title'
-                    }]
-                }]
-            }, {
+        var fields = [];
+
+        var mainBlock = {
                 layout: 'column',
                 defaults: {msgTarget: 'side', border: false},
                 style: 'padding:15px 5px;text-align:center;',
@@ -632,7 +546,123 @@ CreateItemLineManager = {
                         }]
                     }]
                 }]
-            }];
+            };
+        fields.push(this.getOrderFieldsTopBlock(config));
+        fields.push(mainBlock);
+        return fields;
+    },
+
+    getOrderFieldsTopBlock: function (config) {
+        var topFields = [{
+            xtype: 'hidden',
+            name: 'id',
+            id: config.id + '-id',
+        }, {
+            columnWidth: .165,
+            layout: 'form',
+            labelWidth: 100,
+            items: [{
+                xtype: 'textfield',
+                fieldLabel: _('orders_item_container_number'),
+                name: 'container_number',
+                anchor: '99%',
+            }]
+        }, {
+            columnWidth: .165,
+            layout: 'form',
+            labelWidth: 30,
+            items: [{
+                xtype: 'textfield',
+                fieldLabel: _('orders_item_bl'),
+                name: 'bl',
+                anchor: '99%',
+            }]
+        }, {
+            columnWidth: .165,
+            layout: 'form',
+            labelWidth: 80,
+            items: [{
+                xtype: 'textfield',
+                fieldLabel: _('orders_item_agent_number'),
+                name: 'agent_number',
+                anchor: '99%',
+            }]
+        }, {
+            columnWidth: .165,
+            layout: 'form',
+            labelWidth: 80,
+            items: [{
+                xtype: 'textfield',
+                fieldLabel: _('orders_item_agent_china_number'),
+                name: 'agent_china_number',
+                anchor: '99%',
+            }]
+        }, {
+            columnWidth: .18,
+            layout: 'form',
+            labelWidth: 80,
+            items: [{
+                xtype: 'textfield',
+                fieldLabel: _('orders_item_bill_entry_number'),
+                name: 'bill_entry_number',
+                anchor: '99%',
+            }]
+        }, {
+            columnWidth: .05,
+            layout: 'form',
+            items: [{
+                xtype: 'button',
+                scope: this,
+                enableToggle: true,
+                iconCls : 'icon icon-xls',
+                handler: function() {
+                    orders.utils.renderXLS(config.id);
+                },
+                tooltip: _('orders_item_xls_title_text'),
+                tooltipType: 'title'
+            }]
+        }, {
+            columnWidth: .05,
+            layout: 'form',
+            items: [{
+                xtype: 'button',
+                scope: this,
+                enableToggle: false,
+                iconCls : 'icon icon-mail-forward',
+                handler: function() {
+                    orders.utils.sendEmail(config.id);
+                },
+                tooltip: _('orders_item_email_title_text'),
+                tooltipType: 'title'
+            }]
+        }];
+
+        var sendFileIcon = {
+            columnWidth: .05,
+            layout: 'form',
+            items: [{
+                xtype: 'button',
+                scope: this,
+                cls: 'x-btn-icon icon-file_upload',
+                tooltip: {text: _('upload_files')},
+                handler: function(btn,e) {
+                    orders.utils.uploadFiles(btn,e,Ext.getCmp(config.id + '-id').getValue());
+                }
+            }]
+        };
+
+        if(config.xtype == 'orders-item-window-update') {
+            topFields.push(sendFileIcon);
+        }
+
+        var topBlock = {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:15px 5px;text-align:center;',
+            items: topFields
+        };
+
+        return topBlock;
     },
 
     getOrderFieldsTab2: function (config) {
