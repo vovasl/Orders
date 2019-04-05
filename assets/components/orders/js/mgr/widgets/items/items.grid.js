@@ -592,14 +592,8 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
                 }
             }
         };
-        var buttonImportant = {
-            xtype: 'button',
-            scope: this,
-            enableToggle: true,
-            handler: this._buttonImportant,
-            iconCls : 'icon icon-star',
-        };
         var search = {
+            id: 'filter_search_str',
             xtype: 'orders-field-item-search',
             width: 245,
             listeners: {
@@ -622,6 +616,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             }
         };
         var filterReceiver = {
+            id: 'filter_receiver',
             xtype: 'orders-combo-filter-receiver',
             listeners: {
                 select: {
@@ -632,6 +627,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             }
         };
         var filterPortArrive = {
+            id: 'filter_port_arrive',
             width: 185,
             xtype: 'orders-combo-filter-port-arrive',
             listeners: {
@@ -643,8 +639,8 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             }
         };
         var filterStationTrainArrive = {
-            xtype: 'orders-combo-filter-station-train-arrive',
             id: 'orders-combo-filter-station-train-arrive',
+            xtype: 'orders-combo-filter-station-train-arrive',
             listeners: {
                 select: {
                     fn: function (field) {
@@ -654,6 +650,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             }
         };
         var filterManager = {
+            id: 'filter_manager',
             xtype: 'orders-combo-filter-manager',
             listeners: {
                 select: {
@@ -664,6 +661,8 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             }
         };
         var filterColor = {
+            id: 'filter_color',
+            width: 175,
             xtype: 'orders-combo-filter-color',
             listeners: {
                 select: {
@@ -673,7 +672,20 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
                 }
             }
         };
+        var filterCarCarrier = {
+            id: 'filter_car_carrier',
+            xtype: 'orders-combo-filter-car-carrier',
+            width: 165,
+            listeners: {
+                select: {
+                    fn: function (field) {
+                        this._selectFilterCarCarrier(field);
+                    }, scope: this
+                }
+            }
+        };
         var searchCarNumber = {
+            id: 'filter_car_number',
             xtype: 'orders-field-item-search-car-number',
                 width: 175,
                 listeners: {
@@ -696,6 +708,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             }
         };
         var searchBillEntryNumber = {
+            id: 'filter_bill_entry_number',
             xtype: 'orders-field-item-search-bill-entry-number',
             width: 270,
             listeners: {
@@ -717,7 +730,16 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
                 },
             }
         };
+        var buttonImportant = {
+            id: 'filter_important',
+            xtype: 'button',
+            scope: this,
+            enableToggle: true,
+            handler: this._buttonImportant,
+            iconCls : 'icon icon-star',
+        };
         var buttonArchive = {
+            id: 'filter_archive',
             xtype: 'button',
             scope: this,
             enableToggle: true,
@@ -725,11 +747,20 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             iconCls : 'icon icon-archive',
         };
         var buttonHidden = {
+            id: 'filter_hidden',
             xtype: 'button',
             scope: this,
             enableToggle: true,
             handler: this._buttonHidden,
             iconCls : 'icon icon-power-off action-green',
+        };
+
+        var clearFilter = {
+            xtype: 'button',
+            text: _('orders_item_filter_clear_text'),
+            cls: 'primary-button',
+            scope: this,
+            handler: this._clearFilter,
         };
 
         var topBar = [];
@@ -744,11 +775,13 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         topBar.push(filterPortArrive);
         topBar.push(filterStationTrainArrive);
         topBar.push(filterColor);
+        topBar.push(filterCarCarrier);
         topBar.push(searchCarNumber);
         topBar.push(searchBillEntryNumber);
-        topBar.push(filterReceiver);
+        //topBar.push(filterReceiver);
         topBar.push(filterManager);
         //topBar.push(buttonHidden);
+        topBar.push(clearFilter);
 
         return topBar;
     },
@@ -834,6 +867,54 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         this.refresh();
     },
 
+    _selectFilterColor: function (tf) {
+        var s = this.getStore();
+        s.setBaseParam('color',tf.getValue());
+        this.getBottomToolbar().changePage(1);
+        s.removeAll();
+        this.refresh();
+    },
+
+    _selectFilterReceiver: function (tf) {
+        var s = this.getStore();
+        s.setBaseParam('receiver',tf.getValue());
+        this.getBottomToolbar().changePage(1);
+        s.removeAll();
+        this.refresh();
+    },
+
+    _selectFilterManager: function (tf) {
+        var s = this.getStore();
+        s.setBaseParam('manager2',tf.getValue());
+        this.getBottomToolbar().changePage(1);
+        s.removeAll();
+        this.refresh();
+    },
+
+    _selectFilterStationTrainArrive: function (tf) {
+        var s = this.getStore();
+        s.setBaseParam('stationTrainArrive',tf.getValue());
+        this.getBottomToolbar().changePage(1);
+        s.removeAll();
+        this.refresh();
+    },
+
+    _selectFilterPortArrive: function (tf) {
+        var s = this.getStore();
+        s.setBaseParam('portArrive',tf.getValue());
+        this.getBottomToolbar().changePage(1);
+        s.removeAll();
+        this.refresh();
+    },
+
+    _selectFilterCarCarrier: function (tf) {
+        var s = this.getStore();
+        s.setBaseParam('сarCarrier',tf.getValue());
+        this.getBottomToolbar().changePage(1);
+        s.removeAll();
+        this.refresh();
+    },
+
     _buttonImportant: function(btn,e) {
         var s = this.getStore();
         if (btn.pressed) {
@@ -875,45 +956,6 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         s.removeAll();
         this.refresh();
     },
-    _selectFilterColor: function (tf) {
-        var s = this.getStore();
-        s.setBaseParam('color',tf.getValue());
-        this.getBottomToolbar().changePage(1);
-        s.removeAll();
-        this.refresh();
-    },
-
-    _selectFilterReceiver: function (tf) {
-        var s = this.getStore();
-        s.setBaseParam('receiver',tf.getValue());
-        this.getBottomToolbar().changePage(1);
-        s.removeAll();
-        this.refresh();
-    },
-
-    _selectFilterManager: function (tf) {
-        var s = this.getStore();
-        s.setBaseParam('manager2',tf.getValue());
-        this.getBottomToolbar().changePage(1);
-        s.removeAll();
-        this.refresh();
-    },
-
-    _selectFilterStationTrainArrive: function (tf) {
-        var s = this.getStore();
-        s.setBaseParam('stationTrainArrive',tf.getValue());
-        this.getBottomToolbar().changePage(1);
-        s.removeAll();
-        this.refresh();
-    },
-
-    _selectFilterPortArrive: function (tf) {
-        var s = this.getStore();
-        s.setBaseParam('portArrive',tf.getValue());
-        this.getBottomToolbar().changePage(1);
-        s.removeAll();
-        this.refresh();
-    },
 
     _selectTemplate: function (tf) {
         var s = this.getStore();
@@ -921,6 +963,39 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         s.setBaseParam('template',tf.getValue());
         this.getBottomToolbar().changePage(1);
         this.reloadPage();
+    },
+
+    _clearFilter: function (tf) {
+        Ext.getCmp('filter_search_str').setValue('');
+        Ext.getCmp('filter_port_arrive').setValue('');
+        Ext.getCmp('orders-combo-filter-station-train-arrive').setValue('');
+        Ext.getCmp('filter_color').setValue('');
+        Ext.getCmp('filter_car_carrier').setValue('');
+        Ext.getCmp('filter_car_number').setValue('');
+        Ext.getCmp('filter_bill_entry_number').setValue('');
+        //Ext.getCmp('filter_receiver').setValue('');
+        Ext.getCmp('filter_manager').setValue('');
+        Ext.getCmp('filter_important').setIconClass('icon icon-star');
+        Ext.getCmp('filter_archive').setIconClass('icon icon-archive');
+        //Ext.getCmp('filter_hidden').setIconClass('icon icon-power-off action-green');
+
+        var s = this.getStore();
+        s.setBaseParam('searchStr', '');
+        s.setBaseParam('portArrive', '');
+        s.setBaseParam('stationTrainArrive', '');
+        s.setBaseParam('color', '');
+        s.setBaseParam('сarCarrier', '');
+        s.setBaseParam('searchCarNumber', '');
+        s.setBaseParam('searchBillEntryNumber', '');
+        s.setBaseParam('receiver', '');
+        s.setBaseParam('manager2', '');
+        s.setBaseParam('important', 0);
+        s.setBaseParam('archive', 0);
+        s.setBaseParam('hidden', 0);
+
+        this.getBottomToolbar().changePage(1);
+        s.removeAll();
+        this.refresh();
     },
 
     reloadPage: function() {

@@ -45,6 +45,7 @@ class ordersItemGetListProcessor extends modObjectGetListProcessor
         $manager2 = $this->getProperty('manager2');
         $stationTrainArrive = $this->getProperty('stationTrainArrive');
         $portArrive = $this->getProperty('portArrive');
+        $сarCarrier = $this->getProperty('сarCarrier');
         $template = $this->getProperty('template');
 
         $c->select($this->modx->getSelectColumns($this->classKey, $this->classKey));
@@ -139,6 +140,12 @@ class ordersItemGetListProcessor extends modObjectGetListProcessor
         if ($manager2) {
             $c->where([
                 'manager2' => $manager2,
+            ]);
+        }
+
+        if ($сarCarrier) {
+            $c->where([
+                'car_carrier' => $сarCarrier,
             ]);
         }
 

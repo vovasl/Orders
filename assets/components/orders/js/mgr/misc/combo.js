@@ -2,11 +2,11 @@ var colors = new Ext.data.ArrayStore({
     fields: ['id','name'],
     data: [
         ['', 'По умолчанию'],
-        ['orders-row-red','Красный'],
-        ['orders-row-brown','Голубой'],
-        ['orders-row-yellow','Желтый'],
-        ['orders-row-green','Зеленый'],
-        ['orders-row-violet','Фиолетовый']
+        ['orders-row-red','Проблема - Красный'],
+        ['orders-row-brown','Заказан ТП - Голубой'],
+        ['orders-row-yellow','Идет по ЖД - Желтый'],
+        ['orders-row-green','Вывозится АМ - Зеленый'],
+        ['orders-row-violet','Доставлен - Фиолетовый']
     ]
 });
 
@@ -14,11 +14,11 @@ var colorsFilter = new Ext.data.ArrayStore({
     fields: ['id','name'],
     data: [
         ['', 'Все цвета'],
-        ['orders-row-red','Красный'],
-        ['orders-row-brown','Голубой'],
-        ['orders-row-yellow','Желтый'],
-        ['orders-row-green','Зеленый'],
-        ['orders-row-violet','Фиолетовый']
+        ['orders-row-red','Проблема - Красный'],
+        ['orders-row-brown','Заказан ТП - Голубой'],
+        ['orders-row-yellow','Идет по ЖД - Желтый'],
+        ['orders-row-green','Вывозится АМ - Зеленый'],
+        ['orders-row-violet','Доставлен - Фиолетовый']
     ]
 });
 
@@ -346,6 +346,32 @@ orders.combo.FilterStationTrainArrive = function (config) {
 };
 Ext.extend(orders.combo.FilterStationTrainArrive, MODx.combo.ComboBox);
 Ext.reg('orders-combo-filter-station-train-arrive', orders.combo.FilterStationTrainArrive);
+
+orders.combo.FilterCarCarrier = function (config) {
+    config = config || {};
+    Ext.applyIf(config, {
+        name: 'filter_car_carrier',
+        hiddenName: config.name || 'filter_car_carrier',
+        displayField: 'name',
+        valueField: 'id',
+        fields: ['id', 'name'],
+        pageSize: 9999,
+        hideMode: 'offsets',
+        width: 150,
+        emptyText: _('orders_item_filter_car_carrier_empty_text'),
+        url: orders.config['connector_url'],
+        baseParams: {
+            action: 'mgr/car-carrier/getlist',
+            sort: 'name',
+            dir: 'asc',
+            combo: true,
+            limit: 9999,
+        }
+    });
+    orders.combo.FilterCarCarrier.superclass.constructor.call(this, config);
+};
+Ext.extend(orders.combo.FilterCarCarrier, MODx.combo.ComboBox);
+Ext.reg('orders-combo-filter-car-carrier', orders.combo.FilterCarCarrier);
 
 
 orders.combo.Goods = function (config) {
