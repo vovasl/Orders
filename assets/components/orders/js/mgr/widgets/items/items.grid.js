@@ -584,7 +584,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             listeners: {
                 select: {
                     fn: function (field) {
-                        this._selectTemplate(field);
+                        this.selectTemplate(field);
                     }, scope: this
                 },
                 render: function(){
@@ -599,18 +599,18 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             listeners: {
                 keyup: {
                     fn: function (field) {
-                        this._doSearch(field);
+                        this.filterSearchStr(field);
                     }, scope: this
                 },
                 search: {
                     fn: function (field) {
-                        this._doSearch(field);
+                        this.filterSearchStr(field);
                     }, scope: this
                 },
                 clear: {
                     fn: function (field) {
                         field.setValue('');
-                        this._clearSearch();
+                        this.filterSearchStrClear();
                     }, scope: this
                 },
             }
@@ -621,7 +621,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             listeners: {
                 select: {
                     fn: function (field) {
-                        this._selectFilterReceiver(field);
+                        this.filterReceiver(field);
                     }, scope: this
                 }
             }
@@ -633,7 +633,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             listeners: {
                 select: {
                     fn: function (field) {
-                        this._selectFilterPortArrive(field);
+                        this.filterPortArrive(field);
                     }, scope: this
                 }
             }
@@ -644,7 +644,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             listeners: {
                 select: {
                     fn: function (field) {
-                        this._selectFilterStationTrainArrive(field);
+                        this.filterStationTrainArrive(field);
                     }, scope: this
                 },
             }
@@ -655,7 +655,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             listeners: {
                 select: {
                     fn: function (field) {
-                        this._selectFilterManager(field);
+                        this.filterManager(field);
                     }, scope: this
                 }
             }
@@ -667,7 +667,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             listeners: {
                 select: {
                     fn: function (field) {
-                        this._selectFilterColor(field);
+                        this.filterColor(field);
                     }, scope: this
                 }
             }
@@ -679,7 +679,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             listeners: {
                 select: {
                     fn: function (field) {
-                        this._selectFilterCarCarrier(field);
+                        this.filterCarCarrier(field);
                     }, scope: this
                 }
             }
@@ -691,18 +691,18 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
                 listeners: {
                 keyup: {
                     fn: function (field) {
-                        this._doSearchCarNumber(field);
+                        this.filterCarNumber(field);
                     }, scope: this
                 },
                 search: {
                     fn: function (field) {
-                        this._doSearchCarNumber(field);
+                        this.filterCarNumber(field);
                     }, scope: this
                 },
                 clear: {
                     fn: function (field) {
                         field.setValue('');
-                        this._clearSearchCarNumber();
+                        this.filterCarNumberClear();
                     }, scope: this
                 },
             }
@@ -714,18 +714,18 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             listeners: {
                 keyup: {
                     fn: function (field) {
-                        this._doSearchBillEntryNumber(field);
+                        this.filterBillEntryNumber(field);
                     }, scope: this
                 },
                 search: {
                     fn: function (field) {
-                        this._doSearchBillEntryNumber(field);
+                        this.filterBillEntryNumber(field);
                     }, scope: this
                 },
                 clear: {
                     fn: function (field) {
                         field.setValue('');
-                        this._clearSearchBillEntryNumber();
+                        this.filterBillEntryNumberClear();
                     }, scope: this
                 },
             }
@@ -735,7 +735,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             xtype: 'button',
             scope: this,
             enableToggle: true,
-            handler: this._buttonImportant,
+            handler: this.filterImportant,
             iconCls : 'icon icon-star',
         };
         var buttonArchive = {
@@ -743,7 +743,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             xtype: 'button',
             scope: this,
             enableToggle: true,
-            handler: this._buttonArchive,
+            handler: this.filterArchive,
             iconCls : 'icon icon-archive',
         };
         var buttonHidden = {
@@ -751,7 +751,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             xtype: 'button',
             scope: this,
             enableToggle: true,
-            handler: this._buttonHidden,
+            handler: this.filterHidden,
             iconCls : 'icon icon-power-off action-green',
         };
 
@@ -760,7 +760,16 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             text: _('orders_item_filter_clear_text'),
             cls: 'primary-button',
             scope: this,
-            handler: this._clearFilter,
+            handler: this.filterClear,
+        };
+
+        var colorDelivery = {
+            id: 'filter_delivery_disabled',
+            xtype: 'button',
+            scope: this,
+            enableToggle: true,
+            handler: this.filterDeliveryDisabled,
+            iconCls : 'icon icon-clock-o',
         };
 
         var topBar = [];
@@ -771,6 +780,8 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         topBar.push(buttonArchive);
         topBar.push(template);
         topBar.push(buttonImportant);
+        topBar.push(clearFilter);
+        topBar.push(colorDelivery);
         topBar.push(search);
         topBar.push(filterPortArrive);
         topBar.push(filterStationTrainArrive);
@@ -781,7 +792,6 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         //topBar.push(filterReceiver);
         topBar.push(filterManager);
         //topBar.push(buttonHidden);
-        topBar.push(clearFilter);
 
         return topBar;
     },
@@ -819,7 +829,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         return ids;
     },
 
-    _doSearch: function (tf) {
+    filterSearchStr: function (tf) {
         var s = this.getStore();
         s.setBaseParam('searchStr',tf.getValue());
         this.getBottomToolbar().changePage(1);
@@ -827,7 +837,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         this.refresh();
     },
 
-    _clearSearch: function () {
+    filterSearchStrClear: function () {
         var s = this.getStore();
         s.setBaseParam('searchStr','');
         this.getBottomToolbar().changePage(1);
@@ -835,7 +845,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         this.refresh();
     },
 
-    _doSearchCarNumber: function (tf) {
+    filterCarNumber: function (tf) {
         var s = this.getStore();
         s.setBaseParam('searchCarNumber',tf.getValue());
         this.getBottomToolbar().changePage(1);
@@ -843,7 +853,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         this.refresh();
     },
 
-    _clearSearchCarNumber: function () {
+    filterCarNumberClear: function () {
         var s = this.getStore();
         s.setBaseParam('searchCarNumber','');
         this.getBottomToolbar().changePage(1);
@@ -851,7 +861,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         this.refresh();
     },
 
-    _doSearchBillEntryNumber: function (tf) {
+    filterBillEntryNumber: function (tf) {
         var s = this.getStore();
         s.setBaseParam('searchBillEntryNumber',tf.getValue());
         this.getBottomToolbar().changePage(1);
@@ -859,7 +869,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         this.refresh();
     },
 
-    _clearSearchBillEntryNumber: function () {
+    filterBillEntryNumberClear: function () {
         var s = this.getStore();
         s.setBaseParam('searchBillEntryNumber','');
         this.getBottomToolbar().changePage(1);
@@ -867,7 +877,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         this.refresh();
     },
 
-    _selectFilterColor: function (tf) {
+    filterColor: function (tf) {
         var s = this.getStore();
         s.setBaseParam('color',tf.getValue());
         this.getBottomToolbar().changePage(1);
@@ -875,7 +885,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         this.refresh();
     },
 
-    _selectFilterReceiver: function (tf) {
+    filterReceiver: function (tf) {
         var s = this.getStore();
         s.setBaseParam('receiver',tf.getValue());
         this.getBottomToolbar().changePage(1);
@@ -883,7 +893,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         this.refresh();
     },
 
-    _selectFilterManager: function (tf) {
+    filterManager: function (tf) {
         var s = this.getStore();
         s.setBaseParam('manager2',tf.getValue());
         this.getBottomToolbar().changePage(1);
@@ -891,7 +901,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         this.refresh();
     },
 
-    _selectFilterStationTrainArrive: function (tf) {
+    filterStationTrainArrive: function (tf) {
         var s = this.getStore();
         s.setBaseParam('stationTrainArrive',tf.getValue());
         this.getBottomToolbar().changePage(1);
@@ -899,7 +909,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         this.refresh();
     },
 
-    _selectFilterPortArrive: function (tf) {
+    filterPortArrive: function (tf) {
         var s = this.getStore();
         s.setBaseParam('portArrive',tf.getValue());
         this.getBottomToolbar().changePage(1);
@@ -907,7 +917,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         this.refresh();
     },
 
-    _selectFilterCarCarrier: function (tf) {
+    filterCarCarrier: function (tf) {
         var s = this.getStore();
         s.setBaseParam('сarCarrier',tf.getValue());
         this.getBottomToolbar().changePage(1);
@@ -915,7 +925,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         this.refresh();
     },
 
-    _buttonImportant: function(btn,e) {
+    filterImportant: function(btn,e) {
         var s = this.getStore();
         if (btn.pressed) {
             s.setBaseParam('important',1);
@@ -929,7 +939,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         this.refresh();
     },
 
-    _buttonArchive: function(btn,e) {
+    filterArchive: function(btn,e) {
         var s = this.getStore();
         if (btn.pressed) {
             s.setBaseParam('archive',1);
@@ -943,7 +953,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         this.refresh();
     },
 
-    _buttonHidden: function(btn,e) {
+    filterHidden: function(btn,e) {
         var s = this.getStore();
         if (btn.pressed) {
             s.setBaseParam('hidden',1);
@@ -957,15 +967,21 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         this.refresh();
     },
 
-    _selectTemplate: function (tf) {
+    filterDeliveryDisabled: function(btn,e) {
         var s = this.getStore();
-        console.log(tf.getValue());
-        s.setBaseParam('template',tf.getValue());
+        if (btn.pressed) {
+            s.setBaseParam('deliveryDisabled', 1);
+            btn.setIconClass('icon icon-clock-o action-red');
+        } else {
+            s.setBaseParam('deliveryDisabled', 0);
+            btn.setIconClass('icon icon-clock-o');
+        }
         this.getBottomToolbar().changePage(1);
-        this.reloadPage();
+        s.removeAll();
+        this.refresh();
     },
 
-    _clearFilter: function (tf) {
+    filterClear: function (tf) {
         Ext.getCmp('filter_search_str').setValue('');
         Ext.getCmp('filter_port_arrive').setValue('');
         Ext.getCmp('orders-combo-filter-station-train-arrive').setValue('');
@@ -976,8 +992,13 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         //Ext.getCmp('filter_receiver').setValue('');
         Ext.getCmp('filter_manager').setValue('');
         Ext.getCmp('filter_important').setIconClass('icon icon-star');
-        Ext.getCmp('filter_archive').setIconClass('icon icon-archive');
+        Ext.getCmp('filter_important').toggle(false);
         //Ext.getCmp('filter_hidden').setIconClass('icon icon-power-off action-green');
+        //Ext.getCmp('filter_hidden').toggle(false);
+        Ext.getCmp('filter_archive').setIconClass('icon icon-archive');
+        Ext.getCmp('filter_archive').toggle(false);
+        Ext.getCmp('filter_delivery_disabled').setIconClass('icon icon-clock-o');
+        Ext.getCmp('filter_delivery_disabled').toggle(false);
 
         var s = this.getStore();
         s.setBaseParam('searchStr', '');
@@ -992,10 +1013,18 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         s.setBaseParam('important', 0);
         s.setBaseParam('archive', 0);
         s.setBaseParam('hidden', 0);
+        s.setBaseParam('deliveryDisabled', 0);
 
         this.getBottomToolbar().changePage(1);
         s.removeAll();
         this.refresh();
+    },
+
+    selectTemplate: function (tf) {
+        var s = this.getStore();
+        s.setBaseParam('template',tf.getValue());
+        this.getBottomToolbar().changePage(1);
+        this.reloadPage();
     },
 
     reloadPage: function() {

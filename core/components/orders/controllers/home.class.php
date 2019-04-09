@@ -57,6 +57,8 @@ class ordersHomeManagerController extends modExtraManagerController
         $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/misc/utils.js');
         $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/misc/combo.js');
         $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/widgets/items/items.grid.js');
+        $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/widgets/items/reports.grid.js');
+        $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/widgets/items/templates.grid.js');
         $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/widgets/items/items.windows.js');
         $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/widgets/items/items.windows.create.js');;
         $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/widgets/items/items.windows.create.manager.js');
@@ -115,7 +117,6 @@ class ordersHomeManagerController extends modExtraManagerController
         $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/widgets/forwarders.grid.js');
         $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/widgets/forwarders.windows.js');
         $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/widgets/home.panel.js');
-        $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/widgets/items/reports.grid.js');
         $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/sections/home.js');
 
         $config = $this->orders->config;

@@ -47,8 +47,11 @@ class ordersItemGetListProcessor extends modObjectGetListProcessor
         $portArrive = $this->getProperty('portArrive');
         $сarCarrier = $this->getProperty('сarCarrier');
         $template = $this->getProperty('template');
+        $deliveryDisabled = $this->getProperty('deliveryDisabled');
 
         $c->select($this->modx->getSelectColumns($this->classKey, $this->classKey));
+
+        $deliveryClass = 'orders-row-violet';
 
         //ID портов прибытия
         $portArriveIDs = array(9,3,18,5,7,14,6,1,20);
@@ -187,6 +190,12 @@ class ordersItemGetListProcessor extends modObjectGetListProcessor
             $resTemplate = $this->modx->getObject('ordersSettings', array('name' => 'orders_setting_item_template'));
             $resTemplate->set('value', $template);
             $resTemplate->save();
+        }
+
+        if($deliveryDisabled){
+            $c->where([
+                'color:!=' => $deliveryClass,
+            ]);
         }
 
 		return $c;

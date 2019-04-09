@@ -35,9 +35,15 @@ Ext.extend(orders.panel.Home, MODx.Panel, {
             }, {
                 xtype: 'orders-grid-items-reports',
                 cls: 'main-wrapper',
+                style: 'padding-bottom: 0;',
+            }, {
+                xtype: 'orders-grid-items-templates',
+                cls: 'main-wrapper',
+                style: 'padding: 0 15px;',
             }, {
                 xtype: 'orders-grid-items',
                 cls: 'main-wrapper',
+                style: 'padding-top: 0;',
             }]
         };
         var managerTab = {
