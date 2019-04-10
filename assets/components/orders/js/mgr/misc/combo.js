@@ -373,6 +373,32 @@ orders.combo.FilterCarCarrier = function (config) {
 Ext.extend(orders.combo.FilterCarCarrier, MODx.combo.ComboBox);
 Ext.reg('orders-combo-filter-car-carrier', orders.combo.FilterCarCarrier);
 
+orders.combo.FilterClient = function (config) {
+    config = config || {};
+    Ext.applyIf(config, {
+        name: 'filter_client',
+        hiddenName: config.name || 'filter_client',
+        displayField: 'name',
+        valueField: 'id',
+        fields: ['id', 'name'],
+        pageSize: 9999,
+        hideMode: 'offsets',
+        width: 200,
+        emptyText: _('orders_item_filter_client_empty_text'),
+        url: orders.config['connector_url'],
+        baseParams: {
+            action: 'mgr/client/getlist',
+            sort: 'name',
+            dir: 'asc',
+            combo: true,
+            limit: 9999,
+        }
+    });
+    orders.combo.FilterClient.superclass.constructor.call(this, config);
+};
+Ext.extend(orders.combo.FilterClient, MODx.combo.ComboBox);
+Ext.reg('orders-combo-filter-client', orders.combo.FilterClient);
+
 
 orders.combo.Goods = function (config) {
     config = config || {};

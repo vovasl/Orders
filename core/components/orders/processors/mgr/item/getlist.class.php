@@ -48,6 +48,7 @@ class ordersItemGetListProcessor extends modObjectGetListProcessor
         $сarCarrier = $this->getProperty('сarCarrier');
         $template = $this->getProperty('template');
         $deliveryDisabled = $this->getProperty('deliveryDisabled');
+        $client = $this->getProperty('client');
 
         $c->select($this->modx->getSelectColumns($this->classKey, $this->classKey));
 
@@ -149,6 +150,12 @@ class ordersItemGetListProcessor extends modObjectGetListProcessor
         if ($сarCarrier) {
             $c->where([
                 'car_carrier' => $сarCarrier,
+            ]);
+        }
+
+        if ($client) {
+            $c->where([
+                'client' => $client,
             ]);
         }
 

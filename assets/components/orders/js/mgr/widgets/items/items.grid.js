@@ -684,6 +684,17 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
                 }
             }
         };
+        var filterClient = {
+            id: 'filter_client',
+            xtype: 'orders-combo-filter-client',
+            listeners: {
+                select: {
+                    fn: function (field) {
+                        this.filterClient(field);
+                    }, scope: this
+                }
+            }
+        };
         var searchCarNumber = {
             id: 'filter_car_number',
             xtype: 'orders-field-item-search-car-number',
@@ -790,43 +801,11 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         topBar.push(searchCarNumber);
         topBar.push(searchBillEntryNumber);
         //topBar.push(filterReceiver);
-        topBar.push(filterManager);
+        topBar.push(filterClient);
+        //topBar.push(filterManager);
         //topBar.push(buttonHidden);
 
         return topBar;
-    },
-
-    onClick: function (e) {
-        var elem = e.getTarget();
-        if (elem.nodeName == 'BUTTON') {
-            var row = this.getSelectionModel().getSelected();
-            if (typeof(row) != 'undefined') {
-                var action = elem.getAttribute('action');
-                if (action == 'showMenu') {
-                    var ri = this.getStore().find('id', row.id);
-                    return this._showMenu(this, ri, e);
-                }
-                else if (typeof this[action] === 'function') {
-                    this.menu.record = row.data;
-                    return this[action](this, e);
-                }
-            }
-        }
-        return this.processEvent('click', e);
-    },
-
-    _getSelectedIds: function () {
-        var ids = [];
-        var selected = this.getSelectionModel().getSelections();
-
-        for (var i in selected) {
-            if (!selected.hasOwnProperty(i)) {
-                continue;
-            }
-            ids.push(selected[i]['id']);
-        }
-
-        return ids;
     },
 
     filterSearchStr: function (tf) {
@@ -920,6 +899,14 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
     filterCarCarrier: function (tf) {
         var s = this.getStore();
         s.setBaseParam('сarCarrier',tf.getValue());
+        this.getBottomToolbar().changePage(1);
+        s.removeAll();
+        this.refresh();
+    },
+
+    filterClient: function (tf) {
+        var s = this.getStore();
+        s.setBaseParam('client', tf.getValue());
         this.getBottomToolbar().changePage(1);
         s.removeAll();
         this.refresh();
@@ -1042,7 +1029,40 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             }
         }
         return width;
-    }
+    },
+
+    onClick: function (e) {
+        var elem = e.getTarget();
+        if (elem.nodeName == 'BUTTON') {
+            var row = this.getSelectionModel().getSelected();
+            if (typeof(row) != 'undefined') {
+                var action = elem.getAttribute('action');
+                if (action == 'showMenu') {
+                    var ri = this.getStore().find('id', row.id);
+                    return this._showMenu(this, ri, e);
+                }
+                else if (typeof this[action] === 'function') {
+                    this.menu.record = row.data;
+                    return this[action](this, e);
+                }
+            }
+        }
+        return this.processEvent('click', e);
+    },
+
+    _getSelectedIds: function () {
+        var ids = [];
+        var selected = this.getSelectionModel().getSelections();
+
+        for (var i in selected) {
+            if (!selected.hasOwnProperty(i)) {
+                continue;
+            }
+            ids.push(selected[i]['id']);
+        }
+
+        return ids;
+    },
 
 });
 Ext.reg('orders-grid-items', orders.grid.Items);

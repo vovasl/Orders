@@ -29,6 +29,7 @@ $_lang['orders_item_filter_station_train_arrive_empty_text'] = 'по Станц�
 $_lang['orders_item_filter_station_train_arrive_no_empty'] = 'ВСЕ СТАНЦИИ(без пустых)';
 $_lang['orders_item_filter_port_arrive_empty_text'] = 'по P. DISCHARGE';
 $_lang['orders_item_filter_car_carrier_empty_text'] = 'по Авто перевозчик';
+$_lang['orders_item_filter_client_empty_text'] = 'по Клиенту';
 $_lang['orders_item_filter_clear_text'] = 'Очистить фильтр';
 $_lang['orders_item_filter_port_arrive_railway_disabled'] = 'Без Владив и Восточ';
 $_lang['orders_item_filter_port_arrive_ports'] = 'Только Владив и Восточ';
