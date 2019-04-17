@@ -152,6 +152,8 @@ $xpdo_meta_map['ordersItem']= array (
     'kursgtd' => '',
     'platej' => '',
     'itogo' => '',
+    'stavki' => '',
+    'perevodi' => '',
   ),
   'fieldMeta' => 
   array (
@@ -1262,6 +1264,22 @@ $xpdo_meta_map['ordersItem']= array (
       'default' => '',
     ),
     'itogo' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'stavki' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'perevodi' => 
     array (
       'dbtype' => 'varchar',
       'precision' => '100',

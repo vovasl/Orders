@@ -532,6 +532,8 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             kursgtd: {width: 80},
             platej: {width: 80},
             itogo: {width: 80},
+            stavki: {width: 80},
+            perevodi: {width: 80},
 
         };
 

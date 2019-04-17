@@ -495,6 +495,18 @@ CreateItemAdmin = {
                     fieldLabel: _('orders_item_accounts'),
                     name: 'accounts',
                     anchor: '99%',
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_stavki'),
+                    name: 'stavki',
+                    anchor: '99%',
+                    disabled: true,
+                }, {
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_perevodi'),
+                    name: 'perevodi',
+                    anchor: '99%',
+                    disabled: true,
                 }]
             }]
         };

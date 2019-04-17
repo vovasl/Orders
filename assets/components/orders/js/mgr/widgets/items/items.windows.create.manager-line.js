@@ -543,6 +543,12 @@ CreateItemLineManager = {
                             name: 'note_3',
                             anchor: '100%',
                             height: 50,
+                        }, {
+                            xtype: 'textfield',
+                            fieldLabel: _('orders_item_perevodi'),
+                            name: 'perevodi',
+                            anchor: '99%',
+                            disabled: true,
                         }]
                     }]
                 }]

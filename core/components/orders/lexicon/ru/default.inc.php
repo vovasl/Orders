@@ -208,6 +208,8 @@ $_lang['orders_item_kursgtd'] = 'Курс ГТД';
 $_lang['orders_item_platej'] = 'Платеж, руб';
 $_lang['orders_item_itogo'] = 'Итого платеж, USD';
 $_lang['orders_item_upload_files'] = 'Загрузить файлы';
+$_lang['orders_item_stavki'] = 'Ставки';
+$_lang['orders_item_perevodi'] = 'Переводы';
 
 $_lang['orders_item_reports_intro_msg'] = 'Сформировать отчет в формате Excel';
 $_lang['orders_item_reports_field_port_arrive_date_start'] = 'Приб. ETA c';
