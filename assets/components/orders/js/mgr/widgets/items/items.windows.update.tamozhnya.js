@@ -170,6 +170,15 @@ UpdateItemTamozhnya = {getTabs: function (config) {
                     layout: 'form',
                     labelWidth: 100,
                     items: [{
+                        xtype: 'button',
+                        scope: this,
+                        cls: 'x-btn-icon icon-file_upload',
+                        tooltip: {text: _('upload_files')},
+                        handler: function(btn,e) {
+                            orders.utils.uploadFiles(btn,e,Ext.getCmp(config.id + '-id').getValue());
+                        },
+                        style: 'margin-bottom: 6px;',
+                    }, {
                         id: config.id + '-kursgtd',
                         xtype: 'textfield',
                         fieldLabel: _('orders_item_kursgtd'),

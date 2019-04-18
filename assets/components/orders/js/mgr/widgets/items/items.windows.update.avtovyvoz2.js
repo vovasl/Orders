@@ -188,6 +188,19 @@ UpdateItemAvtovyvoz2 = {
                         name: 'account_number_2',
                         anchor: '99%',
                     }]
+                }, {
+                    columnWidth: .33,
+                    layout: 'form',
+                    labelWidth: 140,
+                    items: [{
+                        xtype: 'button',
+                        scope: this,
+                        cls: 'x-btn-icon icon-file_upload',
+                        tooltip: {text: _('upload_files')},
+                        handler: function(btn,e) {
+                            orders.utils.uploadFiles(btn,e,Ext.getCmp(config.id + '-id').getValue());
+                        }
+                    }]
                 }]
             }, {
                 layout: 'column',
