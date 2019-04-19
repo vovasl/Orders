@@ -534,6 +534,10 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             itogo: {width: 80},
             stavki: {width: 80},
             perevodi: {width: 80},
+            date_1c: {
+                width: 102,
+                renderer: Ext.util.Format.dateRenderer('d.m.y'),
+            },
 
         };
 

@@ -496,17 +496,29 @@ CreateItemAdmin = {
                     name: 'accounts',
                     anchor: '99%',
                 }, {
-                    xtype: 'textfield',
-                    fieldLabel: _('orders_item_stavki'),
-                    name: 'stavki',
-                    anchor: '99%',
-                    disabled: true,
-                }, {
-                    xtype: 'textfield',
-                    fieldLabel: _('orders_item_perevodi'),
-                    name: 'perevodi',
-                    anchor: '99%',
-                    disabled: true,
+                    xtype: 'fieldset',
+                    layout: 'form',
+                    style: 'padding:15px 5px;text-align:center;border: 2px solid #ffffff;',
+                    defaults: {msgTarget: 'under'},
+                    items: [{
+                        xtype: 'orders-combo-xdates',
+                        fieldLabel: _('orders_item_date_1c'),
+                        name: 'date_1c',
+                        anchor: '92%',
+                        disabled: true,
+                    }, {
+                        xtype: 'textfield',
+                        fieldLabel: _('orders_item_stavki'),
+                        name: 'stavki',
+                        anchor: '99%',
+                        disabled: true,
+                    }, {
+                        xtype: 'textfield',
+                        fieldLabel: _('orders_item_perevodi'),
+                        name: 'perevodi',
+                        anchor: '99%',
+                        disabled: true,
+                    }]
                 }]
             }]
         };

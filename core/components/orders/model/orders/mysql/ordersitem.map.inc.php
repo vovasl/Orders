@@ -154,6 +154,7 @@ $xpdo_meta_map['ordersItem']= array (
     'itogo' => '',
     'stavki' => '',
     'perevodi' => '',
+    'date_1c' => 0,
   ),
   'fieldMeta' => 
   array (
@@ -1286,6 +1287,14 @@ $xpdo_meta_map['ordersItem']= array (
       'phptype' => 'string',
       'null' => false,
       'default' => '',
+    ),
+    'date_1c' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '20',
+      'phptype' => 'timestamp',
+      'null' => false,
+      'default' => 0,
     ),
   ),
   'indexes' => 
