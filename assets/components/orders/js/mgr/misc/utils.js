@@ -296,30 +296,33 @@ orders.utils.itogoVal = function (c_id) {
 /////////////////////////////////////////////////////////////////////////////////////////////upload files start
 
 orders.utils.getSource = function() {
-    return orders.config['source']
+    return orders.config['source'];
 }
 
 orders.utils.uploadFiles = function(btn,e,order_id) {
     var path = order_id + '/';
 
-    if (!this.uploader) {
-        this.uploader = new MODx.util.MultiUploadDialog.Dialog({
-            url: MODx.config.connector_url
-            ,base_params: {
-                action: 'browser/file/upload'
-                ,wctx: MODx.ctx || ''
-                ,source: orders.utils.getSource()
-            }
-            ,cls: 'ext-ux-uploaddialog-dialog modx-upload-window'
-        });
-        this.uploader.on('show',function(){
-            orders.utils.beforeUpload(path);
-        },this);
-        this.uploader.on('uploadsuccess',orders.utils.uploadSuccess,this);
-        this.uploader.on('uploaderror',orders.utils.uploadError,this);
-        this.uploader.on('uploadfailed',orders.utils.uploadFailed,this);
-    }
+    this.uploader = new MODx.util.MultiUploadDialog.Dialog({
+        url: MODx.config.connector_url
+        ,base_params: {
+            action: 'browser/file/upload'
+            ,wctx: MODx.ctx || ''
+            ,source: orders.utils.getSource()
+            ,path: path
+        }
+        ,cls: 'ext-ux-uploaddialog-dialog modx-upload-window'
+    });
+
+    this.uploader.on('show',function(){
+        orders.utils.beforeUpload(path);
+    },this);
+
+    this.uploader.on('uploadsuccess',orders.utils.uploadSuccess,this);
+    this.uploader.on('uploaderror',orders.utils.uploadError,this);
+    this.uploader.on('uploadfailed',orders.utils.uploadFailed,this);
+
     this.uploader.base_params.source = orders.utils.getSource();
+    //this.uploader.base_params.source = orders.config['source'] + path;
     this.uploader.show(btn);
 }
 
