@@ -794,20 +794,20 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         if(orders.config['perm.orders_item_create_button']){
             topBar.push(createItem);
         }
-        topBar.push(buttonArchive);
-        topBar.push(template);
-        topBar.push(buttonImportant);
+        //topBar.push(template);
         topBar.push(clearFilter);
         topBar.push(colorDelivery);
         topBar.push(search);
         topBar.push(filterPortArrive);
         topBar.push(filterStationTrainArrive);
         topBar.push(filterColor);
+        topBar.push(filterClient);
         topBar.push(filterCarCarrier);
         topBar.push(searchCarNumber);
         topBar.push(searchBillEntryNumber);
+        topBar.push(buttonArchive);
+        topBar.push(buttonImportant);
         //topBar.push(filterReceiver);
-        topBar.push(filterClient);
         //topBar.push(filterManager);
         //topBar.push(buttonHidden);
 

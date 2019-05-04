@@ -573,7 +573,7 @@ CreateItemAdmin = {
                 anchor: '99%',
             }]
         }, {
-            columnWidth: .18,
+            columnWidth: .17,
             layout: 'form',
             labelWidth: 50,
             items: [{
@@ -583,7 +583,7 @@ CreateItemAdmin = {
                 anchor: '99%',
             }]
         }, {
-            columnWidth: .05,
+            columnWidth: .04,
             layout: 'form',
             items: [{
                 xtype: 'button',
@@ -593,11 +593,11 @@ CreateItemAdmin = {
                 handler: function() {
                     orders.utils.renderXLS(config.id);
                 },
-                tooltip: _('orders_item_xls_title_text'),
+                tooltip: {text: _('orders_item_xls_title_text')},
                 tooltipType: 'title'
             }]
         }, {
-            columnWidth: .05,
+            columnWidth: .04,
             layout: 'form',
             items: [{
                 xtype: 'button',
@@ -607,26 +607,48 @@ CreateItemAdmin = {
                 handler: function() {
                     orders.utils.sendEmail(config.id);
                 },
-                tooltip: _('orders_item_email_title_text'),
-                tooltipType: 'title',
+                tooltip: {text: _('orders_item_email_title_text')},
             }]
         }];
 
         var sendFileIcon = {
-            columnWidth: .05,
+            columnWidth: .04,
             layout: 'form',
             items: [{
                 xtype: 'button',
                 scope: this,
                 cls: 'x-btn-icon icon-file_upload',
-                tooltip: {text: _('upload_files')},
+                tooltip: {text: _('orders_item_upload_files')},
                 handler: function(btn,e) {
                     orders.utils.uploadFiles(btn,e,Ext.getCmp(config.id + '-id').getValue());
                 }
             }]
         };
 
+        var directoryIcon = {
+            columnWidth: .04,
+            layout: 'form',
+            items: [{
+                xtype: 'button',
+                scope: this,
+                cls: 'x-btn-icon icon-folder directoryIcon',
+                tooltip: {text: _('orders_item_directory_files')},
+                handler: function(btn,e) {
+                    var browser = MODx.load({
+                        xtype: 'modx-browser',
+                        id: Ext.id(),
+                        multiple: true,
+                        source: orders.config['source'],
+                        openTo: config.record.object.id + '/',
+                    });
+                    browser.show();
+                }
+            }]
+        }
+
+
         if(config.xtype == 'orders-item-window-update') {
+            topFields.push(directoryIcon);
             topFields.push(sendFileIcon);
         }
 

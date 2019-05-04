@@ -208,6 +208,7 @@ $_lang['orders_item_kursgtd'] = 'Курс ГТД';
 $_lang['orders_item_platej'] = 'Платеж, руб';
 $_lang['orders_item_itogo'] = 'Итого платеж, USD';
 $_lang['orders_item_upload_files'] = 'Загрузить файлы';
+$_lang['orders_item_directory_files'] = 'Открыть папку с файлами';
 $_lang['orders_item_stavki'] = 'Ставки';
 $_lang['orders_item_perevodi'] = 'Переводы';
 $_lang['orders_item_date_1c'] = 'Дата 1C';

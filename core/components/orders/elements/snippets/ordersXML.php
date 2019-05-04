@@ -2,7 +2,7 @@
 $modx->getService('orders', 'orders', MODX_CORE_PATH . 'components/orders/model/');
 
 $output = '';
-$file = $_SERVER['DOCUMENT_ROOT'] . '/Balance.xml';
+$file = '/home/s16632/1c/Balance.xml';
 
 if (file_exists($file)) {
     $xml = simplexml_load_file($file);
@@ -33,6 +33,7 @@ if (file_exists($file)) {
             }
         }
     }
+    $output .= 'Данные успешно обновлены';
 } else {
     $output = 'Не удалось открыть файл XML';
 }
