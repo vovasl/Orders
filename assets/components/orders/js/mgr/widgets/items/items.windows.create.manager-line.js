@@ -616,7 +616,7 @@ CreateItemLineManager = {
                 anchor: '99%',
             }]
         }, {
-            columnWidth: .18,
+            columnWidth: .17,
             layout: 'form',
             labelWidth: 80,
             items: [{
@@ -626,7 +626,7 @@ CreateItemLineManager = {
                 anchor: '99%',
             }]
         }, {
-            columnWidth: .05,
+            columnWidth: .04,
             layout: 'form',
             items: [{
                 xtype: 'button',
@@ -640,7 +640,7 @@ CreateItemLineManager = {
                 tooltipType: 'title'
             }]
         }, {
-            columnWidth: .05,
+            columnWidth: .04,
             layout: 'form',
             items: [{
                 xtype: 'button',
@@ -656,7 +656,7 @@ CreateItemLineManager = {
         }];
 
         var sendFileIcon = {
-            columnWidth: .05,
+            columnWidth: .04,
             layout: 'form',
             items: [{
                 xtype: 'button',
@@ -669,7 +669,34 @@ CreateItemLineManager = {
             }]
         };
 
+        var directoryIcon = {
+            columnWidth: .04,
+            layout: 'form',
+            items: [{
+                xtype: 'button',
+                scope: this,
+                cls: 'x-btn-icon icon-folder directoryIcon',
+                tooltip: {text: _('orders_item_directory_files')},
+                handler: function(btn,e) {
+                    MODx.perm.directory_create = false;
+                    MODx.perm.file_create = false;
+                    var browser = MODx.load({
+                        xtype: 'modx-browser',
+                        id: Ext.id(),
+                        multiple: true,
+                        source: orders.config['source'],
+                        openTo: config.record.object.id + '/',
+                        rootId: config.record.object.id + '/',
+                        rootVisible: false,
+                        hideSourceCombo: true,
+                    });
+                    browser.show();
+                }
+            }]
+        };
+
         if(config.xtype == 'orders-item-window-update') {
+            topFields.push(directoryIcon);
             topFields.push(sendFileIcon);
         }
 

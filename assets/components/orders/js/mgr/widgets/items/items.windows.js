@@ -78,6 +78,20 @@ orders.window.UpdateItem = function (config) {
                 this.submit()
             }, scope: this
         }],
+        buttons: [{
+            text: _('orders_items_window_cancel'),
+            scope: this,
+            handler: function() { this.hide(); }
+        },{
+            text: _('orders_items_window_save'),
+            scope: this,
+            handler: function() { this.submit(false); }
+        },{
+            text: _('orders_items_window_save_and_close'),
+            cls: 'primary-button',
+            scope: this,
+            handler: this.submit
+        }]
     });
     orders.window.UpdateItem.superclass.constructor.call(this, config);
 

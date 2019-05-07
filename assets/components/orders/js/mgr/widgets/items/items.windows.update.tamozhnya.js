@@ -170,14 +170,46 @@ UpdateItemTamozhnya = {getTabs: function (config) {
                     layout: 'form',
                     labelWidth: 100,
                     items: [{
-                        xtype: 'button',
-                        scope: this,
-                        cls: 'x-btn-icon icon-file_upload',
-                        tooltip: {text: _('upload_files')},
-                        handler: function(btn,e) {
-                            orders.utils.uploadFiles(btn,e,Ext.getCmp(config.id + '-id').getValue());
-                        },
-                        style: 'margin-bottom: 6px;',
+                        layout: 'column',
+                        defaults: {msgTarget: 'under', border: false},
+                        style: 'text-align:center;',
+                        items: [{
+                            columnWidth: .1,
+                            layout: 'form',
+                            items: [{
+                                xtype: 'button',
+                                scope: this,
+                                cls: 'x-btn-icon icon-folder directoryIcon',
+                                tooltip: {text: _('orders_item_directory_files')},
+                                handler: function(btn,e) {
+                                    MODx.perm.directory_create = false;
+                                    MODx.perm.file_create = false;
+                                    var browser = MODx.load({
+                                        xtype: 'modx-browser',
+                                        id: Ext.id(),
+                                        multiple: true,
+                                        source: orders.config['source'],
+                                        openTo: config.record.object.id + '/',
+                                        rootId: config.record.object.id + '/',
+                                        rootVisible: false,
+                                        hideSourceCombo: true,
+                                    });
+                                    browser.show();
+                                }
+                            }]
+                        }, {
+                            columnWidth: .1,
+                            layout: 'form',
+                            items: [{
+                                xtype: 'button',
+                                scope: this,
+                                cls: 'x-btn-icon icon-file_upload',
+                                tooltip: {text: _('upload_files')},
+                                handler: function(btn,e) {
+                                    orders.utils.uploadFiles(btn,e,Ext.getCmp(config.id + '-id').getValue());
+                                }
+                            }]
+                        }]
                     }, {
                         id: config.id + '-kursgtd',
                         xtype: 'textfield',

@@ -9,7 +9,7 @@
 .x-grid3-col-vdt, .x-grid3-col-train_arrive_date, .x-grid3-col-delivery_date, .x-grid3-col-receiver,
 .x-grid3-col-agent_china_number, .x-grid3-col-account_number_4, .x-grid3-col-account_number,
 .x-grid3-col-account_number_2, .x-grid3-col-sender, .x-grid3-col-bill_entry_number,
-.x-grid3-col-closed_3 { border-right: solid 2px #2F4F4F; }
+.x-grid3-col-closed_3, .x-grid3-col-closed_5 { border-right: solid 2px #2F4F4F; }
 
 .x-grid3-row-selected {background-color: #FFDEAD !important; }
 
