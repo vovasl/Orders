@@ -983,7 +983,7 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         Ext.getCmp('filter_car_number').setValue('');
         Ext.getCmp('filter_bill_entry_number').setValue('');
         //Ext.getCmp('filter_receiver').setValue('');
-        Ext.getCmp('filter_manager').setValue('');
+        //Ext.getCmp('filter_manager').setValue('');
         Ext.getCmp('filter_important').setIconClass('icon icon-star');
         Ext.getCmp('filter_important').toggle(false);
         //Ext.getCmp('filter_hidden').setIconClass('icon icon-power-off action-green');
@@ -992,6 +992,16 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
         Ext.getCmp('filter_archive').toggle(false);
         Ext.getCmp('filter_delivery_disabled').setIconClass('icon icon-clock-o');
         Ext.getCmp('filter_delivery_disabled').toggle(false);
+
+        Ext.getCmp('filter-port-arrive-butt-1').removeClass('primary-button');
+        Ext.getCmp('filter-port-arrive-butt-1').toggle(false);
+        Ext.getCmp('filter-port-arrive-butt-2').removeClass('primary-button');
+        Ext.getCmp('filter-port-arrive-butt-2').toggle(false);
+        Ext.getCmp('filter-port-arrive-butt-3').removeClass('primary-button');
+        Ext.getCmp('filter-port-arrive-butt-3').toggle(false);
+        Ext.getCmp('filter-port-arrive-butt-4').removeClass('primary-button');
+        Ext.getCmp('filter-port-arrive-butt-4').toggle(false);
+
 
         var s = this.getStore();
         s.setBaseParam('searchStr', '');
