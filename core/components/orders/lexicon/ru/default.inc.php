@@ -37,7 +37,8 @@ $_lang['orders_item_filter_port_arrive_spb'] = 'Только СПБ';
 $_lang['orders_item_filter_port_arrive_riga'] = 'Только Рига\Котка+Коляд+Ворс';
 
 $_lang['orders_item_tab_item'] = 'Заказ';
-$_lang['orders_item_tab_calculations'] = 'Временно';
+$_lang['orders_item_tab_calculations'] = 'Расчеты';
+$_lang['orders_item_tab_temporarily'] = 'Временно';
 $_lang['orders_item_tab_factories'] = 'Фабрики';
 $_lang['orders_item_tab_files'] = 'Файлы';
 

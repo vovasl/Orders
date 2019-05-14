@@ -60,7 +60,6 @@ Ext.extend(orders.grid.TemplatesForm, MODx.FormPanel,{
                                     value: 'railway-disabled',
                                     handler: this.filterPortArriveButt,
                                 };
-
                                 var filterPortArriveButt2 = {
                                     id: 'filter-port-arrive-butt-2',
                                     xtype: 'button',
@@ -95,6 +94,7 @@ Ext.extend(orders.grid.TemplatesForm, MODx.FormPanel,{
                                 templates.push(filterPortArriveButt2);
                                 templates.push(filterPortArriveButt3);
                                 templates.push(filterPortArriveButt4);
+
 
                                 this.getTopToolbar().add(new Ext.Toolbar({
                                     renderTo: this.tbar,

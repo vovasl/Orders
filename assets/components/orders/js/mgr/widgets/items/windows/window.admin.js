@@ -19,6 +19,13 @@ CreateItemAdmin = {
             hideMode: 'offsets',
             //bodyStyle: 'padding:5px 0;',
             defaults: {msgTarget: 'under', border: false},
+            items: this.getOrderFieldsTab4(config),
+        }, {
+            layout: 'form',
+            title: _('orders_item_tab_temporarily'),
+            hideMode: 'offsets',
+            //bodyStyle: 'padding:5px 0;',
+            defaults: {msgTarget: 'under', border: false},
             items: this.getOrderFieldsTab2(config),
         }];
 
@@ -1172,6 +1179,10 @@ CreateItemAdmin = {
             }]
         }];
     },
+
+    getOrderFieldsTab4: function (config) {
+        return [{}]
+    }
 
 
 }
