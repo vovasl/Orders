@@ -476,6 +476,16 @@ CreateItemAdmin = {
                             name: 'contact_person',
                             anchor: '99%',
                         }]
+                    }, {
+                        columnWidth: .5,
+                        layout: 'form',
+                        labelWidth: 75,
+                        items: [{
+                            xtype: 'orders-combo-yes-no',
+                            fieldLabel: _('orders_item_closed_5'),
+                            name: 'closed_5',
+                            anchor: '99%'
+                        }]
                     }]
                 }, {
                     xtype: 'orders-combo-delivery-term-receiver',
@@ -776,20 +786,6 @@ CreateItemAdmin = {
                     fieldLabel: _('orders_item_currency_4'),
                     name: 'currency_4',
                     anchor: '99%',
-                }, {
-                    id: config.id + '-kursgtd',
-                    xtype: 'textfield',
-                    fieldLabel: _('orders_item_kursgtd'),
-                    name: 'kursgtd',
-                    anchor: '99%',
-                    listeners: {
-                        change: {
-                            fn: function (r) {
-                                orders.utils.itogoVal(config.id);
-                            },
-                            scope: this
-                        }
-                    }
                 }, {
                     id: config.id + '-platej',
                     xtype: 'textfield',
@@ -1176,14 +1172,30 @@ CreateItemAdmin = {
             defaults: {msgTarget: 'under', border: false},
             style: 'padding:15px 5px 30px 40px;text-align:center;',
             items: [{
-                columnWidth: .7,
+                columnWidth: .55,
                 layout: 'form',
                 labelWidth: 75,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    fieldLabel: _('orders_item_closed_5'),
-                    name: 'closed_5',
-                    anchor: '20%'
+                    title: ' ',
+                }]
+            }, {
+                columnWidth: .15,
+                layout: 'form',
+                labelWidth: 75,
+                items: [{
+                    id: config.id + '-kursgtd',
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_kursgtd'),
+                    name: 'kursgtd',
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.itogoVal(config.id);
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .15,
@@ -1191,9 +1203,9 @@ CreateItemAdmin = {
                 labelWidth: 75,
                 items: [{
                     xtype: 'textfield',
-                    fieldLabel: 'Курс Евро',
+                    fieldLabel: _('orders_item_euro_rate'),
                     anchor: '99%',
-                    name: '',
+                    name: 'euro_rate',
                 }]
             }, {
                 columnWidth: .15,
@@ -1201,9 +1213,9 @@ CreateItemAdmin = {
                 labelWidth: 70,
                 items: [{
                     xtype: 'textfield',
-                    fieldLabel: 'Крос курс',
+                    fieldLabel: _('orders_item_cros_rate'),
                     anchor: '99%',
-                    name: '',
+                    name: 'cros_rate',
                 }]
             }]
         }, {
@@ -1214,56 +1226,56 @@ CreateItemAdmin = {
                 columnWidth: .125,
                 layout: 'form',
                 items: [{
-                    title: 'Тип',
+                    title: _('orders_item_tab4_title1'),
                     region: 'center',
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 items: [{
-                    title: 'Агент',
+                    title: _('orders_item_tab4_title2'),
                     region: 'center',
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 items: [{
-                    title: 'Статус',
+                    title: _('orders_item_tab4_title3'),
                     region: 'center',
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 items: [{
-                    title: 'Валюта',
+                    title: _('orders_item_tab4_title4'),
                     region: 'center',
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 items: [{
-                    title: 'Сумма',
+                    title: _('orders_item_tab4_title5'),
                     region: 'center',
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 items: [{
-                    title: 'Итого, $',
+                    title: _('orders_item_tab4_title6'),
                     region: 'center',
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 items: [{
-                    title: 'Номер счета',
+                    title: _('orders_item_tab4_title7'),
                     region: 'center',
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 items: [{
-                    title: 'Примечание',
+                    title: _('orders_item_tab4_title8'),
                     region: 'center',
                 }]
             }]
@@ -1275,7 +1287,7 @@ CreateItemAdmin = {
                 columnWidth: .125,
                 layout: 'form',
                 items: [{
-                    title: 'Ставка, руб',
+                    title: _('orders_item_tab4_label1'),
                     region: 'center',
                     style: 'padding-top: 7px',
                 }]
@@ -1351,7 +1363,7 @@ CreateItemAdmin = {
                 columnWidth: .125,
                 layout: 'form',
                 items: [{
-                    title: 'ТП, USD',
+                    title: _('orders_item_tab4_label2'),
                     region: 'center',
                     style: 'padding-top: 7px',
                 }]
@@ -1417,6 +1429,437 @@ CreateItemAdmin = {
                     xtype: 'textfield',
                     name: '',
                     anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_label3'),
+                    region: 'center',
+                    style: 'padding-top: 7px',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_label4'),
+                    region: 'center',
+                    style: 'padding-top: 7px',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_label5'),
+                    region: 'center',
+                    style: 'padding-top: 7px',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_label6'),
+                    region: 'center',
+                    style: 'padding-top: 7px',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_label7'),
+                    region: 'center',
+                    style: 'padding-top: 7px',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:15px 5px 0 40px;text-align:center;',
+            items: [{
+                columnWidth: .62,
+                layout: 'form',
+                labelWidth: 75,
+                items: [{
+                    title: ' ',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 45,
+                items: [{
+                    xtype: 'textfield',
+                    fieldLabel: 'Итого',
+                    anchor: '99%',
+                    name: '',
+                }]
+            }, {
+                columnWidth: .255,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    title: ' ',
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:15px 5px 30px 40px;text-align:center;',
+            items: [{
+                columnWidth: .82,
+                layout: 'form',
+                labelWidth: 75,
+                items: [{
+                    title: ' ',
+                }]
+            }, {
+                columnWidth: .18,
+                layout: 'form',
+                labelWidth: 75,
+                items: [{
+                    xtype: 'textfield',
+                    fieldLabel: 'Прибыль',
+                    anchor: '99%',
+                    name: '',
                 }]
             }]
         }]

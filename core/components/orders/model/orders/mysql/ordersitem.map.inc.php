@@ -155,6 +155,8 @@ $xpdo_meta_map['ordersItem']= array (
     'stavki' => '',
     'perevodi' => '',
     'date_1c' => 0,
+    'euro_rate' => '',
+    'cros_rate' => '',
   ),
   'fieldMeta' => 
   array (
@@ -1295,6 +1297,22 @@ $xpdo_meta_map['ordersItem']= array (
       'phptype' => 'timestamp',
       'null' => false,
       'default' => 0,
+    ),
+    'euro_rate' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'cros_rate' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
     ),
   ),
   'indexes' => 

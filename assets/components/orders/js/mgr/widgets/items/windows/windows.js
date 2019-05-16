@@ -24,21 +24,24 @@ Ext.extend(orders.window.CreateItem, MODx.Window, {
     getFields: function (config) {
         return {
             xtype: 'modx-tabs',
-            activeTab: config.activeTab || 0,
             bodyStyle: {background: 'Gainsboro'},
             deferredRender: false,
             autoHeight: true,
+            items: this.getTabs(config)
+            /*активная вкладка
+            activeTab: config.activeTab || 0,
             stateful: true,
             stateId: 'orders-item-window-create',
             stateEvents: ['tabchange'],
             getState: function () {
                 return {activeTab: this.items.indexOf(this.getActiveTab())};
             },
-            items: this.getTabs(config)
+            */
         };
     },
 
     getTabs: function (config) {
+
         var tabs;
         if(orders.config['orders_member_group'] == 'OrdersAvtovyvoz1' || orders.config['orders_member_group'] == 'OrdersAvtovyvoz2') {
 
@@ -102,17 +105,19 @@ Ext.extend(orders.window.UpdateItem, MODx.Window, {
         var fields = {};
         return {
             xtype: 'modx-tabs',
-            activeTab: config.activeTab || 0,
             bodyStyle: {background: 'Gainsboro'},
             deferredRender: false,
             autoHeight: true,
+            items: this.getTabs(config),
+            /*активная вкладка
+            activeTab: config.activeTab || 0,
             stateful: true,
             stateId: 'orders-item-window-update',
             stateEvents: ['tabchange'],
             getState: function () {
                 return {activeTab: this.items.indexOf(this.getActiveTab())};
             },
-            items: this.getTabs(config),
+            */
         };
     },
 

@@ -538,6 +538,8 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
                 width: 102,
                 renderer: Ext.util.Format.dateRenderer('d.m.y'),
             },
+            euro_rate: {width: 125, editor: {xtype: 'textfield'}},
+            cros_rate: {width: 90},
 
         };
 

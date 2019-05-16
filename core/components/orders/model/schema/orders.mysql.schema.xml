@@ -148,6 +148,8 @@
         <field key="stavki" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
         <field key="perevodi" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
         <field key="date_1c" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
+        <field key="euro_rate" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="cros_rate" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
 
         <index alias="container_number" name="container_number" primary="false" unique="false" type="BTREE">
             <column key="container_number" length="" collation="A" null="false" />
