@@ -19,6 +19,13 @@ CreateItemLineManager = {
             hideMode: 'offsets',
             //bodyStyle: 'padding:5px 0;',
             defaults: {msgTarget: 'under', border: false},
+            items: this.getOrderFieldsTab4(config),
+        }, {
+            layout: 'form',
+            title: _('orders_item_tab_calculations'),
+            hideMode: 'offsets',
+            //bodyStyle: 'padding:5px 0;',
+            defaults: {msgTarget: 'under', border: false},
             items: this.getOrderFieldsTab2(config),
         }];
 
@@ -1024,4 +1031,1159 @@ CreateItemLineManager = {
             }]
         }];
     },
+
+    getOrderFieldsTab4: function (config) {
+        return [{
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:15px 5px 30px 40px;text-align:center;',
+            items: [{
+                columnWidth: .55,
+                layout: 'form',
+                labelWidth: 75,
+                items: [{
+                    title: ' ',
+                }]
+            }, {
+                columnWidth: .15,
+                layout: 'form',
+                labelWidth: 75,
+                items: [{
+                    id: config.id + '-kursgtd',
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_kursgtd'),
+                    name: 'kursgtd',
+                    anchor: '99%',
+                    disabled: true,
+                }]
+            }, {
+                columnWidth: .15,
+                layout: 'form',
+                labelWidth: 75,
+                items: [{
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_euro_rate'),
+                    anchor: '99%',
+                    name: 'euro_rate',
+                }]
+            }, {
+                columnWidth: .15,
+                layout: 'form',
+                labelWidth: 70,
+                items: [{
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_cros_rate'),
+                    anchor: '99%',
+                    name: 'cros_rate',
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0;text-align:center;color:FireBrick;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_title1'),
+                    region: 'center',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_title2'),
+                    region: 'center',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_title3'),
+                    region: 'center',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_title4'),
+                    region: 'center',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_title5'),
+                    region: 'center',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_title6'),
+                    region: 'center',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_title7'),
+                    region: 'center',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_title8'),
+                    region: 'center',
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_label1'),
+                    region: 'center',
+                    style: 'padding-top: 7px',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_label2'),
+                    region: 'center',
+                    style: 'padding-top: 7px',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_label3'),
+                    region: 'center',
+                    style: 'padding-top: 7px',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_label4'),
+                    region: 'center',
+                    style: 'padding-top: 7px',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_label5'),
+                    region: 'center',
+                    style: 'padding-top: 7px',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_label6'),
+                    region: 'center',
+                    style: 'padding-top: 7px',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-cost',
+                    name: 'prochee_1',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-cost',
+                    name: 'prochee_2',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-cost',
+                    name: 'prochee_3',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-cost',
+                    name: 'prochee_4',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-cost',
+                    name: 'prochee_5',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-cost',
+                    name: 'prochee_6',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-cost',
+                    name: 'prochee_7',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: '',
+                    anchor: '99%'
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:15px 5px 0 40px;text-align:center;',
+            items: [{
+                columnWidth: .62,
+                layout: 'form',
+                labelWidth: 75,
+                items: [{
+                    title: ' ',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 45,
+                items: [{
+                    xtype: 'textfield',
+                    fieldLabel: 'Итого',
+                    anchor: '99%',
+                    name: '',
+                }]
+            }, {
+                columnWidth: .255,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    title: ' ',
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
+            style: 'padding:15px 5px 30px 40px;text-align:center;',
+            items: [{
+                columnWidth: .82,
+                layout: 'form',
+                labelWidth: 75,
+                items: [{
+                    title: ' ',
+                }]
+            }, {
+                columnWidth: .18,
+                layout: 'form',
+                labelWidth: 75,
+                items: [{
+                    xtype: 'textfield',
+                    fieldLabel: 'Прибыль',
+                    anchor: '99%',
+                    name: '',
+                }]
+            }]
+        }]
+    }
 }

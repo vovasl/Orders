@@ -150,6 +150,13 @@
         <field key="date_1c" dbtype="int" precision="20" phptype="timestamp" null="false" default="" />
         <field key="euro_rate" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
         <field key="cros_rate" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prochee_1" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="prochee_2" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="prochee_3" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="prochee_4" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="prochee_5" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="prochee_6" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="prochee_7" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
 
         <index alias="container_number" name="container_number" primary="false" unique="false" type="BTREE">
             <column key="container_number" length="" collation="A" null="false" />
@@ -199,6 +206,27 @@
         <index alias="car_carrier" name="car_carrier" primary="false" unique="false" type="BTREE">
             <column key="car_carrier" length="" collation="A" null="false" />
         </index>
+        <index alias="prochee_1" name="prochee_1" primary="false" unique="false" type="BTREE">
+            <column key="prochee_1" length="" collation="A" null="false" />
+        </index>
+        <index alias="prochee_2" name="prochee_2" primary="false" unique="false" type="BTREE">
+            <column key="prochee_2" length="" collation="A" null="false" />
+        </index>
+        <index alias="prochee_3" name="prochee_3" primary="false" unique="false" type="BTREE">
+            <column key="prochee_3" length="" collation="A" null="false" />
+        </index>
+        <index alias="prochee_4" name="prochee_4" primary="false" unique="false" type="BTREE">
+            <column key="prochee_4" length="" collation="A" null="false" />
+        </index>
+        <index alias="prochee_5" name="prochee_5" primary="false" unique="false" type="BTREE">
+            <column key="prochee_5" length="" collation="A" null="false" />
+        </index>
+        <index alias="prochee_6" name="prochee_6" primary="false" unique="false" type="BTREE">
+            <column key="prochee_6" length="" collation="A" null="false" />
+        </index>
+        <index alias="prochee_7" name="prochee_7" primary="false" unique="false" type="BTREE">
+            <column key="prochee_7" length="" collation="A" null="false" />
+        </index>
 
         <aggregate alias="Client" class="ordersClient" local="client" foreign="id" cardinality="one" owner="foreign" />
         <aggregate alias="Goods" class="ordersGoods" local="goods" foreign="id" cardinality="one" owner="foreign" />
@@ -222,7 +250,13 @@
         <aggregate alias="CarCarrier" class="ordersCarCarrier" local="car_carrier" foreign="id" cardinality="one" owner="foreign" />
         <aggregate alias="Sale" class="ordersSaleNote" local="sale" foreign="id" cardinality="one" owner="foreign" />
         <aggregate alias="Accounts" class="ordersAccountsNote" local="accounts" foreign="id" cardinality="one" owner="foreign" />
-
+        <aggregate alias="Prochee1" class="ordersCost" local="prochee_1" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Prochee2" class="ordersCost" local="prochee_2" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Prochee3" class="ordersCost" local="prochee_3" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Prochee4" class="ordersCost" local="prochee_4" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Prochee5" class="ordersCost" local="prochee_5" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Prochee6" class="ordersCost" local="prochee_6" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Prochee7" class="ordersCost" local="prochee_7" foreign="id" cardinality="one" owner="foreign" />
     </object>
 
     <object class="ordersGoods" table="orders_goods" extends="xPDOSimpleObject">
@@ -516,6 +550,25 @@
 
         <aggregate alias="Client" class="ordersClient" local="client" foreign="id" cardinality="one" owner="foreign" />
         <aggregate alias="Goods" class="ordersGoods" local="goods" foreign="id" cardinality="one" owner="foreign" />
+
+    </object>
+
+
+
+    <object class="ordersCost" table="orders_cost" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+        <composite alias="CostProchee1" class="ordersItem" local="id" foreign="prochee_1" cardinality="many" owner="local" />
+        <composite alias="CostProchee2" class="ordersItem" local="id" foreign="prochee_2" cardinality="many" owner="local" />
+        <composite alias="CostProchee3" class="ordersItem" local="id" foreign="prochee_3" cardinality="many" owner="local" />
+        <composite alias="CostProchee4" class="ordersItem" local="id" foreign="prochee_4" cardinality="many" owner="local" />
+        <composite alias="CostProchee5" class="ordersItem" local="id" foreign="prochee_5" cardinality="many" owner="local" />
+        <composite alias="CostProchee6" class="ordersItem" local="id" foreign="prochee_6" cardinality="many" owner="local" />
+        <composite alias="CostProchee7" class="ordersItem" local="id" foreign="prochee_7" cardinality="many" owner="local" />
 
     </object>
 

@@ -278,6 +278,18 @@ Ext.extend(orders.panel.Home, MODx.Panel, {
             }]
         };
 
+        var costTab = {
+            title: _('orders_cost_title'),
+            layout: 'anchor',
+            items: [{
+                html: _('orders_cost_intro_msg'),
+                cls: 'panel-desc',
+            }, {
+                xtype: 'orders-grid-costs',
+                cls: 'main-wrapper',
+            }]
+        };
+
 
         var tabs = [];
         tabs.push(ordersTab);
@@ -303,6 +315,7 @@ Ext.extend(orders.panel.Home, MODx.Panel, {
             tabs.push(deliveryTermReceiverTab);
             tabs.push(saleNoteTab);
             tabs.push(accountsNoteTab);
+            tabs.push(costTab);
         }
         return tabs;
     }

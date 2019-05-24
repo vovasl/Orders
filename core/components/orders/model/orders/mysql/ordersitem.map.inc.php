@@ -157,6 +157,13 @@ $xpdo_meta_map['ordersItem']= array (
     'date_1c' => 0,
     'euro_rate' => '',
     'cros_rate' => '',
+    'prochee_1' => NULL,
+    'prochee_2' => NULL,
+    'prochee_3' => NULL,
+    'prochee_4' => NULL,
+    'prochee_5' => NULL,
+    'prochee_6' => NULL,
+    'prochee_7' => NULL,
   ),
   'fieldMeta' => 
   array (
@@ -1314,6 +1321,62 @@ $xpdo_meta_map['ordersItem']= array (
       'null' => false,
       'default' => '',
     ),
+    'prochee_1' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'prochee_2' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'prochee_3' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'prochee_4' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'prochee_5' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'prochee_6' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'prochee_7' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
   ),
   'indexes' => 
   array (
@@ -1573,6 +1636,118 @@ $xpdo_meta_map['ordersItem']= array (
         ),
       ),
     ),
+    'prochee_1' => 
+    array (
+      'alias' => 'prochee_1',
+      'primary' => false,
+      'unique' => false,
+      'type' => 'BTREE',
+      'columns' => 
+      array (
+        'prochee_1' => 
+        array (
+          'length' => '',
+          'collation' => 'A',
+          'null' => false,
+        ),
+      ),
+    ),
+    'prochee_2' => 
+    array (
+      'alias' => 'prochee_2',
+      'primary' => false,
+      'unique' => false,
+      'type' => 'BTREE',
+      'columns' => 
+      array (
+        'prochee_2' => 
+        array (
+          'length' => '',
+          'collation' => 'A',
+          'null' => false,
+        ),
+      ),
+    ),
+    'prochee_3' => 
+    array (
+      'alias' => 'prochee_3',
+      'primary' => false,
+      'unique' => false,
+      'type' => 'BTREE',
+      'columns' => 
+      array (
+        'prochee_3' => 
+        array (
+          'length' => '',
+          'collation' => 'A',
+          'null' => false,
+        ),
+      ),
+    ),
+    'prochee_4' => 
+    array (
+      'alias' => 'prochee_4',
+      'primary' => false,
+      'unique' => false,
+      'type' => 'BTREE',
+      'columns' => 
+      array (
+        'prochee_4' => 
+        array (
+          'length' => '',
+          'collation' => 'A',
+          'null' => false,
+        ),
+      ),
+    ),
+    'prochee_5' => 
+    array (
+      'alias' => 'prochee_5',
+      'primary' => false,
+      'unique' => false,
+      'type' => 'BTREE',
+      'columns' => 
+      array (
+        'prochee_5' => 
+        array (
+          'length' => '',
+          'collation' => 'A',
+          'null' => false,
+        ),
+      ),
+    ),
+    'prochee_6' => 
+    array (
+      'alias' => 'prochee_6',
+      'primary' => false,
+      'unique' => false,
+      'type' => 'BTREE',
+      'columns' => 
+      array (
+        'prochee_6' => 
+        array (
+          'length' => '',
+          'collation' => 'A',
+          'null' => false,
+        ),
+      ),
+    ),
+    'prochee_7' => 
+    array (
+      'alias' => 'prochee_7',
+      'primary' => false,
+      'unique' => false,
+      'type' => 'BTREE',
+      'columns' => 
+      array (
+        'prochee_7' => 
+        array (
+          'length' => '',
+          'collation' => 'A',
+          'null' => false,
+        ),
+      ),
+    ),
   ),
   'aggregates' => 
   array (
@@ -1748,6 +1923,62 @@ $xpdo_meta_map['ordersItem']= array (
     array (
       'class' => 'ordersAccountsNote',
       'local' => 'accounts',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'Prochee1' => 
+    array (
+      'class' => 'ordersCost',
+      'local' => 'prochee_1',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'Prochee2' => 
+    array (
+      'class' => 'ordersCost',
+      'local' => 'prochee_2',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'Prochee3' => 
+    array (
+      'class' => 'ordersCost',
+      'local' => 'prochee_3',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'Prochee4' => 
+    array (
+      'class' => 'ordersCost',
+      'local' => 'prochee_4',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'Prochee5' => 
+    array (
+      'class' => 'ordersCost',
+      'local' => 'prochee_5',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'Prochee6' => 
+    array (
+      'class' => 'ordersCost',
+      'local' => 'prochee_6',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'Prochee7' => 
+    array (
+      'class' => 'ordersCost',
+      'local' => 'prochee_7',
       'foreign' => 'id',
       'cardinality' => 'one',
       'owner' => 'foreign',

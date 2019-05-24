@@ -540,6 +540,13 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             },
             euro_rate: {width: 125, editor: {xtype: 'textfield'}},
             cros_rate: {width: 90},
+            prochee_1: {width: 110, editor: {xtype: 'orders-combo-cost', renderer: true}},
+            prochee_2: {width: 110, editor: {xtype: 'orders-combo-cost', renderer: true}},
+            prochee_3: {width: 110, editor: {xtype: 'orders-combo-cost', renderer: true}},
+            prochee_4: {width: 110, editor: {xtype: 'orders-combo-cost', renderer: true}},
+            prochee_5: {width: 110, editor: {xtype: 'orders-combo-cost', renderer: true}},
+            prochee_6: {width: 110, editor: {xtype: 'orders-combo-cost', renderer: true}},
+            prochee_7: {width: 110, editor: {xtype: 'orders-combo-cost', renderer: true}},
 
         };
 

@@ -1113,3 +1113,28 @@ orders.combo.ReportSort = function(config) {
 };
 Ext.extend(orders.combo.ReportSort,MODx.combo.ComboBox);
 Ext.reg('orders-combo-report-sort',orders.combo.ReportSort);
+
+orders.combo.Cost = function (config) {
+    config = config || {};
+    Ext.applyIf(config, {
+        name: 'cost',
+        hiddenName: config.name || 'cost',
+        displayField: 'name',
+        valueField: 'id',
+        fields: ['id', 'name'],
+        pageSize: 9999,
+        hideMode: 'offsets',
+        emptyText: _('orders_item_combo_empty_text'),
+        url: orders.config['connector_url'],
+        baseParams: {
+            action: 'mgr/cost/getlist',
+            sort: 'name',
+            dir: 'asc',
+            combo: true,
+            limit: 9999,
+        }
+    });
+    orders.combo.Cost.superclass.constructor.call(this, config);
+};
+Ext.extend(orders.combo.Cost, MODx.combo.ComboBox);
+Ext.reg('orders-combo-cost', orders.combo.Cost);
