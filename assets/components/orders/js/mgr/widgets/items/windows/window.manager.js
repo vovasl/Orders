@@ -22,7 +22,7 @@ CreateItemManager = {
             items: this.getOrderFieldsTab4(config),
         }, {
             layout: 'form',
-            title: _('orders_item_tab_calculations'),
+            title: _('orders_item_tab_temporarily'),
             hideMode: 'offsets',
             //bodyStyle: 'padding:5px 0;',
             defaults: {msgTarget: 'under', border: false},

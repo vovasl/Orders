@@ -22,7 +22,7 @@ CreateItemLineManager = {
             items: this.getOrderFieldsTab4(config),
         }, {
             layout: 'form',
-            title: _('orders_item_tab_calculations'),
+            title: _('orders_item_tab_temporarily'),
             hideMode: 'offsets',
             //bodyStyle: 'padding:5px 0;',
             defaults: {msgTarget: 'under', border: false},
@@ -1038,23 +1038,11 @@ CreateItemLineManager = {
             defaults: {msgTarget: 'under', border: false},
             style: 'padding:15px 5px 30px 40px;text-align:center;',
             items: [{
-                columnWidth: .55,
+                columnWidth: .70,
                 layout: 'form',
                 labelWidth: 75,
                 items: [{
                     title: ' ',
-                }]
-            }, {
-                columnWidth: .15,
-                layout: 'form',
-                labelWidth: 75,
-                items: [{
-                    id: config.id + '-kursgtd',
-                    xtype: 'textfield',
-                    fieldLabel: _('orders_item_kursgtd'),
-                    name: 'kursgtd',
-                    anchor: '99%',
-                    disabled: true,
                 }]
             }, {
                 columnWidth: .15,

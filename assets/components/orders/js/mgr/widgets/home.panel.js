@@ -290,6 +290,18 @@ Ext.extend(orders.panel.Home, MODx.Panel, {
             }]
         };
 
+        var agent2Tab = {
+            title: _('orders_agent_title'),
+            layout: 'anchor',
+            items: [{
+                html: _('orders_agent_intro_msg'),
+                cls: 'panel-desc',
+            }, {
+                xtype: 'orders-grid-agents2',
+                cls: 'main-wrapper',
+            }]
+        };
+
 
         var tabs = [];
         tabs.push(ordersTab);
@@ -316,6 +328,7 @@ Ext.extend(orders.panel.Home, MODx.Panel, {
             tabs.push(saleNoteTab);
             tabs.push(accountsNoteTab);
             tabs.push(costTab);
+            tabs.push(agent2Tab);
         }
         return tabs;
     }

@@ -573,4 +573,14 @@
     </object>
 
 
+    <object class="ordersAgent2" table="orders_agent2" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="200" phptype="string" null="false" default="" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+
+    </object>
+
+
 </model>

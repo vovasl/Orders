@@ -33,5 +33,6 @@ $xpdo_meta_map = array (
     27 => 'ordersClientManager2',
     28 => 'ordersClientGoods',
     29 => 'ordersCost',
+    30 => 'ordersAgent2',
   ),
 );

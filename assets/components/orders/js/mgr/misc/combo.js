@@ -1138,3 +1138,28 @@ orders.combo.Cost = function (config) {
 };
 Ext.extend(orders.combo.Cost, MODx.combo.ComboBox);
 Ext.reg('orders-combo-cost', orders.combo.Cost);
+
+orders.combo.Agent2 = function (config) {
+    config = config || {};
+    Ext.applyIf(config, {
+        name: 'agent2',
+        hiddenName: config.name || 'agent2',
+        displayField: 'name',
+        valueField: 'id',
+        fields: ['id', 'name'],
+        pageSize: 9999,
+        hideMode: 'offsets',
+        emptyText: _('orders_item_combo_empty_text'),
+        url: orders.config['connector_url'],
+        baseParams: {
+            action: 'mgr/agent2/getlist',
+            sort: 'name',
+            dir: 'asc',
+            combo: true,
+            limit: 9999,
+        }
+    });
+    orders.combo.Agent2.superclass.constructor.call(this, config);
+};
+Ext.extend(orders.combo.Agent2, MODx.combo.ComboBox);
+Ext.reg('orders-combo-agent2', orders.combo.Agent2);

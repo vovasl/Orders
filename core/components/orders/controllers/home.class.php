@@ -120,6 +120,8 @@ class ordersHomeManagerController extends modExtraManagerController
         $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/sections/home.js');
         $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/widgets/costs/costs.grid.js');
         $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/widgets/costs/costs.windows.js');
+        $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/widgets/agents2/agents2.grid.js');
+        $this->addJavascript($this->orders->config['jsUrl'] . 'mgr/widgets/agents2/agents2.windows.js');
 
         $config = $this->orders->config;
 
