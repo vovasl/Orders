@@ -164,6 +164,19 @@ $xpdo_meta_map['ordersItem']= array (
     'prochee_5' => NULL,
     'prochee_6' => NULL,
     'prochee_7' => NULL,
+    'r_agent_1' => NULL,
+    'r_agent_2' => NULL,
+    'r_agent_3' => NULL,
+    'r_agent_4' => NULL,
+    'r_agent_5' => NULL,
+    'r_agent_6' => NULL,
+    'r_agent_7' => NULL,
+    'r_agent_8' => NULL,
+    'r_agent_9' => NULL,
+    'r_agent_10' => NULL,
+    'r_agent_11' => NULL,
+    'r_agent_12' => NULL,
+    'r_agent_13' => NULL,
   ),
   'fieldMeta' => 
   array (
@@ -1377,6 +1390,110 @@ $xpdo_meta_map['ordersItem']= array (
       'null' => true,
       'attributes' => 'unsigned',
     ),
+    'r_agent_1' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'r_agent_2' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'r_agent_3' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'r_agent_4' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'r_agent_5' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'r_agent_6' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'r_agent_7' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'r_agent_8' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'r_agent_9' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'r_agent_10' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'r_agent_11' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'r_agent_12' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'r_agent_13' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
   ),
   'indexes' => 
   array (
@@ -1979,6 +2096,110 @@ $xpdo_meta_map['ordersItem']= array (
     array (
       'class' => 'ordersCost',
       'local' => 'prochee_7',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'RAgent1' => 
+    array (
+      'class' => 'ordersAgent2',
+      'local' => 'r_agent_1',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'RAgent2' => 
+    array (
+      'class' => 'ordersAgent2',
+      'local' => 'r_agent_2',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'RAgent3' => 
+    array (
+      'class' => 'ordersAgent2',
+      'local' => 'r_agent_3',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'RAgent4' => 
+    array (
+      'class' => 'ordersAgent2',
+      'local' => 'r_agent_4',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'RAgent5' => 
+    array (
+      'class' => 'ordersAgent2',
+      'local' => 'r_agent_5',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'RAgent6' => 
+    array (
+      'class' => 'ordersAgent2',
+      'local' => 'r_agent_6',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'RAgent7' => 
+    array (
+      'class' => 'ordersAgent2',
+      'local' => 'r_agent_7',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'RAgent8' => 
+    array (
+      'class' => 'ordersAgent2',
+      'local' => 'r_agent_8',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'RAgent9' => 
+    array (
+      'class' => 'ordersAgent2',
+      'local' => 'r_agent_9',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'RAgent10' => 
+    array (
+      'class' => 'ordersAgent2',
+      'local' => 'r_agent_10',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'RAgent11' => 
+    array (
+      'class' => 'ordersAgent2',
+      'local' => 'r_agent_11',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'RAgent12' => 
+    array (
+      'class' => 'ordersAgent2',
+      'local' => 'r_agent_12',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'RAgent13' => 
+    array (
+      'class' => 'ordersAgent2',
+      'local' => 'r_agent_13',
       'foreign' => 'id',
       'cardinality' => 'one',
       'owner' => 'foreign',

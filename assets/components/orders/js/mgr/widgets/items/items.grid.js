@@ -547,6 +547,19 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             prochee_5: {width: 110, editor: {xtype: 'orders-combo-cost', renderer: true}},
             prochee_6: {width: 110, editor: {xtype: 'orders-combo-cost', renderer: true}},
             prochee_7: {width: 110, editor: {xtype: 'orders-combo-cost', renderer: true}},
+            r_agent_1: {width: 100, editor: {xtype: 'orders-combo-agent2', renderer: true}},
+            r_agent_2: {width: 100, editor: {xtype: 'orders-combo-agent2', renderer: true}},
+            r_agent_3: {width: 100, editor: {xtype: 'orders-combo-agent2', renderer: true}},
+            r_agent_4: {width: 100, editor: {xtype: 'orders-combo-agent2', renderer: true}},
+            r_agent_5: {width: 100, editor: {xtype: 'orders-combo-agent2', renderer: true}},
+            r_agent_6: {width: 100, editor: {xtype: 'orders-combo-agent2', renderer: true}},
+            r_agent_7: {width: 100, editor: {xtype: 'orders-combo-agent2', renderer: true}},
+            r_agent_8: {width: 100, editor: {xtype: 'orders-combo-agent2', renderer: true}},
+            r_agent_9: {width: 100, editor: {xtype: 'orders-combo-agent2', renderer: true}},
+            r_agent_10: {width: 100, editor: {xtype: 'orders-combo-agent2', renderer: true}},
+            r_agent_11: {width: 100, editor: {xtype: 'orders-combo-agent2', renderer: true}},
+            r_agent_12: {width: 100, editor: {xtype: 'orders-combo-agent2', renderer: true}},
+            r_agent_13: {width: 100, editor: {xtype: 'orders-combo-agent2', renderer: true}},
 
         };
 

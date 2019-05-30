@@ -292,6 +292,14 @@ orders.utils.itogoVal = function (c_id) {
     Ext.getCmp(c_id + '-itogo').setValue(itogo.toFixed(2));
 };
 
+
+orders.utils.crosRateVal = function (c_id) {
+    var kursgtd = Ext.getCmp(c_id + '-kursgtd').getValue();
+    var euroRate = Ext.getCmp(c_id + '-euro_rate').getValue();
+
+    var crosRate = euroRate/kursgtd;
+    Ext.getCmp(c_id + '-cros_rate').setValue(crosRate.toFixed(2));
+};
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////upload files start
 

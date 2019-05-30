@@ -157,6 +157,21 @@
         <field key="prochee_5" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
         <field key="prochee_6" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
         <field key="prochee_7" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="prochee_7" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="r_agent_1" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="r_agent_2" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="r_agent_3" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="r_agent_4" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="r_agent_5" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="r_agent_6" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="r_agent_7" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="r_agent_8" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="r_agent_9" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="r_agent_10" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="r_agent_11" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="r_agent_12" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="r_agent_13" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+
 
         <index alias="container_number" name="container_number" primary="false" unique="false" type="BTREE">
             <column key="container_number" length="" collation="A" null="false" />
@@ -257,6 +272,19 @@
         <aggregate alias="Prochee5" class="ordersCost" local="prochee_5" foreign="id" cardinality="one" owner="foreign" />
         <aggregate alias="Prochee6" class="ordersCost" local="prochee_6" foreign="id" cardinality="one" owner="foreign" />
         <aggregate alias="Prochee7" class="ordersCost" local="prochee_7" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="RAgent1" class="ordersAgent2" local="r_agent_1" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="RAgent2" class="ordersAgent2" local="r_agent_2" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="RAgent3" class="ordersAgent2" local="r_agent_3" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="RAgent4" class="ordersAgent2" local="r_agent_4" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="RAgent5" class="ordersAgent2" local="r_agent_5" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="RAgent6" class="ordersAgent2" local="r_agent_6" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="RAgent7" class="ordersAgent2" local="r_agent_7" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="RAgent8" class="ordersAgent2" local="r_agent_8" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="RAgent9" class="ordersAgent2" local="r_agent_9" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="RAgent10" class="ordersAgent2" local="r_agent_10" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="RAgent11" class="ordersAgent2" local="r_agent_11" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="RAgent12" class="ordersAgent2" local="r_agent_12" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="RAgent13" class="ordersAgent2" local="r_agent_13" foreign="id" cardinality="one" owner="foreign" />
     </object>
 
     <object class="ordersGoods" table="orders_goods" extends="xPDOSimpleObject">
@@ -579,6 +607,20 @@
         <index alias="name" name="name" primary="false" unique="false" type="BTREE">
             <column key="name" length="" collation="A" null="false" />
         </index>
+
+        <composite alias="Agent1" class="ordersItem" local="id" foreign="r_agent_1" cardinality="many" owner="local" />
+        <composite alias="Agent2" class="ordersItem" local="id" foreign="r_agent_2" cardinality="many" owner="local" />
+        <composite alias="Agent3" class="ordersItem" local="id" foreign="r_agent_3" cardinality="many" owner="local" />
+        <composite alias="Agent4" class="ordersItem" local="id" foreign="r_agent_4" cardinality="many" owner="local" />
+        <composite alias="Agent5" class="ordersItem" local="id" foreign="r_agent_5" cardinality="many" owner="local" />
+        <composite alias="Agent6" class="ordersItem" local="id" foreign="r_agent_6" cardinality="many" owner="local" />
+        <composite alias="Agent7" class="ordersItem" local="id" foreign="r_agent_7" cardinality="many" owner="local" />
+        <composite alias="Agent8" class="ordersItem" local="id" foreign="r_agent_8" cardinality="many" owner="local" />
+        <composite alias="Agent9" class="ordersItem" local="id" foreign="r_agent_9" cardinality="many" owner="local" />
+        <composite alias="Agent10" class="ordersItem" local="id" foreign="r_agent_10" cardinality="many" owner="local" />
+        <composite alias="Agent11" class="ordersItem" local="id" foreign="r_agent_11" cardinality="many" owner="local" />
+        <composite alias="Agent12" class="ordersItem" local="id" foreign="r_agent_12" cardinality="many" owner="local" />
+        <composite alias="Agent13" class="ordersItem" local="id" foreign="r_agent_13" cardinality="many" owner="local" />
 
     </object>
 

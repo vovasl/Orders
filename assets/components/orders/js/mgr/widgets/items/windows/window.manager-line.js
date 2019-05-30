@@ -1049,6 +1049,7 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 75,
                 items: [{
+                    id: config.id + '-euro_rate',
                     xtype: 'textfield',
                     fieldLabel: _('orders_item_euro_rate'),
                     anchor: '99%',
@@ -1059,10 +1060,12 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 70,
                 items: [{
+                    id: config.id + '-cros_rate',
                     xtype: 'textfield',
                     fieldLabel: _('orders_item_cros_rate'),
                     anchor: '99%',
                     name: 'cros_rate',
+                    readOnly: true,
                 }]
             }]
         }, {
@@ -1143,8 +1146,8 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-agent2',
+                    name: 'r_agent_1',
                     anchor: '99%'
                 }]
             }, {
@@ -1219,8 +1222,8 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-agent2',
+                    name: 'r_agent_2',
                     anchor: '99%'
                 }]
             }, {
@@ -1295,8 +1298,8 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-agent2',
+                    name: 'r_agent_3',
                     anchor: '99%'
                 }]
             }, {
@@ -1371,8 +1374,8 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-agent2',
+                    name: 'r_agent_4',
                     anchor: '99%'
                 }]
             }, {
@@ -1447,8 +1450,8 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-agent2',
+                    name: 'r_agent_5',
                     anchor: '99%'
                 }]
             }, {
@@ -1523,8 +1526,8 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-agent2',
+                    name: 'r_agent_6',
                     anchor: '99%'
                 }]
             }, {
@@ -1600,8 +1603,8 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-agent2',
+                    name: 'r_agent_7',
                     anchor: '99%'
                 }]
             }, {
@@ -1677,8 +1680,8 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-agent2',
+                    name: 'r_agent_8',
                     anchor: '99%'
                 }]
             }, {
@@ -1754,8 +1757,8 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-agent2',
+                    name: 'r_agent_9',
                     anchor: '99%'
                 }]
             }, {
@@ -1831,8 +1834,8 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-agent2',
+                    name: 'r_agent_10',
                     anchor: '99%'
                 }]
             }, {
@@ -1908,8 +1911,8 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-agent2',
+                    name: 'r_agent_11',
                     anchor: '99%'
                 }]
             }, {
@@ -1985,8 +1988,8 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-agent2',
+                    name: 'r_agent_12',
                     anchor: '99%'
                 }]
             }, {
@@ -2062,8 +2065,8 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-agent2',
+                    name: 'r_agent_13',
                     anchor: '99%'
                 }]
             }, {
