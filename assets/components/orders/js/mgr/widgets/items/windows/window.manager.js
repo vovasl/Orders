@@ -387,12 +387,7 @@ CreateItemManager = {
                             columnWidth: .5,
                             layout: 'form',
                             labelWidth: 70,
-                            items: [{
-                                xtype: 'orders-combo-yes-no',
-                                fieldLabel: _('orders_item_closed_2'),
-                                name: 'closed_2',
-                                anchor: '99%',
-                            }]
+                            items: []
                         }]
                     }, {
                         layout: 'column',
@@ -467,12 +462,7 @@ CreateItemManager = {
                                 columnWidth: .5,
                                 layout: 'form',
                                 labelWidth: 70,
-                                items: [{
-                                    xtype: 'orders-combo-yes-no',
-                                    fieldLabel: _('orders_item_closed_4'),
-                                    name: 'closed_4',
-                                    anchor: '99%',
-                                }]
+                                items: []
                             }]
                         }]
                     }, {
@@ -799,30 +789,6 @@ CreateItemManager = {
                     anchor: '99%',
                     disabled: true,
                 }, {
-                    xtype: 'orders-combo-currency',
-                    fieldLabel: _('orders_item_currency'),
-                    name: 'currency',
-                    anchor: '99%',
-                    disabled: true,
-                }, {
-                    xtype: 'orders-combo-currency',
-                    fieldLabel: _('orders_item_currency_2'),
-                    name: 'currency_2',
-                    anchor: '99%',
-                    disabled: true,
-                }, {
-                    xtype: 'orders-combo-currency',
-                    fieldLabel: _('orders_item_currency_3'),
-                    name: 'currency_3',
-                    anchor: '99%',
-                    disabled: true,
-                }, {
-                    xtype: 'orders-combo-currency',
-                    fieldLabel: _('orders_item_currency_4'),
-                    name: 'currency_4',
-                    anchor: '99%',
-                    disabled: true,
-                }, {
                     id: config.id + '-platej',
                     xtype: 'textfield',
                     fieldLabel: _('orders_item_platej'),
@@ -845,12 +811,6 @@ CreateItemManager = {
                     xtype: 'textfield',
                     fieldLabel: _('orders_item_exchange_rate'),
                     name: 'exchange_rate',
-                    anchor: '99%',
-                    disabled: true,
-                }, {
-                    xtype: 'orders-combo-yes-no',
-                    fieldLabel: _('orders_item_closed'),
-                    name: 'closed',
                     anchor: '99%',
                     disabled: true,
                 }, {
@@ -1353,16 +1313,28 @@ CreateItemManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'orders-combo-yes-no',
-                    name: '',
-                    anchor: '99%'
+                    //fieldLabel: _('orders_item_closed_2'),
+                    name: 'closed_2',
+                    anchor: '99%',
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-currency',
+                    //fieldLabel: _('orders_item_currency_4'),
+                    name: 'currency_4',
+                    anchor: '99%',
+                    disabled: true,
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: 'stavrubsum',
                     anchor: '99%'
                 }]
             }, {
@@ -1388,18 +1360,10 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
-                }]
-            }, {
-                columnWidth: .125,
-                layout: 'form',
-                labelWidth: 1,
-                items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
+                    xtype: 'textarea',
+                    name: 'stavrubpr',
+                    anchor: '99%',
+                    height: 50,
                 }]
             }]
         }, {
@@ -1429,7 +1393,17 @@ CreateItemManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'orders-combo-yes-no',
-                    name: '',
+                    //fieldLabel: _('orders_item_closed_4'),
+                    name: 'closed_4',
+                    anchor: '99%',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-currency',
+                    name: 'tpusdval',
                     anchor: '99%'
                 }]
             }, {
@@ -1437,8 +1411,8 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'textfield',
+                    name: 'tpusdsum',
                     anchor: '99%'
                 }]
             }, {
@@ -1464,18 +1438,10 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
-                }]
-            }, {
-                columnWidth: .125,
-                layout: 'form',
-                labelWidth: 1,
-                items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
+                    xtype: 'textarea',
+                    name: 'tpusdpr',
+                    anchor: '99%',
+                    height: 50,
                 }]
             }]
         }, {
@@ -1505,7 +1471,7 @@ CreateItemManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'orders-combo-yes-no',
-                    name: '',
+                    name: 'pstat',
                     anchor: '99%'
                 }]
             }, {
@@ -1513,8 +1479,17 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-currency',
+                    name: 'pstatval',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: 'pstatsum',
                     anchor: '99%'
                 }]
             }, {
@@ -1540,18 +1515,10 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
-                }]
-            }, {
-                columnWidth: .125,
-                layout: 'form',
-                labelWidth: 1,
-                items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
+                    xtype: 'textarea',
+                    name: 'pstatpr',
+                    anchor: '99%',
+                    height: 50,
                 }]
             }]
         }, {
@@ -1581,7 +1548,7 @@ CreateItemManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'orders-combo-yes-no',
-                    name: '',
+                    name: 'exwstat',
                     anchor: '99%'
                 }]
             }, {
@@ -1589,8 +1556,19 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-currency',
+                    //fieldLabel: _('orders_item_currency_3'),
+                    name: 'currency_3',
+                    anchor: '99%',
+                    disabled: true,
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: 'exwstatsum',
                     anchor: '99%'
                 }]
             }, {
@@ -1616,18 +1594,10 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
-                }]
-            }, {
-                columnWidth: .125,
-                layout: 'form',
-                labelWidth: 1,
-                items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
+                    xtype: 'textarea',
+                    name: 'exwstatpr',
+                    anchor: '99%',
+                    height: 50,
                 }]
             }]
         }, {
@@ -1657,7 +1627,7 @@ CreateItemManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'orders-combo-yes-no',
-                    name: '',
+                    name: 'frstat',
                     anchor: '99%'
                 }]
             }, {
@@ -1665,8 +1635,19 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-currency',
+                    //fieldLabel: _('orders_item_currency'),
+                    name: 'currency',
+                    anchor: '99%',
+                    disabled: true,
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: 'frusdsum',
                     anchor: '99%'
                 }]
             }, {
@@ -1692,18 +1673,10 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
-                }]
-            }, {
-                columnWidth: .125,
-                layout: 'form',
-                labelWidth: 1,
-                items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
+                    xtype: 'textarea',
+                    name: 'frusdpr',
+                    anchor: '99%',
+                    height: 50,
                 }]
             }]
         }, {
@@ -1733,16 +1706,29 @@ CreateItemManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'orders-combo-yes-no',
-                    name: '',
-                    anchor: '99%'
+                    //fieldLabel: _('orders_item_closed'),
+                    name: 'closed',
+                    anchor: '99%',
+                    disabled: true,
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-currency',
+                    //fieldLabel: _('orders_item_currency_2'),
+                    name: 'currency_2',
+                    anchor: '99%',
+                    disabled: true,
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: 'tautosum',
                     anchor: '99%'
                 }]
             }, {
@@ -1768,18 +1754,10 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
-                }]
-            }, {
-                columnWidth: .125,
-                layout: 'form',
-                labelWidth: 1,
-                items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
+                    xtype: 'textarea',
+                    name: 'stautopr',
+                    anchor: '99%',
+                    height: 50,
                 }]
             }]
         }, {
@@ -1810,7 +1788,7 @@ CreateItemManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'orders-combo-yes-no',
-                    name: '',
+                    name: 'prochstat_1',
                     anchor: '99%'
                 }]
             }, {
@@ -1818,8 +1796,17 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-currency',
+                    name: 'prval1',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: 'prsum1',
                     anchor: '99%'
                 }]
             }, {
@@ -1845,18 +1832,10 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
-                }]
-            }, {
-                columnWidth: .125,
-                layout: 'form',
-                labelWidth: 1,
-                items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
+                    xtype: 'textarea',
+                    name: 'pr1pr',
+                    anchor: '99%',
+                    height: 50,
                 }]
             }]
         }, {
@@ -1887,7 +1866,7 @@ CreateItemManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'orders-combo-yes-no',
-                    name: '',
+                    name: 'prochstat_2',
                     anchor: '99%'
                 }]
             }, {
@@ -1895,8 +1874,17 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-currency',
+                    name: 'prval2',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: 'prsum2',
                     anchor: '99%'
                 }]
             }, {
@@ -1922,18 +1910,10 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
-                }]
-            }, {
-                columnWidth: .125,
-                layout: 'form',
-                labelWidth: 1,
-                items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
+                    xtype: 'textarea',
+                    name: 'pr2pr',
+                    anchor: '99%',
+                    height: 50,
                 }]
             }]
         }, {
@@ -1964,7 +1944,7 @@ CreateItemManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'orders-combo-yes-no',
-                    name: '',
+                    name: 'prochstat_3',
                     anchor: '99%'
                 }]
             }, {
@@ -1972,8 +1952,17 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-currency',
+                    name: 'prval3',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: 'prsum3',
                     anchor: '99%'
                 }]
             }, {
@@ -1999,18 +1988,10 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
-                }]
-            }, {
-                columnWidth: .125,
-                layout: 'form',
-                labelWidth: 1,
-                items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
+                    xtype: 'textarea',
+                    name: 'pr3pr',
+                    anchor: '99%',
+                    height: 50,
                 }]
             }]
         }, {
@@ -2041,7 +2022,7 @@ CreateItemManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'orders-combo-yes-no',
-                    name: '',
+                    name: 'prochstat_4',
                     anchor: '99%'
                 }]
             }, {
@@ -2049,8 +2030,17 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-currency',
+                    name: 'prval4',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: 'prsum4',
                     anchor: '99%'
                 }]
             }, {
@@ -2076,18 +2066,10 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
-                }]
-            }, {
-                columnWidth: .125,
-                layout: 'form',
-                labelWidth: 1,
-                items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
+                    xtype: 'textarea',
+                    name: 'pr4pr',
+                    anchor: '99%',
+                    height: 50,
                 }]
             }]
         }, {
@@ -2118,7 +2100,7 @@ CreateItemManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'orders-combo-yes-no',
-                    name: '',
+                    name: 'prochstat_5',
                     anchor: '99%'
                 }]
             }, {
@@ -2126,8 +2108,17 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-currency',
+                    name: 'prval5',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: 'prsum5',
                     anchor: '99%'
                 }]
             }, {
@@ -2153,18 +2144,10 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
-                }]
-            }, {
-                columnWidth: .125,
-                layout: 'form',
-                labelWidth: 1,
-                items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
+                    xtype: 'textarea',
+                    name: 'pr5pr',
+                    anchor: '99%',
+                    height: 50,
                 }]
             }]
         }, {
@@ -2195,7 +2178,7 @@ CreateItemManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'orders-combo-yes-no',
-                    name: '',
+                    name: 'prochstat_6',
                     anchor: '99%'
                 }]
             }, {
@@ -2203,8 +2186,17 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-currency',
+                    name: 'prval6',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: 'prsum6',
                     anchor: '99%'
                 }]
             }, {
@@ -2230,18 +2222,10 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
-                }]
-            }, {
-                columnWidth: .125,
-                layout: 'form',
-                labelWidth: 1,
-                items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
+                    xtype: 'textarea',
+                    name: 'pr6pr',
+                    anchor: '99%',
+                    height: 50,
                 }]
             }]
         }, {
@@ -2272,7 +2256,7 @@ CreateItemManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'orders-combo-yes-no',
-                    name: '',
+                    name: 'prochstat_7',
                     anchor: '99%'
                 }]
             }, {
@@ -2280,8 +2264,17 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'orders-combo-yes-no',
-                    name: '',
+                    xtype: 'orders-combo-currency',
+                    name: 'prval7',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: 'prsum7',
                     anchor: '99%'
                 }]
             }, {
@@ -2307,18 +2300,10 @@ CreateItemManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
-                }]
-            }, {
-                columnWidth: .125,
-                layout: 'form',
-                labelWidth: 1,
-                items: [{
-                    xtype: 'textfield',
-                    name: '',
-                    anchor: '99%'
+                    xtype: 'textarea',
+                    name: 'pr7pr',
+                    anchor: '99%',
+                    height: 50,
                 }]
             }]
         }, {

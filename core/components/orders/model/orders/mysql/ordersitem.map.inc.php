@@ -177,6 +177,51 @@ $xpdo_meta_map['ordersItem']= array (
     'r_agent_11' => NULL,
     'r_agent_12' => NULL,
     'r_agent_13' => NULL,
+    'pstat' => '',
+    'exwstat' => '',
+    'frstat' => '',
+    'prochstat_1' => '',
+    'prochstat_2' => '',
+    'prochstat_3' => '',
+    'prochstat_4' => '',
+    'prochstat_5' => '',
+    'prochstat_6' => '',
+    'prochstat_7' => '',
+    'tpusdval' => '',
+    'pstatval' => '',
+    'prval1' => '',
+    'prval2' => '',
+    'prval3' => '',
+    'prval4' => '',
+    'prval5' => '',
+    'prval6' => '',
+    'prval7' => '',
+    'stavrubsum' => '',
+    'tpusdsum' => '',
+    'pstatsum' => '',
+    'exwstatsum' => '',
+    'frusdsum' => '',
+    'tautosum' => '',
+    'prsum1' => '',
+    'prsum2' => '',
+    'prsum3' => '',
+    'prsum4' => '',
+    'prsum5' => '',
+    'prsum6' => '',
+    'prsum7' => '',
+    'stavrubpr' => NULL,
+    'tpusdpr' => NULL,
+    'pstatpr' => NULL,
+    'exwstatpr' => NULL,
+    'frusdpr' => NULL,
+    'stautopr' => NULL,
+    'pr1pr' => NULL,
+    'pr2pr' => NULL,
+    'pr3pr' => NULL,
+    'pr4pr' => NULL,
+    'pr5pr' => NULL,
+    'pr6pr' => NULL,
+    'pr7pr' => NULL,
   ),
   'fieldMeta' => 
   array (
@@ -1493,6 +1538,327 @@ $xpdo_meta_map['ordersItem']= array (
       'phptype' => 'integer',
       'null' => true,
       'attributes' => 'unsigned',
+    ),
+    'pstat' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'exwstat' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'frstat' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prochstat_1' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prochstat_2' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prochstat_3' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prochstat_4' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prochstat_5' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prochstat_6' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prochstat_7' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'tpusdval' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'pstatval' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prval1' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prval2' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prval3' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prval4' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prval5' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prval6' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prval7' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'stavrubsum' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'tpusdsum' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'pstatsum' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'exwstatsum' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'frusdsum' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'tautosum' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prsum1' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prsum2' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prsum3' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prsum4' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prsum5' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prsum6' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'prsum7' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'stavrubpr' => 
+    array (
+      'dbtype' => 'mediumtext',
+      'phptype' => 'string',
+    ),
+    'tpusdpr' => 
+    array (
+      'dbtype' => 'mediumtext',
+      'phptype' => 'string',
+    ),
+    'pstatpr' => 
+    array (
+      'dbtype' => 'mediumtext',
+      'phptype' => 'string',
+    ),
+    'exwstatpr' => 
+    array (
+      'dbtype' => 'mediumtext',
+      'phptype' => 'string',
+    ),
+    'frusdpr' => 
+    array (
+      'dbtype' => 'mediumtext',
+      'phptype' => 'string',
+    ),
+    'stautopr' => 
+    array (
+      'dbtype' => 'mediumtext',
+      'phptype' => 'string',
+    ),
+    'pr1pr' => 
+    array (
+      'dbtype' => 'mediumtext',
+      'phptype' => 'string',
+    ),
+    'pr2pr' => 
+    array (
+      'dbtype' => 'mediumtext',
+      'phptype' => 'string',
+    ),
+    'pr3pr' => 
+    array (
+      'dbtype' => 'mediumtext',
+      'phptype' => 'string',
+    ),
+    'pr4pr' => 
+    array (
+      'dbtype' => 'mediumtext',
+      'phptype' => 'string',
+    ),
+    'pr5pr' => 
+    array (
+      'dbtype' => 'mediumtext',
+      'phptype' => 'string',
+    ),
+    'pr6pr' => 
+    array (
+      'dbtype' => 'mediumtext',
+      'phptype' => 'string',
+    ),
+    'pr7pr' => 
+    array (
+      'dbtype' => 'mediumtext',
+      'phptype' => 'string',
     ),
   ),
   'indexes' => 

@@ -171,6 +171,51 @@
         <field key="r_agent_11" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
         <field key="r_agent_12" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
         <field key="r_agent_13" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="pstat" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="exwstat" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="frstat" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prochstat_1" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prochstat_2" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prochstat_3" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prochstat_4" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prochstat_5" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prochstat_6" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prochstat_7" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="tpusdval" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="pstatval" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prval1" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prval2" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prval3" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prval4" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prval5" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prval6" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prval7" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="stavrubsum" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="tpusdsum" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="pstatsum" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="exwstatsum" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="frusdsum" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="tautosum" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prsum1" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prsum2" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prsum3" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prsum4" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prsum5" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prsum6" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="prsum7" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="stavrubpr" dbtype="mediumtext" phptype="string" />
+        <field key="tpusdpr" dbtype="mediumtext" phptype="string" />
+        <field key="pstatpr" dbtype="mediumtext" phptype="string" />
+        <field key="exwstatpr" dbtype="mediumtext" phptype="string" />
+        <field key="frusdpr" dbtype="mediumtext" phptype="string" />
+        <field key="stautopr" dbtype="mediumtext" phptype="string" />
+        <field key="pr1pr" dbtype="mediumtext" phptype="string" />
+        <field key="pr2pr" dbtype="mediumtext" phptype="string" />
+        <field key="pr3pr" dbtype="mediumtext" phptype="string" />
+        <field key="pr4pr" dbtype="mediumtext" phptype="string" />
+        <field key="pr5pr" dbtype="mediumtext" phptype="string" />
+        <field key="pr6pr" dbtype="mediumtext" phptype="string" />
+        <field key="pr7pr" dbtype="mediumtext" phptype="string" />
 
 
         <index alias="container_number" name="container_number" primary="false" unique="false" type="BTREE">
