@@ -1312,7 +1312,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'stavrub',
                     anchor: '99%'
                 }]
             }, {
@@ -1390,7 +1390,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'tpusd',
                     anchor: '99%'
                 }]
             }, {
@@ -1467,7 +1467,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pstatusd',
                     anchor: '99%'
                 }]
             }, {
@@ -1545,7 +1545,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'exwstatusd',
                     anchor: '99%'
                 }]
             }, {
@@ -1623,7 +1623,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'frusd',
                     anchor: '99%'
                 }]
             }, {
@@ -1702,7 +1702,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'stauto',
                     anchor: '99%'
                 }]
             }, {
@@ -1780,7 +1780,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr1',
                     anchor: '99%'
                 }]
             }, {
@@ -1858,7 +1858,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr2',
                     anchor: '99%'
                 }]
             }, {
@@ -1936,7 +1936,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr3',
                     anchor: '99%'
                 }]
             }, {
@@ -2014,7 +2014,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr4',
                     anchor: '99%'
                 }]
             }, {
@@ -2092,7 +2092,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr5',
                     anchor: '99%'
                 }]
             }, {
@@ -2170,7 +2170,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr6',
                     anchor: '99%'
                 }]
             }, {
@@ -2248,7 +2248,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr7',
                     anchor: '99%'
                 }]
             }, {
