@@ -332,10 +332,7 @@ CreateItemLineManager = {
                             layout: 'form',
                             labelWidth: 55,
                             items: [{
-                                xtype: 'textfield',
-                                fieldLabel: _('orders_item_account_number_4'),
-                                name: 'account_number_4',
-                                anchor: '100%',
+                                xtype: 'displayfield',
                             }]
                         }]
                     }, /*{
@@ -391,10 +388,7 @@ CreateItemLineManager = {
                             layout: 'form',
                             labelWidth: 55,
                             items: [{
-                                xtype: 'textfield',
-                                fieldLabel: _('orders_item_account_number'),
-                                name: 'account_number',
-                                anchor: '100%',
+                                xtype: 'displayfield',
                             }]
                         }]
                     }, /*{
@@ -514,10 +508,7 @@ CreateItemLineManager = {
                                 layout: 'form',
                                 labelWidth: 55,
                                 items: [{
-                                    xtype: 'textfield',
-                                    fieldLabel: _('orders_item_account_number_2'),
-                                    name: 'account_number_2',
-                                    anchor: '100%',
+                                    xtype: 'displayfield',
                                 }]
                             }]
                         }, {
@@ -1019,11 +1010,23 @@ CreateItemLineManager = {
             defaults: {msgTarget: 'under', border: false},
             style: 'padding:15px 5px 30px 40px;text-align:center;',
             items: [{
-                columnWidth: .70,
+                columnWidth: .55,
                 layout: 'form',
                 labelWidth: 75,
                 items: [{
                     title: ' ',
+                }]
+            }, {
+                columnWidth: .15,
+                layout: 'form',
+                labelWidth: 75,
+                items: [{
+                    id: config.id + '-kursgtd',
+                    xtype: 'textfield',
+                    fieldLabel: _('orders_item_kursgtd'),
+                    name: 'kursgtd',
+                    anchor: '99%',
+                    disabled: true,
                 }]
             }, {
                 columnWidth: .15,
@@ -1035,6 +1038,14 @@ CreateItemLineManager = {
                     fieldLabel: _('orders_item_euro_rate'),
                     anchor: '99%',
                     name: 'euro_rate',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.valDIVIDEkursgtd(config.id, 'euro_rate', 'cros_rate');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .15,
@@ -1156,18 +1167,29 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-stavrubsum',
                     xtype: 'textfield',
                     name: 'stavrubsum',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.valDIVIDEkursgtd(config.id, 'stavrubsum', 'stavrub');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-stavrub',
                     xtype: 'textfield',
                     name: 'stavrub',
-                    anchor: '99%'
+                    anchor: '99%',
+                    readOnly: true,
                 }]
             }, {
                 columnWidth: .125,
@@ -1175,7 +1197,7 @@ CreateItemLineManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'stavrubnsh',
                     anchor: '99%'
                 }]
             }, {
@@ -1250,7 +1272,7 @@ CreateItemLineManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'tpusdnsh',
                     anchor: '99%'
                 }]
             }, {
@@ -1327,7 +1349,7 @@ CreateItemLineManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pstatnsh',
                     anchor: '99%'
                 }]
             }, {
@@ -1405,7 +1427,7 @@ CreateItemLineManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'account_number_4',
                     anchor: '99%'
                 }]
             }, {
@@ -1464,18 +1486,29 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-frusdsum',
                     xtype: 'textfield',
                     name: 'frusdsum',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-frusd',
                     xtype: 'textfield',
                     name: 'frusd',
-                    anchor: '99%'
+                    anchor: '99%',
+                    readOnly: true,
                 }]
             }, {
                 columnWidth: .125,
@@ -1483,7 +1516,7 @@ CreateItemLineManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'account_number',
                     anchor: '99%'
                 }]
             }, {
@@ -1540,18 +1573,29 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-tautosum',
                     xtype: 'textfield',
                     name: 'tautosum',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.valDIVIDEkursgtd(config.id, 'tautosum', 'stauto');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-stauto',
                     xtype: 'textfield',
                     name: 'stauto',
-                    anchor: '99%'
+                    anchor: '99%',
+                    readOnly: true,
                 }]
             }, {
                 columnWidth: .125,
@@ -1559,7 +1603,7 @@ CreateItemLineManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'account_number_2',
                     anchor: '99%'
                 }]
             }, {
@@ -1637,7 +1681,7 @@ CreateItemLineManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr1nsh',
                     anchor: '99%'
                 }]
             }, {
@@ -1715,7 +1759,7 @@ CreateItemLineManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr2nsh',
                     anchor: '99%'
                 }]
             }, {
@@ -1793,7 +1837,7 @@ CreateItemLineManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr3nsh',
                     anchor: '99%'
                 }]
             }, {
@@ -1871,7 +1915,7 @@ CreateItemLineManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr4nsh',
                     anchor: '99%'
                 }]
             }, {
@@ -1949,7 +1993,7 @@ CreateItemLineManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr5nsh',
                     anchor: '99%'
                 }]
             }, {
@@ -2027,7 +2071,7 @@ CreateItemLineManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr6nsh',
                     anchor: '99%'
                 }]
             }, {
@@ -2105,7 +2149,7 @@ CreateItemLineManager = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr7nsh',
                     anchor: '99%'
                 }]
             }, {

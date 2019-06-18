@@ -235,6 +235,16 @@ $xpdo_meta_map['ordersItem']= array (
     'pr5' => '',
     'pr6' => '',
     'pr7' => '',
+    'stavrubnsh' => '',
+    'tpusdnsh' => '',
+    'pstatnsh' => '',
+    'pr1nsh' => '',
+    'pr2nsh' => '',
+    'pr3nsh' => '',
+    'pr4nsh' => '',
+    'pr5nsh' => '',
+    'pr6nsh' => '',
+    'pr7nsh' => '',
   ),
   'fieldMeta' => 
   array (
@@ -1973,6 +1983,86 @@ $xpdo_meta_map['ordersItem']= array (
     array (
       'dbtype' => 'varchar',
       'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'stavrubnsh' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'tpusdnsh' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'pstatnsh' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'pr1nsh' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'pr2nsh' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'pr3nsh' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'pr4nsh' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'pr5nsh' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'pr6nsh' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'pr7nsh' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
       'phptype' => 'string',
       'null' => false,
       'default' => '',

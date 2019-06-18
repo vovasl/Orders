@@ -296,6 +296,16 @@ $_lang['orders_item_pr4'] = '';
 $_lang['orders_item_pr5'] = '';
 $_lang['orders_item_pr6'] = '';
 $_lang['orders_item_pr7'] = '';
+$_lang['orders_item_stavrubnsh'] = '';
+$_lang['orders_item_tpusdnsh'] = '';
+$_lang['orders_item_pstatnsh'] = '';
+$_lang['orders_item_pr1nsh'] = '';
+$_lang['orders_item_pr2nsh'] = '';
+$_lang['orders_item_pr3nsh'] = '';
+$_lang['orders_item_pr4nsh'] = '';
+$_lang['orders_item_pr5nsh'] = '';
+$_lang['orders_item_pr6nsh'] = '';
+$_lang['orders_item_pr7nsh'] = '';
 
 $_lang['orders_item_tab4_title1'] = 'Тип';
 $_lang['orders_item_tab4_title2'] = 'Агент';

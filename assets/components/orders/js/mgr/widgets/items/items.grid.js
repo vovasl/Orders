@@ -618,6 +618,16 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             pr5: {width: 74},
             pr6: {width: 74},
             pr7: {width: 74},
+            stavrubnsh: {width: 74, editor: {xtype: 'textfield'}},
+            tpusdnsh: {width: 74, editor: {xtype: 'textfield'}},
+            pstatnsh: {width: 74, editor: {xtype: 'textfield'}},
+            pr1nsh: {width: 74, editor: {xtype: 'textfield'}},
+            pr2nsh: {width: 74, editor: {xtype: 'textfield'}},
+            pr3nsh: {width: 74, editor: {xtype: 'textfield'}},
+            pr4nsh: {width: 74, editor: {xtype: 'textfield'}},
+            pr5nsh: {width: 74, editor: {xtype: 'textfield'}},
+            pr6nsh: {width: 74, editor: {xtype: 'textfield'}},
+            pr7nsh: {width: 74, editor: {xtype: 'textfield'}},
         };
 
 		var allWidth = orders.config['orders_item_fields_width'];

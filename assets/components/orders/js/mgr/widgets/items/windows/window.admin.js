@@ -714,23 +714,8 @@ CreateItemAdmin = {
                     anchor: '99%',
                 }, {
                     xtype: 'textfield',
-                    fieldLabel: _('orders_item_account_number'),
-                    name: 'account_number',
-                    anchor: '99%',
-                }, {
-                    xtype: 'textfield',
-                    fieldLabel: _('orders_item_account_number_2'),
-                    name: 'account_number_2',
-                    anchor: '99%',
-                }, {
-                    xtype: 'textfield',
                     fieldLabel: _('orders_item_account_number_3'),
                     name: 'account_number_3',
-                    anchor: '99%',
-                }, {
-                    xtype: 'textfield',
-                    fieldLabel: _('orders_item_account_number_4'),
-                    name: 'account_number_4',
                     anchor: '99%',
                 }]
             }, {
@@ -1157,7 +1142,9 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.itogoVal(config.id);
-                                orders.utils.crosRateVal(config.id);
+                                orders.utils.valDIVIDEkursgtd(config.id, 'euro_rate', 'cros_rate');
+                                orders.utils.valDIVIDEkursgtd(config.id, 'stavrubsum', 'stavrub');
+                                orders.utils.valDIVIDEkursgtd(config.id, 'tautosum', 'stauto');
                             },
                             scope: this
                         }
@@ -1176,7 +1163,7 @@ CreateItemAdmin = {
                     listeners: {
                         change: {
                             fn: function (r) {
-                                orders.utils.crosRateVal(config.id);
+                                orders.utils.valDIVIDEkursgtd(config.id, 'euro_rate', 'cros_rate');
                             },
                             scope: this
                         }
@@ -1302,18 +1289,29 @@ CreateItemAdmin = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-stavrubsum',
                     xtype: 'textfield',
                     name: 'stavrubsum',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.valDIVIDEkursgtd(config.id, 'stavrubsum', 'stavrub');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-stavrub',
                     xtype: 'textfield',
                     name: 'stavrub',
-                    anchor: '99%'
+                    anchor: '99%',
+                    readOnly: true,
                 }]
             }, {
                 columnWidth: .125,
@@ -1321,7 +1319,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'stavrubnsh',
                     anchor: '99%'
                 }]
             }, {
@@ -1399,7 +1397,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'tpusdnsh',
                     anchor: '99%'
                 }]
             }, {
@@ -1476,7 +1474,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pstatnsh',
                     anchor: '99%'
                 }]
             }, {
@@ -1554,7 +1552,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'account_number_4',
                     anchor: '99%'
                 }]
             }, {
@@ -1613,18 +1611,29 @@ CreateItemAdmin = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-frusdsum',
                     xtype: 'textfield',
                     name: 'frusdsum',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-frusd',
                     xtype: 'textfield',
                     name: 'frusd',
-                    anchor: '99%'
+                    anchor: '99%',
+                    readOnly: true,
                 }]
             }, {
                 columnWidth: .125,
@@ -1632,7 +1641,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'account_number',
                     anchor: '99%'
                 }]
             }, {
@@ -1692,18 +1701,29 @@ CreateItemAdmin = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-tautosum',
                     xtype: 'textfield',
                     name: 'tautosum',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.valDIVIDEkursgtd(config.id, 'tautosum', 'stauto');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-stauto',
                     xtype: 'textfield',
                     name: 'stauto',
-                    anchor: '99%'
+                    anchor: '99%',
+                    readOnly: true,
                 }]
             }, {
                 columnWidth: .125,
@@ -1711,7 +1731,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'account_number_2',
                     anchor: '99%'
                 }]
             }, {
@@ -1789,7 +1809,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr1nsh',
                     anchor: '99%'
                 }]
             }, {
@@ -1867,7 +1887,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr2nsh',
                     anchor: '99%'
                 }]
             }, {
@@ -1945,7 +1965,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr3nsh',
                     anchor: '99%'
                 }]
             }, {
@@ -2023,7 +2043,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr4nsh',
                     anchor: '99%'
                 }]
             }, {
@@ -2101,7 +2121,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr5nsh',
                     anchor: '99%'
                 }]
             }, {
@@ -2179,7 +2199,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr6nsh',
                     anchor: '99%'
                 }]
             }, {
@@ -2257,7 +2277,7 @@ CreateItemAdmin = {
                 labelWidth: 1,
                 items: [{
                     xtype: 'textfield',
-                    name: '',
+                    name: 'pr7nsh',
                     anchor: '99%'
                 }]
             }, {

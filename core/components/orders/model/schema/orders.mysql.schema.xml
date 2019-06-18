@@ -229,6 +229,16 @@
         <field key="pr5" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
         <field key="pr6" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
         <field key="pr7" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="stavrubnsh" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="tpusdnsh" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="pstatnsh" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="pr1nsh" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="pr2nsh" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="pr3nsh" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="pr4nsh" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="pr5nsh" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="pr6nsh" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="pr7nsh" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
 
         <index alias="container_number" name="container_number" primary="false" unique="false" type="BTREE">
             <column key="container_number" length="" collation="A" null="false" />
