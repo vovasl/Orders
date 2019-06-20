@@ -284,13 +284,8 @@ orders.utils.renderGoods = function (c_id) {
     }
 }
 
-orders.utils.itogoVal = function (c_id) {
-    var kursgtd = Ext.getCmp(c_id + '-kursgtd').getValue();
-    var platej = Ext.getCmp(c_id + '-platej').getValue();
-
-    var itogo = platej/kursgtd;
-    Ext.getCmp(c_id + '-itogo').setValue(itogo.toFixed(2));
-};
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////формулы
 
 orders.utils.valDIVIDEkursgtd = function (c_id, val_id, res_id) {
     var kursgtd = Ext.getCmp(c_id + '-kursgtd').getValue();
@@ -299,6 +294,33 @@ orders.utils.valDIVIDEkursgtd = function (c_id, val_id, res_id) {
     var res = val/kursgtd;
     Ext.getCmp(c_id + '-' + res_id).setValue(res.toFixed(2));
 };
+
+
+orders.utils.valXkursgtd = function (c_id, val_id, res_id) {
+    var kursgtd = Ext.getCmp(c_id + '-kursgtd').getValue();
+    var val = Ext.getCmp(c_id + '-' + val_id).getValue();
+
+    var res = val*kursgtd;
+    Ext.getCmp(c_id + '-' + res_id).setValue(res.toFixed(2));
+};
+
+orders.utils.pr_kursgtd = function (c_id, currency_id, val_id, res_id) {
+    var currency = Ext.getCmp(c_id + '-' + currency_id).getValue();
+    var val = Ext.getCmp(c_id + '-' + val_id).getValue();
+
+    if(currency == 'EUR'){
+        orders.utils.valXkursgtd(c_id, val_id, res_id);
+    }
+    else if(currency == 'RUR'){
+        orders.utils.valDIVIDEkursgtd(c_id, val_id, res_id);
+    }
+    else if(currency == 'USD'){
+        Ext.getCmp(c_id + '-' + res_id).setValue(val);
+    }
+
+};
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////upload files start
 

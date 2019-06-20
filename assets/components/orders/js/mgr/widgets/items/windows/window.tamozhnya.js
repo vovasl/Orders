@@ -219,7 +219,7 @@ UpdateItemTamozhnya = {getTabs: function (config) {
                         listeners: {
                             change: {
                                 fn: function (r) {
-                                    orders.utils.itogoVal(config.id);
+                                    orders.utils.valDIVIDEkursgtd(config.id, 'platej', 'itogo');
                                 },
                                 scope: this
                             }
@@ -233,7 +233,7 @@ UpdateItemTamozhnya = {getTabs: function (config) {
                         listeners: {
                             change: {
                                 fn: function (r) {
-                                    orders.utils.itogoVal(config.id);
+                                    orders.utils.valDIVIDEkursgtd(config.id, 'platej', 'itogo');
                                 },
                                 scope: this
                             }

@@ -1408,6 +1408,7 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-exwstatsum',
                     xtype: 'textfield',
                     name: 'exwstatsum',
                     anchor: '99%'
@@ -1417,9 +1418,11 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-exwstatusd',
                     xtype: 'textfield',
                     name: 'exwstatusd',
-                    anchor: '99%'
+                    anchor: '99%',
+                    readOnly: true,
                 }]
             }, {
                 columnWidth: .125,
@@ -1493,7 +1496,7 @@ CreateItemLineManager = {
                     listeners: {
                         change: {
                             fn: function (r) {
-
+                                orders.utils.valXkursgtd(config.id, 'frusdsum', 'frusd');
                             },
                             scope: this
                         }
@@ -1653,27 +1656,47 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-prval1',
                     xtype: 'orders-combo-currency',
                     name: 'prval1',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.pr_kursgtd(config.id, 'prval1', 'prsum1', 'pr1');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-prsum1',
                     xtype: 'textfield',
                     name: 'prsum1',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.pr_kursgtd(config.id, 'prval1', 'prsum1', 'pr1');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-pr1',
                     xtype: 'textfield',
                     name: 'pr1',
-                    anchor: '99%'
+                    anchor: '99%',
+                    readOnly: true,
                 }]
             }, {
                 columnWidth: .125,
@@ -1731,27 +1754,47 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-prval2',
                     xtype: 'orders-combo-currency',
                     name: 'prval2',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.pr_kursgtd(config.id, 'prval2', 'prsum2', 'pr2');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-prsum2',
                     xtype: 'textfield',
                     name: 'prsum2',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.pr_kursgtd(config.id, 'prval2', 'prsum2', 'pr2');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-pr2',
                     xtype: 'textfield',
                     name: 'pr2',
-                    anchor: '99%'
+                    anchor: '99%',
+                    readOnly: true,
                 }]
             }, {
                 columnWidth: .125,
@@ -1809,27 +1852,47 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-prval3',
                     xtype: 'orders-combo-currency',
                     name: 'prval3',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.pr_kursgtd(config.id, 'prval3', 'prsum3', 'pr3');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-prsum3',
                     xtype: 'textfield',
                     name: 'prsum3',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.pr_kursgtd(config.id, 'prval3', 'prsum3', 'pr3');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-pr3',
                     xtype: 'textfield',
                     name: 'pr3',
-                    anchor: '99%'
+                    anchor: '99%',
+                    readOnly: true,
                 }]
             }, {
                 columnWidth: .125,
@@ -1887,27 +1950,47 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-prval4',
                     xtype: 'orders-combo-currency',
                     name: 'prval4',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.pr_kursgtd(config.id, 'prval4', 'prsum4', 'pr4');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-prsum4',
                     xtype: 'textfield',
                     name: 'prsum4',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.pr_kursgtd(config.id, 'prval4', 'prsum4', 'pr4');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-pr4',
                     xtype: 'textfield',
                     name: 'pr4',
-                    anchor: '99%'
+                    anchor: '99%',
+                    readOnly: true,
                 }]
             }, {
                 columnWidth: .125,
@@ -1965,27 +2048,47 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-prval5',
                     xtype: 'orders-combo-currency',
                     name: 'prval5',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.pr_kursgtd(config.id, 'prval5', 'prsum5', 'pr5');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-prsum5',
                     xtype: 'textfield',
                     name: 'prsum5',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.pr_kursgtd(config.id, 'prval5', 'prsum5', 'pr5');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-pr5',
                     xtype: 'textfield',
                     name: 'pr5',
-                    anchor: '99%'
+                    anchor: '99%',
+                    readOnly: true,
                 }]
             }, {
                 columnWidth: .125,
@@ -2043,27 +2146,47 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-prval6',
                     xtype: 'orders-combo-currency',
                     name: 'prval6',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.pr_kursgtd(config.id, 'prval6', 'prsum6', 'pr6');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-prsum6',
                     xtype: 'textfield',
                     name: 'prsum6',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.pr_kursgtd(config.id, 'prval6', 'prsum6', 'pr6');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-pr6',
                     xtype: 'textfield',
                     name: 'pr6',
-                    anchor: '99%'
+                    anchor: '99%',
+                    readOnly: true,
                 }]
             }, {
                 columnWidth: .125,
@@ -2121,27 +2244,47 @@ CreateItemLineManager = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-prval7',
                     xtype: 'orders-combo-currency',
                     name: 'prval7',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.pr_kursgtd(config.id, 'prval7', 'prsum7', 'pr7');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-prsum7',
                     xtype: 'textfield',
                     name: 'prsum7',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.pr_kursgtd(config.id, 'prval7', 'prsum7', 'pr7');
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-pr7',
                     xtype: 'textfield',
                     name: 'pr7',
-                    anchor: '99%'
+                    anchor: '99%',
+                    readOnly: true,
                 }]
             }, {
                 columnWidth: .125,
