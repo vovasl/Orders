@@ -321,6 +321,43 @@ orders.utils.pr_kursgtd = function (c_id, currency_id, val_id, res_id) {
 };
 
 
+orders.utils.exw_kursgtd = function (c_id, val_id, res_id) {
+    var kursgtd = Ext.getCmp(c_id + '-kursgtd').getValue();
+    var val = Ext.getCmp(c_id + '-' + val_id).getValue();
+
+    var res = val*kursgtd/kursgtd;
+
+    Ext.getCmp(c_id + '-' + res_id).setValue(res.toFixed(2));
+
+};
+
+orders.utils.totalTab4 = function (c_id) {
+    var res = 0;
+    var arr = ['stavrub', 'tpusd', 'pstatusd', 'exwstatusd', 'stauto', 'frusd', 'pr1', 'pr2', 'pr3', 'pr4', 'pr5',
+    'pr6', 'pr7'];
+    for (var i = 0; i < arr.length; i++) {
+        var val = Ext.getCmp(c_id + '-' + arr[i]).getValue();
+        if(val){
+            res = res + parseFloat(val);
+        }
+    }
+
+    var stavrubsum = Ext.getCmp(c_id + '-stavrubsum').getValue();
+
+    res = res-stavrubsum;
+
+    Ext.getCmp(c_id + '-itograsch').setValue(res.toFixed(2));
+};
+
+orders.utils.pribilTab4 = function (c_id) {
+    var stavrubsum = Ext.getCmp(c_id + '-stavrubsum').getValue();
+    var itogo = Ext.getCmp(c_id + '-itograsch').getValue();
+
+    var res = stavrubsum-itogo;
+
+    Ext.getCmp(c_id + '-pribrasch').setValue(res.toFixed(2));
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////upload files start
 

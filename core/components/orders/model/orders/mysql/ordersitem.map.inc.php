@@ -245,6 +245,8 @@ $xpdo_meta_map['ordersItem']= array (
     'pr5nsh' => '',
     'pr6nsh' => '',
     'pr7nsh' => '',
+    'itograsch' => '',
+    'pribrasch' => '',
   ),
   'fieldMeta' => 
   array (
@@ -2063,6 +2065,22 @@ $xpdo_meta_map['ordersItem']= array (
     array (
       'dbtype' => 'varchar',
       'precision' => '191',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'itograsch' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'pribrasch' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
       'phptype' => 'string',
       'null' => false,
       'default' => '',

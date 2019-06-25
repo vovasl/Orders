@@ -306,6 +306,8 @@ $_lang['orders_item_pr4nsh'] = '';
 $_lang['orders_item_pr5nsh'] = '';
 $_lang['orders_item_pr6nsh'] = '';
 $_lang['orders_item_pr7nsh'] = '';
+$_lang['orders_item_itograsch'] = 'Итого';
+$_lang['orders_item_pribrasch'] = 'Прибыль';
 
 $_lang['orders_item_tab4_title1'] = 'Тип';
 $_lang['orders_item_tab4_title2'] = 'Агент';

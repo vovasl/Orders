@@ -239,6 +239,8 @@
         <field key="pr5nsh" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
         <field key="pr6nsh" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
         <field key="pr7nsh" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="itograsch" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="pribrasch" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
 
         <index alias="container_number" name="container_number" primary="false" unique="false" type="BTREE">
             <column key="container_number" length="" collation="A" null="false" />

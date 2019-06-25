@@ -1144,6 +1144,7 @@ CreateItemAdmin = {
                                 orders.utils.valDIVIDEkursgtd(config.id, 'platej', 'itogo');
                                 orders.utils.valDIVIDEkursgtd(config.id, 'euro_rate', 'cros_rate');
                                 orders.utils.valDIVIDEkursgtd(config.id, 'stavrubsum', 'stavrub');
+                                orders.utils.exw_kursgtd(config.id, 'exwstatsum', 'exwstatusd');
                                 orders.utils.valDIVIDEkursgtd(config.id, 'tautosum', 'stauto');
                                 orders.utils.valXkursgtd(config.id, 'frusdsum', 'frusd');
                                 orders.utils.pr_kursgtd(config.id, 'prval1', 'prsum1', 'pr1');
@@ -1153,6 +1154,8 @@ CreateItemAdmin = {
                                 orders.utils.pr_kursgtd(config.id, 'prval5', 'prsum5', 'pr5');
                                 orders.utils.pr_kursgtd(config.id, 'prval6', 'prsum6', 'pr6');
                                 orders.utils.pr_kursgtd(config.id, 'prval7', 'prsum7', 'pr7');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -1305,6 +1308,8 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.valDIVIDEkursgtd(config.id, 'stavrubsum', 'stavrub');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -1395,9 +1400,19 @@ CreateItemAdmin = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-tpusd',
                     xtype: 'textfield',
                     name: 'tpusd',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
@@ -1472,9 +1487,19 @@ CreateItemAdmin = {
                 layout: 'form',
                 labelWidth: 1,
                 items: [{
+                    id: config.id + '-pstatusd',
                     xtype: 'textfield',
                     name: 'pstatusd',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
@@ -1544,7 +1569,17 @@ CreateItemAdmin = {
                     id: config.id + '-exwstatsum',
                     xtype: 'textfield',
                     name: 'exwstatsum',
-                    anchor: '99%'
+                    anchor: '99%',
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                orders.utils.exw_kursgtd(config.id, 'exwstatsum', 'exwstatusd');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
+                            },
+                            scope: this
+                        }
+                    }
                 }]
             }, {
                 columnWidth: .125,
@@ -1630,6 +1665,8 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.valXkursgtd(config.id, 'frusdsum', 'frusd');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -1720,6 +1757,8 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.valDIVIDEkursgtd(config.id, 'tautosum', 'stauto');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -1800,6 +1839,8 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.pr_kursgtd(config.id, 'prval1', 'prsum1', 'pr1');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -1818,6 +1859,8 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.pr_kursgtd(config.id, 'prval1', 'prsum1', 'pr1');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -1898,6 +1941,8 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.pr_kursgtd(config.id, 'prval2', 'prsum2', 'pr2');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -1916,6 +1961,8 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.pr_kursgtd(config.id, 'prval2', 'prsum2', 'pr2');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -1996,6 +2043,8 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.pr_kursgtd(config.id, 'prval3', 'prsum3', 'pr3');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -2014,6 +2063,8 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.pr_kursgtd(config.id, 'prval3', 'prsum3', 'pr3');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -2094,6 +2145,8 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.pr_kursgtd(config.id, 'prval4', 'prsum4', 'pr4');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -2112,6 +2165,8 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.pr_kursgtd(config.id, 'prval4', 'prsum4', 'pr4');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -2192,6 +2247,8 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.pr_kursgtd(config.id, 'prval5', 'prsum5', 'pr5');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -2210,6 +2267,8 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.pr_kursgtd(config.id, 'prval5', 'prsum5', 'pr5');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -2290,6 +2349,8 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.pr_kursgtd(config.id, 'prval6', 'prsum6', 'pr6');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -2308,6 +2369,8 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.pr_kursgtd(config.id, 'prval6', 'prsum6', 'pr6');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -2388,6 +2451,8 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.pr_kursgtd(config.id, 'prval7', 'prsum7', 'pr7');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -2406,6 +2471,8 @@ CreateItemAdmin = {
                         change: {
                             fn: function (r) {
                                 orders.utils.pr_kursgtd(config.id, 'prval7', 'prsum7', 'pr7');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
                             },
                             scope: this
                         }
@@ -2458,10 +2525,12 @@ CreateItemAdmin = {
                 layout: 'form',
                 labelWidth: 45,
                 items: [{
+                    id: config.id + '-itograsch',
                     xtype: 'textfield',
-                    fieldLabel: 'Итого',
+                    fieldLabel: _('orders_item_itograsch'),
                     anchor: '99%',
-                    name: '',
+                    name: 'itograsch',
+                    readOnly: true,
                 }]
             }, {
                 columnWidth: .255,
@@ -2487,10 +2556,12 @@ CreateItemAdmin = {
                 layout: 'form',
                 labelWidth: 75,
                 items: [{
+                    id: config.id + '-pribrasch',
                     xtype: 'textfield',
-                    fieldLabel: 'Прибыль',
+                    fieldLabel: _('orders_item_pribrasch'),
                     anchor: '99%',
-                    name: '',
+                    name: 'pribrasch',
+                    readOnly: true,
                 }]
             }]
         }]
