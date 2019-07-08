@@ -97,6 +97,7 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
         $c->leftJoin('ordersLine', 'Line');
         $c->leftJoin('ordersContainerType', 'ContainerType');
         $c->leftJoin('ordersStationTrainArrive', 'StationTrainArrive');
+        $c->leftJoin('ordersCarCarrier', 'CarCarrier');
         $c->select(array(
             'clientName' => 'Client.name',
             'manager2Name' => 'Manager2.name',
@@ -110,7 +111,8 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
             'portArriveName' => 'PortArrive.name',
             'lineName' => 'Line.name',
             'containerTypeName' => 'ContainerType.name',
-            'stationTrainArriveName' => 'StationTrainArrive.name'
+            'stationTrainArriveName' => 'StationTrainArrive.name',
+            'carCarrierName' => 'CarCarrier.name',
         ));
         return $c;
     }
@@ -136,7 +138,7 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
         $objPHPExcel = new PHPExcel();
 
         $cellStart = 'A';
-        $cellEnd = 'R'; //последняя ячейка
+        $cellEnd = 'AG'; //последняя ячейка
         $dataCell = 2; //первая строка для записи данных в файл
 
         //массив последовательности выгрузки загрузки полей в Excel файл
@@ -159,6 +161,21 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
             'P' => 'line',
             'Q' => 'receiver',
             'R' => 'manager2',
+            'S' => 'customs_fee',
+            'T' => 'closed_4',
+            'U' => 'bill_entry_number',
+            'V' => 'rate_usd',
+            'W' => 'closed_3',
+            'X' => 'platej',
+            'Y' => 'kursgtd',
+            'Z' => 'contact_person',
+            'AA' => 'closed_5',
+            'AB' => 'exw',
+            'AC' => 'car_carrier_rate',
+            'AD' => 'car_carrier',
+            'AE' => 'currency_2',
+            'AF' => 'total',
+            'AG' => 'currency',
         );
 
         //массив названий для полей с базой данных и их размещение в Excel файле
@@ -171,14 +188,15 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
             'O' => 'goodsName',
             'P' => 'lineName',
             'Q' => 'receiverName',
-            'R' => 'manager2Name'
+            'R' => 'manager2Name',
+            'AD' => 'carCarrierName',
         );
 
         $fieldsDate = array('port_arrive_date', 'pdt', 'vdt', 'train_arrive_date', 'export_from_station_real');//названия полей с типом дата
-        $fieldsCheckbox = array('release');
+        $fieldsCheckbox = array('release', 'closed_4', 'closed_3', 'closed_5');
 
         //установка заголовков и основных стилей для Excel файла
-        foreach(range($cellStart, $cellEnd) as $columnID) {
+        foreach($this->excelColumnRange($cellStart, $cellEnd) as $columnID) {
             $objPHPExcel->getActiveSheet()->getColumnDimension($columnID)
                 ->setAutoSize(true);
             $objPHPExcel->getActiveSheet()->getStyle($columnID)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
@@ -201,7 +219,7 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
             $orderArr['id'] = '0000' . $orderArr['id'];
 
             //запись данных в файл по ячейке
-            foreach(range($cellStart, $cellEnd) as $columnID) {
+            foreach($this->excelColumnRange($cellStart, $cellEnd) as $columnID) {
                 //получение значения в зависимости поле в базе или нет
                 $val = array_key_exists($columnID, $fieldsDB) ? $orderArr[$fieldsDB[$columnID]] : $orderArr[$fields[$columnID]];
 
@@ -232,6 +250,14 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
         return '';
 
     }
+
+    public function excelColumnRange($lower, $upper) {
+        ++$upper;
+        for ($i = $lower; $i !== $upper; ++$i) {
+            yield $i;
+        }
+    }
+
 
 }
 return 'ordersItemXlsGetListProcessor';
