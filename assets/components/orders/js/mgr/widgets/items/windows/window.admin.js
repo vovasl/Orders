@@ -2512,6 +2512,97 @@ CreateItemAdmin = {
         }, {
             layout: 'column',
             defaults: {msgTarget: 'under', border: false},
+            style: 'padding:0 0 10px 0;text-align:center;',
+            items: [{
+                columnWidth: .125,
+                layout: 'form',
+                items: [{
+                    title: _('orders_item_tab4_label14'),
+                    region: 'center',
+                    style: 'padding-top: 7px',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-agent2',
+                    name: 'agusdst',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-yes-no',
+                    name: 'usdstavplat',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'orders-combo-currency',
+                    //fieldLabel: _('orders_item_currency_3'),
+                    name: 'usdstavval',
+                    anchor: '99%',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    id: config.id + '-usdstavsum',
+                    xtype: 'textfield',
+                    name: 'usdstavsum',
+                    anchor: '99%',
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    id: config.id + '-usdstavusd',
+                    xtype: 'textfield',
+                    name: 'usdstavusd',
+                    anchor: '99%',
+                    //readOnly: true,
+                    listeners: {
+                        change: {
+                            fn: function (r) {
+                                //orders.utils.exw_kursgtd(config.id, 'usdstavsum', 'usdstavusd');
+                                orders.utils.totalTab4(config.id);
+                                orders.utils.pribilTab4(config.id);
+                            },
+                            scope: this
+                        }
+                    }
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textfield',
+                    name: 'usdstavnsh',
+                    anchor: '99%'
+                }]
+            }, {
+                columnWidth: .125,
+                layout: 'form',
+                labelWidth: 1,
+                items: [{
+                    xtype: 'textarea',
+                    name: 'usdstavprim',
+                    anchor: '99%',
+                    height: 50,
+                }]
+            }]
+        }, {
+            layout: 'column',
+            defaults: {msgTarget: 'under', border: false},
             style: 'padding:15px 5px 0 40px;text-align:center;',
             items: [{
                 columnWidth: .62,

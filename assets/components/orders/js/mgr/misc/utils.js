@@ -334,7 +334,7 @@ orders.utils.exw_kursgtd = function (c_id, val_id, res_id) {
 orders.utils.totalTab4 = function (c_id) {
     var res = 0;
     var arr = ['stavrub', 'tpusd', 'pstatusd', 'exwstatusd', 'stauto', 'frusd', 'pr1', 'pr2', 'pr3', 'pr4', 'pr5',
-    'pr6', 'pr7'];
+    'pr6', 'pr7', 'usdstavusd'];
     for (var i = 0; i < arr.length; i++) {
         var val = Ext.getCmp(c_id + '-' + arr[i]).getValue();
         if(val){

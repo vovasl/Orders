@@ -241,6 +241,13 @@
         <field key="pr7nsh" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
         <field key="itograsch" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
         <field key="pribrasch" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="agusdst" dbtype="int" precision="10" phptype="integer" null="true" attributes="unsigned" />
+        <field key="usdstavplat" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="usdstavval" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="usdstavsum" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="usdstavusd" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="usdstavnsh" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="usdstavprim" dbtype="mediumtext" phptype="string" />
 
         <index alias="container_number" name="container_number" primary="false" unique="false" type="BTREE">
             <column key="container_number" length="" collation="A" null="false" />
@@ -354,6 +361,7 @@
         <aggregate alias="RAgent11" class="ordersAgent2" local="r_agent_11" foreign="id" cardinality="one" owner="foreign" />
         <aggregate alias="RAgent12" class="ordersAgent2" local="r_agent_12" foreign="id" cardinality="one" owner="foreign" />
         <aggregate alias="RAgent13" class="ordersAgent2" local="r_agent_13" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="RAgusdst" class="ordersAgent2" local="agusdst" foreign="id" cardinality="one" owner="foreign" />
     </object>
 
     <object class="ordersGoods" table="orders_goods" extends="xPDOSimpleObject">
@@ -690,7 +698,7 @@
         <composite alias="Agent11" class="ordersItem" local="id" foreign="r_agent_11" cardinality="many" owner="local" />
         <composite alias="Agent12" class="ordersItem" local="id" foreign="r_agent_12" cardinality="many" owner="local" />
         <composite alias="Agent13" class="ordersItem" local="id" foreign="r_agent_13" cardinality="many" owner="local" />
-
+        <composite alias="Agusdst" class="ordersItem" local="id" foreign="agusdst" cardinality="many" owner="local" />
     </object>
 
 

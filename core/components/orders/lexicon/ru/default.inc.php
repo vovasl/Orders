@@ -306,6 +306,13 @@ $_lang['orders_item_pr4nsh'] = '';
 $_lang['orders_item_pr5nsh'] = '';
 $_lang['orders_item_pr6nsh'] = '';
 $_lang['orders_item_pr7nsh'] = '';
+$_lang['orders_item_agusdst'] = '';
+$_lang['orders_item_usdstavplat'] = '';
+$_lang['orders_item_usdstavval'] = '';
+$_lang['orders_item_usdstavsum'] = '';
+$_lang['orders_item_usdstavusd'] = '';
+$_lang['orders_item_usdstavnsh'] = '';
+$_lang['orders_item_usdstavprim'] = '';
 $_lang['orders_item_itograsch'] = 'Итого';
 $_lang['orders_item_pribrasch'] = 'Прибыль';
 
@@ -323,6 +330,7 @@ $_lang['orders_item_tab4_label3'] = 'Платеж, руб';
 $_lang['orders_item_tab4_label4'] = 'EXW, USD';
 $_lang['orders_item_tab4_label5'] = 'Фрахт, USD';
 $_lang['orders_item_tab4_label6'] = 'Ставка авто';
+$_lang['orders_item_tab4_label14'] = 'USD став.';
 
 $_lang['orders_item_reports_intro_msg'] = 'Сформировать отчет в формате Excel';
 $_lang['orders_item_reports_field_port_arrive_date_start'] = 'Приб. ETA c';

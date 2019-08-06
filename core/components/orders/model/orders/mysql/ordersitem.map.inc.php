@@ -247,6 +247,13 @@ $xpdo_meta_map['ordersItem']= array (
     'pr7nsh' => '',
     'itograsch' => '',
     'pribrasch' => '',
+    'agusdst' => NULL,
+    'usdstavplat' => '',
+    'usdstavval' => '',
+    'usdstavsum' => '',
+    'usdstavusd' => '',
+    'usdstavnsh' => '',
+    'usdstavprim' => NULL,
   ),
   'fieldMeta' => 
   array (
@@ -2085,6 +2092,59 @@ $xpdo_meta_map['ordersItem']= array (
       'null' => false,
       'default' => '',
     ),
+    'agusdst' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => true,
+      'attributes' => 'unsigned',
+    ),
+    'usdstavplat' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'usdstavval' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'usdstavsum' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'usdstavusd' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '100',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'usdstavnsh' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'usdstavprim' => 
+    array (
+      'dbtype' => 'mediumtext',
+      'phptype' => 'string',
+    ),
   ),
   'indexes' => 
   array (
@@ -2791,6 +2851,14 @@ $xpdo_meta_map['ordersItem']= array (
     array (
       'class' => 'ordersAgent2',
       'local' => 'r_agent_13',
+      'foreign' => 'id',
+      'cardinality' => 'one',
+      'owner' => 'foreign',
+    ),
+    'RAgusdst' => 
+    array (
+      'class' => 'ordersAgent2',
+      'local' => 'agusdst',
       'foreign' => 'id',
       'cardinality' => 'one',
       'owner' => 'foreign',

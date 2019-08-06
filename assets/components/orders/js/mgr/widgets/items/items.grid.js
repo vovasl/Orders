@@ -630,6 +630,13 @@ Ext.extend(orders.grid.Items, MODx.grid.Grid, {
             pr7nsh: {width: 74, editor: {xtype: 'textfield'}},
             itograsch: {width: 74},
             pribrasch: {width: 74},
+            agusdst: {width: 100, editor: {xtype: 'orders-combo-agent2', renderer: true}},
+            usdstavplat: {width: 65, editor: {xtype: 'orders-combo-yes-no', renderer: true}},
+            usdstavval: {width: 85, editor: {xtype: 'orders-combo-currency', renderer: true}},
+            usdstavsum: {width: 74, editor: {xtype: 'textfield'}},
+            usdstavusd: {width: 74, editor: {xtype: 'textfield'}},
+            usdstavnsh: {width: 74, editor: {xtype: 'textfield'}},
+            usdstavprim: {width: 125, editor: {xtype: 'textarea'}},
         };
 
 		var allWidth = orders.config['orders_item_fields_width'];

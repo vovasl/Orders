@@ -138,7 +138,7 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
         $objPHPExcel = new PHPExcel();
 
         $cellStart = 'A';
-        $cellEnd = 'AG'; //последняя ячейка
+        $cellEnd = 'AJ'; //последняя ячейка
         $dataCell = 2; //первая строка для записи данных в файл
 
         //массив последовательности выгрузки загрузки полей в Excel файл
@@ -176,6 +176,9 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
             'AE' => 'currency_2',
             'AF' => 'total',
             'AG' => 'currency',
+            'AH' => 'rate_rur',
+            'AI' => 'delivery_date',
+            'AJ' => 'car_number'
         );
 
         //массив названий для полей с базой данных и их размещение в Excel файле
@@ -192,7 +195,7 @@ class ordersItemXlsGetListProcessor extends modObjectGetListProcessor
             'AD' => 'carCarrierName',
         );
 
-        $fieldsDate = array('port_arrive_date', 'pdt', 'vdt', 'train_arrive_date', 'export_from_station_real');//названия полей с типом дата
+        $fieldsDate = array('port_arrive_date', 'pdt', 'vdt', 'train_arrive_date', 'export_from_station_real', 'delivery_date');//названия полей с типом дата
         $fieldsCheckbox = array('release', 'closed_4', 'closed_3', 'closed_5');
 
         //установка заголовков и основных стилей для Excel файла

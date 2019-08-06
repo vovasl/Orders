@@ -148,5 +148,13 @@ $xpdo_meta_map['ordersAgent2']= array (
       'cardinality' => 'many',
       'owner' => 'local',
     ),
+    'Agusdst' => 
+    array (
+      'class' => 'ordersItem',
+      'local' => 'id',
+      'foreign' => 'agusdst',
+      'cardinality' => 'many',
+      'owner' => 'local',
+    ),
   ),
 );
